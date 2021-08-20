@@ -1,0 +1,13 @@
+{
+  "name": "ui-kit",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "kit-build": "yarn workspace ui-kit rollup -c"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
