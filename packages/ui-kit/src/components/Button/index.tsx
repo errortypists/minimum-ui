@@ -13,7 +13,7 @@ export interface IProps {
 }
 
 const Button: React.FC<IProps> = ({ children, theme = ButtonType.DEFAULT }) => {
-  return <button>{children}11</button>;
+  return <button>{children}</button>;
 };
 
 export default Button;
