@@ -6,7 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "kit-build": "yarn workspace ui-kit rollup -c"
+    "kit-build": "yarn workspace ui-kit rollup -c",
+    "docs-start": "yarn workspace ui-kit-docs start"
   },
   "devDependencies": {},
   "dependencies": {}
