@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Button>1ㅋㅋㅋㅋㅋ?</Button>
+        <Button>샘플버튼</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
