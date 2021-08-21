@@ -16,6 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "references": [{ "path": "../ui-kit" }],
   "include": ["src"]
 }
