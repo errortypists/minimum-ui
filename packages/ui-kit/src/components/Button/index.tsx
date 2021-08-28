@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 export enum ButtonType {
   DEFAULT = "default",
@@ -13,7 +14,13 @@ export interface IProps {
 }
 
 const Button: React.FC<IProps> = ({ children, theme = ButtonType.DEFAULT }) => {
-  return <button>{children}</button>;
+  return <ButtonWrapper>{children}</ButtonWrapper>;
 };
 
 export default Button;
+
+const ButtonWrapper = styled.button`
+  width: 200px;
+  height: 200px;
+  background-color: red;
+`;
