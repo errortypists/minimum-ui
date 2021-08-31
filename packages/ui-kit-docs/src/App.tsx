@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import { Button } from "ui-kit";
+import { Button2 } from "ui-kit";
 import "./App.css";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Button>샘플버튼</Button>
+        <Button2>샘플버튼2</Button2>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
