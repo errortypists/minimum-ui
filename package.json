@@ -9,7 +9,7 @@
     "kit-build": "yarn workspace ui-kit rollup -c",
     "kit-watch": "yarn workspace ui-kit rollup -c -w",
     "docs-start": "yarn workspace ui-kit-docs start",
-    "dev": "concurrently 'yarn kit-watch' 'yarn docs-start'"
+    "dev": "concurrently \"yarn kit-watch\" \"yarn docs-start\""
   },
   "devDependencies": {
     "concurrently": "^6.2.1"
