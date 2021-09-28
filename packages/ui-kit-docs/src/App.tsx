@@ -1,27 +1,22 @@
 import React from "react";
-import logo from "./logo.svg";
-import { Button2 } from "ui-kit";
-import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import { Tabs } from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Button2>샘플버튼2</Button2>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <div>
+            <Link to="/">Home</Link> /<Link to="/tabs">tabs</Link> /
+          </div>
+        </Route>
+        <Route path="/tabs" exact>
+          <Tabs />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
