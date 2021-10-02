@@ -5,4 +5,6 @@ export { default as Flex } from "./components/Flex";
 export { default as Grid } from "./components/Grid";
 export { default as Typography } from "./components/Typography";
 export { default as Tabs } from "./components/Tabs"
+export { default as Progress } from "./components/Progress"
+
 export { default as IconArrowRight } from "./icons/IconArrowRight"
