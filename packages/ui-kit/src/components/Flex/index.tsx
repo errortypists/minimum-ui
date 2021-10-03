@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 // NOTE gap 값의 기본 높이 정해야 함
 
 interface Props {
-  align?: "center" | "flex-start" | "flex-end";
+  align?: "center" | "flex-start" | "flex-end"
   justify?:
     | "center"
     | "flex-start"
@@ -12,11 +12,11 @@ interface Props {
     | "space-between"
     | "space-around"
     | "space-evenly"
-    | "stretch";
-  direction?: "row" | "column";
-  wrap?: "nowrap" | "wrap" | "wrap-reverse" | "inherit";
-  gap?: number;
-  style?: React.CSSProperties;
+    | "stretch"
+  direction?: "row" | "column"
+  wrap?: "nowrap" | "wrap" | "wrap-reverse" | "inherit"
+  gap?: number
+  style?: React.CSSProperties
 }
 
 const Flex: React.FC<Props> = ({
@@ -42,8 +42,8 @@ const Flex: React.FC<Props> = ({
     >
       {children}
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div<any>`
   width: 100%;
@@ -52,23 +52,9 @@ const Wrapper = styled.div<any>`
   flex-wrap: wrap;
   flex: 1;
 
-  .child {
-    display: flex;
-    width: 100%;
-    flex: 1;
-  }
-
-  .child ~ .child {
-    margin-left: ${(props) => props.gap}px;
-  }
-
   &[data-direction="column"] {
     flex-direction: column;
-    .child ~ .child {
-      margin-top: ${(props) => props.gap}px;
-      margin-left: 0;
-    }
   }
-`;
+`
 
-export default Flex;
+export default Flex
