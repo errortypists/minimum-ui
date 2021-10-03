@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { Typography } from "ui-kit";
+import styled from "styled-components"
+import { Typography } from "ui-kit"
 
-const { Title, SubTitle, Body, Caption } = Typography;
+const { Title, SubTitle, Body, Caption } = Typography
 
 const TypographyPage: React.FC = () => {
   return (
@@ -26,11 +26,11 @@ const TypographyPage: React.FC = () => {
       </Body>
       <Caption>사이드 문구입니다</Caption>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div`
   width: 500px;
-`;
+`
 
-export default TypographyPage;
+export default TypographyPage

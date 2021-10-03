@@ -1,34 +1,35 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from "react"
+import styled, { css } from "styled-components"
 
 interface Props {
-  size?: [number, number];
-  align?: "center" | "flex-start" | "flex-end";
-  justify?: "center" | "flex-start" | "flex-end" | "stretch";
-  gap?: number;
-  style?: React.CSSProperties;
+  row?: number
+  col?: number
+  align?: "center" | "flex-start" | "flex-end"
+  justify?: "center" | "flex-start" | "flex-end" | "stretch"
+  gap?: number
+  style?: React.CSSProperties
 }
 
 const Grid: React.FC<Props> = ({
-  size = [undefined, undefined],
+  row = 1,
+  col = 1,
   children,
   align = "center",
   justify = "center",
   gap = 0,
   style,
 }) => {
-  const [col, row] = size;
   return (
     <Wrapper
       style={{ alignItems: align, justifyItems: justify, ...style }}
       gap={gap}
-      col={col || 1}
-      row={row || 1}
+      col={col}
+      row={row}
     >
       {children}
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div<any>`
   display: grid;
@@ -41,6 +42,6 @@ const Wrapper = styled.div<any>`
     css`
       grid-gap: ${props.gap}px;
     `}
-`;
+`
 
-export default Grid;
+export default Grid

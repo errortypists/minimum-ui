@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Divider, Flex, Grid } from "ui-kit";
+import styled from "styled-components"
+import { Divider, Flex, Grid } from "ui-kit"
 
 const LayoutPage: React.FC = () => {
   return (
@@ -20,19 +20,19 @@ const LayoutPage: React.FC = () => {
         <Box style={{ flex: 2, height: "auto" }}>FLEX5</Box>
       </Flex>
       <Divider size={20} />
-      <Grid size={[2, 2]} gap={8}>
+      <Grid row={2} col={2} gap={8}>
         <Box>GRID1</Box>
         <Box>GRID2</Box>
         <Box>GRID3</Box>
         <Box>GRID4</Box>
       </Grid>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div`
   width: 500px;
-`;
+`
 
 const Box = styled.div`
   width: 100%;
@@ -41,6 +41,6 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
-export default LayoutPage;
+export default LayoutPage

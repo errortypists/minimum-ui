@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Divider } from "ui-kit";
+import styled from "styled-components"
+import { Divider } from "ui-kit"
 
 const DividerPage: React.FC = () => {
   return (
@@ -8,11 +8,11 @@ const DividerPage: React.FC = () => {
       <Divider />
       Section2
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div`
   width: 500px;
-`;
+`
 
-export default DividerPage;
+export default DividerPage
