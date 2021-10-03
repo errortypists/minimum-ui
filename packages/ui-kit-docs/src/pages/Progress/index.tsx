@@ -6,6 +6,8 @@ const TabsPage: React.FC = () => {
     <>
       <Progress type={"circle"} progress={50} />
       <hr />
+      <Progress type={"circular"} />
+      <hr />
       <Progress type={"linear"} progress={50} />
       <hr />
       <div style={{ width: "50%" }}>

@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 
 interface Props {
-  type: "circle" | "linear"
+  type: "circle" | "linear" | "circular"
   progress?: number
 }
 
@@ -10,7 +10,7 @@ const Circle: React.FC<Props> = (props) => {
   const { progress = 0 } = props
   const circleRef = useRef(null)
   const size = 24
-  const strokeWidth = 2
+  const strokeWidth = 5
   const center = size / 2
   const radius = size / 2 - strokeWidth / 2
   const circumference = 2 * Math.PI * radius
@@ -32,7 +32,8 @@ const Circle: React.FC<Props> = (props) => {
       fill="none"
     >
       <circle
-        stroke={"#ffffff"}
+        // stroke={"transparent"}
+        stroke={"#dbdbdb"}
         cx={center}
         cy={center}
         r={radius}
@@ -52,6 +53,65 @@ const Circle: React.FC<Props> = (props) => {
     </svg>
   )
 }
+
+const Circular: React.FC<Props> = (props) => {
+  const { progress = 85 } = props
+  const circleRef = useRef(null)
+  const size = 24
+  const strokeWidth = 5
+  const center = size / 2
+  const radius = size / 2 - strokeWidth / 2
+  const circumference = 2 * Math.PI * radius
+  const offset = ((100 - progress) / 100) * circumference
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+    >
+      <circle
+        stroke={"#dbdbdb"}
+        cx={center}
+        cy={center}
+        r={radius}
+        strokeWidth={strokeWidth}
+      />
+      <RotationCircle>
+        <circle
+          ref={circleRef}
+          stroke={"#00ff00"}
+          cx={center}
+          cy={center}
+          r={radius}
+          strokeWidth={strokeWidth}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+        />
+      </RotationCircle>
+    </svg>
+  )
+}
+
+const RotationCircle = styled.g`
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-name: rotation;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+`
 
 const Linear: React.FC<Props> = (props) => {
   const { progress = 0 } = props
@@ -92,10 +152,19 @@ const Linear: React.FC<Props> = (props) => {
 
 const Tabs: React.FC<Props> = (props) => {
   const { type } = props
+  let Component = undefined
+  switch (type) {
+    case "circular":
+      Component = Circular
+      break
+    case "linear":
+      Component = Linear
+      break
+    default:
+      Component = Circle
+  }
 
-  return (
-    <>{type === "circle" ? <Circle {...props} /> : <Linear {...props} />}</>
-  )
+  return <Component {...props} />
 }
 
 export default Tabs
