@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Circle: React.FC<Props> = (props) => {
-  const { progress = 0 } = props
+  const { progress = 100 } = props
   const circleRef = useRef(null)
   const size = 24
   const strokeWidth = 5
@@ -19,7 +19,6 @@ const Circle: React.FC<Props> = (props) => {
   useEffect(() => {
     const progressOffset = ((100 - progress) / 100) * circumference
     setOffset(progressOffset)
-    console.log(progressOffset)
   }, [setOffset, circumference, progress, offset])
 
   return (
