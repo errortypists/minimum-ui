@@ -5,19 +5,19 @@ import Tab from "./Tab"
 
 interface HeaderItem {
   text: string
+  value: string
   icon?: any
 }
 
 interface Props {
   headers: HeaderItem[]
-  initIndex?: number
-  hasRadius?: boolean
-  onChange?: (item: HeaderItem, index: number) => void
+  value: string
+  type?: "round" | "rectangle"
+  onChange?: (value: string, item: HeaderItem, index: number) => void
 }
 
 const Tabs: React.FC<Props> = (props) => {
-  const { headers, hasRadius = false, onChange } = props
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const { headers, type = "rectangle", value, onChange } = props
 
   const renderEachTab = useMemo(() => {
     return headers.map((item, index) => {
@@ -26,16 +26,15 @@ const Tabs: React.FC<Props> = (props) => {
           icon={item.icon}
           text={item.text}
           // isSelcted={selectedIndex !== index}
-          type={selectedIndex === index ? "selected" : "default"}
+          status={value === item.value ? "selected" : "default"}
           onClick={() => {
-            setSelectedIndex(index)
-            if (onChange) onChange(item, index)
+            if (onChange) onChange(item.value, item, index)
           }}
-          hasRadius={hasRadius}
+          type={type}
         />
       )
     })
-  }, [selectedIndex])
+  }, [value, onChange])
 
   return <Wrapper>{renderEachTab}</Wrapper>
 }
