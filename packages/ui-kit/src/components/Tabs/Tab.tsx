@@ -4,8 +4,8 @@ import styled, { css } from "styled-components"
 interface TabProps {
   text: string // 탭 텍스트
   icon?: any // 아이콘 유무, 타입을 svg 타입으로 못할까;;;
-  hasRadius?: boolean // 각진 상태 유무
-  type?: "default" | "disabled" | "selected" // 기본 default
+  type?: "round" | "rectangle"
+  status?: "default" | "disabled" | "selected" // 기본 default
   onClick: () => void
 }
 
@@ -13,12 +13,12 @@ const Tab: React.FC<TabProps> = (props) => {
   const {
     text = "",
     icon,
-    type = "default",
-    hasRadius = false,
+    status = "default",
+    type = "rectangle",
     onClick,
   } = props
   let Wrapper = BaseWrapper
-  switch (type) {
+  switch (status) {
     case "selected":
       Wrapper = SelectedWrapper
       break
@@ -29,7 +29,7 @@ const Tab: React.FC<TabProps> = (props) => {
       Wrapper = DefaultWrapper
   }
   return (
-    <Wrapper onClick={onClick} hasRadius={hasRadius}>
+    <Wrapper onClick={onClick} isRound={type === "round"}>
       {icon}
       <div>{`${text}`}</div>
     </Wrapper>
@@ -47,13 +47,12 @@ const BaseWrapper = styled.button<any>`
   font-weight: bold;
   padding: 10px 40px;
   border: 1px solid black;
-  /* background-color: ${(props) => (props.isSelcted ? "red" : "blue")}; */
 
   border-bottom: 3px solid black;
   min-width: 80px;
 
   ${(props) =>
-    props.hasRadius &&
+    props.isRound &&
     css`
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;
