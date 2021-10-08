@@ -36,6 +36,8 @@ const Wrapper = styled.div<any>`
   grid-template-columns: ${(props) => `repeat(${props.col}, 1fr)`};
   grid-template-rows: ${(props) => `repeat(${props.col}, 1fr)`};
   justify-items: center;
+  box-sizing: border-box;
+  text-align: left;
 
   ${(props) =>
     props.gap > 0 &&
