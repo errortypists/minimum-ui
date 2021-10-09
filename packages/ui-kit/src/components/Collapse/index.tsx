@@ -18,9 +18,9 @@ const Collapse: React.FC<Props> = (props) => {
   return (
     <Wrapper isOpen={isOpen} childHeight={childHeight} speed={speed}>
       <div ref={childRef}>
-			  {children}
+        {children}
       </div>
-		</Wrapper>
+    </Wrapper>
   )
 }
 
