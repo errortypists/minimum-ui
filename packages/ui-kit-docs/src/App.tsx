@@ -1,7 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
-import { Tabs, DividerPage, LayoutPage, Progress } from "./pages";
+import { Tabs, DividerPage, LayoutPage, Progress, Modal } from "./pages";
 import TypographyPage from "./pages/Typography";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
             <Link to="/progress">progress</Link> /
             <Link to="/layout">layout</Link> /<Link to="/divider">divider</Link>{" "}
             /<Link to="/typography">typography</Link>/
+            /<Link to="/modal">modal</Link>/
           </div>
         </Route>
         <Route path="/tabs" exact>
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path="/typography" exact>
           <TypographyPage />
+        </Route>
+        <Route path="/modal" exact>
+          <Modal />
         </Route>
       </Switch>
     </Router>
