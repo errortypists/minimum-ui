@@ -1,25 +1,46 @@
 import React from "react"
+import { createPortal } from "react-dom"
 import styled, { css } from "styled-components"
 
 interface Props {
+  zIndex?: number
   style?: React.CSSProperties
+  onClickOutside?: () => void
 }
 
-const Grid: React.FC<Props> = ({
-	children,
-  style,
-}) => {
-  return (
-    <Wrapper
-      style={{ ...style }}
-    >
-      {children}1234
-    </Wrapper>
+const Grid: React.FC<Props> = (props) => {
+  const { zIndex = 1000, style, children, onClickOutside } = props
+  return createPortal(
+    <Wrapper style={{ ...style }}>
+      <Dimmed onClick={onClickOutside} zIndex={zIndex} />
+      <Content zIndex={zIndex + 1}>{children}</Content>
+    </Wrapper>,
+    document.body
   )
 }
 
 const Wrapper = styled.div<any>`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
+const Dimmed = styled.div<any>`
+  background-color: #000000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  z-index: ${(props) => `${props.zIndex}`};
+`
+
+const Content = styled.div<any>`
+  position: absolute;
+  z-index: ${(props) => `${props.zIndex}`};
 `
 
 export default Grid
