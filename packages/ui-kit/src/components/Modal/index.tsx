@@ -8,7 +8,7 @@ interface Props {
   onClickOutside?: () => void
 }
 
-const Grid: React.FC<Props> = (props) => {
+const Modal: React.FC<Props> = (props) => {
   const { zIndex = 1000, style, children, onClickOutside } = props
   return createPortal(
     <Wrapper style={{ ...style }}>
@@ -43,4 +43,4 @@ const Content = styled.div<any>`
   z-index: ${(props) => `${props.zIndex}`};
 `
 
-export default Grid
+export default Modal
