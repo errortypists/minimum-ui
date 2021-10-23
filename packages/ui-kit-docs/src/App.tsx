@@ -1,8 +1,15 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
-import { Tabs, DividerPage, LayoutPage, Progress, Collapse } from "./pages";
-import TypographyPage from "./pages/Typography";
+import {
+  Tabs,
+  DividerPage,
+  LayoutPage,
+  Progress,
+  Modal,
+  Collapse,
+} from "./pages"
+import TypographyPage from "./pages/Typography"
 
 function App() {
   return (
@@ -13,7 +20,9 @@ function App() {
             <Link to="/">Home</Link> /<Link to="/tabs">tabs</Link> /
             <Link to="/progress">progress</Link> /
             <Link to="/layout">layout</Link> /<Link to="/divider">divider</Link>{" "}
-            /<Link to="/typography">typography</Link>/<Link to="/collapse">collapse</Link>
+            /<Link to="/typography">typography</Link>/ /
+            <Link to="/modal">modal</Link>/ /
+            <Link to="/collapse">collapse</Link>
           </div>
         </Route>
         <Route path="/tabs" exact>
@@ -30,6 +39,9 @@ function App() {
         </Route>
         <Route path="/typography" exact>
           <TypographyPage />
+        </Route>
+        <Route path="/modal" exact>
+          <Modal />
         </Route>
         <Route path="/collapse" exact>
           <Collapse />
