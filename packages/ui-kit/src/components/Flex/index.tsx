@@ -51,6 +51,8 @@ const Wrapper = styled.div<any>`
   align-self: stretch;
   flex-wrap: wrap;
   flex: 1;
+  box-sizing: border-box;
+  text-align: left;
 
   &[data-direction="column"] {
     flex-direction: column;
