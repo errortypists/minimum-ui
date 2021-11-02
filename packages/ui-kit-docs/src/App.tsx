@@ -8,21 +8,34 @@ import {
   Progress,
   Modal,
   Collapse,
+  Drawer,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 
 function App() {
+  const divider = " / "
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
           <div>
-            <Link to="/">Home</Link> /<Link to="/tabs">tabs</Link> /
-            <Link to="/progress">progress</Link> /
-            <Link to="/layout">layout</Link> /<Link to="/divider">divider</Link>{" "}
-            /<Link to="/typography">typography</Link>/ /
-            <Link to="/modal">modal</Link>/ /
+            <Link to="/">Home</Link>
+            {divider}
+            <Link to="/tabs">tabs</Link>
+            {divider}
+            <Link to="/progress">progress</Link>
+            {divider}
+            <Link to="/layout">layout</Link>
+            {divider}
+            <Link to="/divider">divider</Link>
+            {divider}
+            <Link to="/typography">typography</Link>
+            {divider}
+            <Link to="/modal">modal</Link>
+            {divider}
             <Link to="/collapse">collapse</Link>
+            {divider}
+            <Link to="/drawer">drawer</Link>
           </div>
         </Route>
         <Route path="/tabs" exact>
@@ -45,6 +58,9 @@ function App() {
         </Route>
         <Route path="/collapse" exact>
           <Collapse />
+        </Route>
+        <Route path="/drawer" exact>
+          <Drawer />
         </Route>
       </Switch>
     </Router>
