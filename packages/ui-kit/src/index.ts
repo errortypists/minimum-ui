@@ -1,6 +1,7 @@
 export { default as Button } from "./components/Button"
 export { default as Button2 } from "./components/Button2"
 export { default as Divider } from "./components/Divider"
+export { default as Drawer } from "./components/Drawer"
 export { default as Flex } from "./components/Flex"
 export { default as Grid } from "./components/Grid"
 export { default as Typography } from "./components/Typography"
