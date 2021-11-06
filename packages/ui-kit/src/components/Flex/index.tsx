@@ -32,7 +32,7 @@ const Flex: React.FC<Props> = ({
     <Wrapper
       style={{
         alignItems: align,
-        justifyContents: justify,
+        justifyContent: justify,
         flexWrap: wrap,
         gap,
         ...style,
