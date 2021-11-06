@@ -30,9 +30,9 @@ const DividerPage: React.FC = () => {
         isOpen={isOpen1}
         onClickOutside={() => setOpen1(false)}
         direction={"left"}
-        size={600}
+        size={document.querySelector("html")?.clientWidth}
       >
-        <div style={{ width: "200px", height: "200px", background: "white" }}>
+        <div style={{ width: "70px", height: "200px", background: "white" }}>
           하이
         </div>
       </Drawer>
@@ -58,6 +58,7 @@ const DividerPage: React.FC = () => {
         isOpen={isOpen4}
         onClickOutside={() => setOpen4(false)}
         direction={"bottom"}
+        size={50}
       >
         <div style={{ width: "200px", height: "200px", background: "white" }}>
           하이
