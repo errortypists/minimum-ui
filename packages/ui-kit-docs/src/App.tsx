@@ -1,6 +1,4 @@
-import React from "react"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-
 import {
   Tabs,
   DividerPage,
@@ -8,22 +6,69 @@ import {
   Progress,
   Modal,
   Collapse,
+  ConceptPage,
+  ButtonPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
+import { Flex, Grid } from "ui-kit"
+import React from "react"
+import styled from "styled-components"
+import TextAreaPage from "./pages/TextArea"
+
+const Box: React.FC = ({ children }) => {
+  return (
+    <Flex
+      align="center"
+      justify="center"
+      style={{
+        width: "100%",
+        height: "100px",
+        border: "1px solid black",
+        borderRadius: "2px",
+      }}
+    >
+      <Children>{children}</Children>
+    </Flex>
+  )
+}
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
-          <div>
-            <Link to="/">Home</Link> /<Link to="/tabs">tabs</Link> /
-            <Link to="/progress">progress</Link> /
-            <Link to="/layout">layout</Link> /<Link to="/divider">divider</Link>{" "}
-            /<Link to="/typography">typography</Link>/ /
-            <Link to="/modal">modal</Link>/ /
-            <Link to="/collapse">collapse</Link>
-          </div>
+          <Grid col={5} gap={5}>
+            <Box>
+              <Link to="/tabs">tabs</Link>
+            </Box>
+            <Box>
+              <Link to="/progress">progress</Link>
+            </Box>
+            <Box>
+              <Link to="/layout">layout</Link>
+            </Box>
+            <Box>
+              <Link to="/divider">divider</Link>
+            </Box>
+            <Box>
+              <Link to="/typography">typography</Link>
+            </Box>
+            <Box>
+              <Link to="/modal">modal</Link>
+            </Box>
+            <Box>
+              <Link to="/collapse">collapse</Link>
+            </Box>
+            <Box>
+              <Link to="/concept">concept</Link>
+            </Box>
+            <Box>
+              <Link to="/button">button</Link>
+            </Box>
+            <Box>
+              <Link to="/textarea">textarea</Link>
+            </Box>
+          </Grid>
         </Route>
         <Route path="/tabs" exact>
           <Tabs />
@@ -46,9 +91,27 @@ function App() {
         <Route path="/collapse" exact>
           <Collapse />
         </Route>
+        <Route path="/concept" exact>
+          <ConceptPage />
+        </Route>
+        <Route path="/button" exact>
+          <ButtonPage />
+        </Route>
+        <Route path="/textarea" exact>
+          <TextAreaPage />
+        </Route>
       </Switch>
     </Router>
   )
 }
+
+const Children = styled.div`
+  a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+`
 
 export default App
