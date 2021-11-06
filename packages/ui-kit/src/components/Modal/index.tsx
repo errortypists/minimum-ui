@@ -11,9 +11,11 @@ interface Props {
 const Modal: React.FC<Props> = (props) => {
   const { zIndex = 1000, style, children, onClickOutside } = props
   return createPortal(
-    <Wrapper style={{ ...style }}>
+    <Wrapper>
       <Dimmed onClick={onClickOutside} zIndex={zIndex} />
-      <Content zIndex={zIndex + 1}>{children}</Content>
+      <Content zIndex={zIndex + 1} style={{ ...style }}>
+        {children}
+      </Content>
     </Wrapper>,
     document.body
   )

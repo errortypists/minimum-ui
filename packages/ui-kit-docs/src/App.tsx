@@ -6,6 +6,7 @@ import {
   Progress,
   Modal,
   Collapse,
+  Drawer,
   ConceptPage,
   ButtonPage,
 } from "./pages"
@@ -68,6 +69,9 @@ function App() {
             <Box>
               <Link to="/textarea">textarea</Link>
             </Box>
+            <Box>
+              <Link to="/drawer">drawer</Link>
+            </Box>
           </Grid>
         </Route>
         <Route path="/tabs" exact>
@@ -99,6 +103,9 @@ function App() {
         </Route>
         <Route path="/textarea" exact>
           <TextAreaPage />
+        </Route>
+        <Route path="/drawer" exact>
+          <Drawer />
         </Route>
       </Switch>
     </Router>
