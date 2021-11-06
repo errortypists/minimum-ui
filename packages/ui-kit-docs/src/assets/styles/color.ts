@@ -159,6 +159,7 @@ const Colors = {
 
 export const BaseColor = {
   border: Colors.GRAY[2], //  기본 박스들의 border 값
+  inputBorder: Colors.GRAY[5], //  input, select
   default: Colors.GRAY[7], //  메인이 되는 gray 색상
   primary: Colors.INDIGO[8], //  메인이 되는 blue 색상
   font: Colors.GRAY[9], //  폰트 색상,
