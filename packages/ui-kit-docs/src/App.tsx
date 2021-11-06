@@ -13,6 +13,7 @@ import TypographyPage from "./pages/Typography"
 import { Flex, Grid } from "ui-kit"
 import React from "react"
 import styled from "styled-components"
+import TextAreaPage from "./pages/TextArea"
 
 const Box: React.FC = ({ children }) => {
   return (
@@ -64,6 +65,9 @@ function App() {
             <Box>
               <Link to="/button">button</Link>
             </Box>
+            <Box>
+              <Link to="/textarea">textarea</Link>
+            </Box>
           </Grid>
         </Route>
         <Route path="/tabs" exact>
@@ -92,6 +96,9 @@ function App() {
         </Route>
         <Route path="/button" exact>
           <ButtonPage />
+        </Route>
+        <Route path="/textarea" exact>
+          <TextAreaPage />
         </Route>
       </Switch>
     </Router>

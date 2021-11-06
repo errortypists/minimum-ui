@@ -7,5 +7,6 @@ export { default as Tabs } from "./components/Tabs"
 export { default as Progress } from "./components/Progress"
 export { default as Modal } from "./components/Modal"
 export { default as Collapse } from "./components/Collapse"
+export { default as TextArea } from "./components/TextArea"
 
 export { default as IconArrowRight } from "./icons/IconArrowRight"
