@@ -9,6 +9,9 @@ import {
   Drawer,
   ConceptPage,
   ButtonPage,
+  SelectPage,
+  PaginationPage,
+  InputPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 import { Flex, Grid } from "ui-kit"
@@ -72,6 +75,15 @@ function App() {
             <Box>
               <Link to="/drawer">drawer</Link>
             </Box>
+            <Box>
+              <Link to="/select">select</Link>
+            </Box>
+            <Box>
+              <Link to="/pagination">pagination</Link>
+            </Box>
+            <Box>
+              <Link to="/input">input</Link>
+            </Box>
           </Grid>
         </Route>
         <Route path="/tabs" exact>
@@ -106,6 +118,15 @@ function App() {
         </Route>
         <Route path="/drawer" exact>
           <Drawer />
+        </Route>
+        <Route path="/select" exact>
+          <SelectPage />
+        </Route>
+        <Route path="/pagination" exact>
+          <PaginationPage />
+        </Route>
+        <Route path="/input" exact>
+          <InputPage />
         </Route>
       </Switch>
     </Router>
