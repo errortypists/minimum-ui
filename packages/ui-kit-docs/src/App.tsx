@@ -9,6 +9,7 @@ import {
   Drawer,
   ConceptPage,
   ButtonPage,
+  TablePage,
   SelectPage,
   PaginationPage,
   InputPage,
@@ -76,6 +77,9 @@ function App() {
               <Link to="/drawer">drawer</Link>
             </Box>
             <Box>
+              <Link to="/table">table</Link>
+            </Box>
+            <Box>
               <Link to="/select">select</Link>
             </Box>
             <Box>
@@ -118,6 +122,9 @@ function App() {
         </Route>
         <Route path="/drawer" exact>
           <Drawer />
+        </Route>
+        <Route path="/table" exact>
+          <TablePage />
         </Route>
         <Route path="/select" exact>
           <SelectPage />
