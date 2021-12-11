@@ -11,5 +11,8 @@ export { default as Collapse } from "./components/Collapse"
 export { default as TextArea } from "./components/TextArea"
 export { default as Table } from "./components/Table"
 export { default as QuickTable } from "./components/QuickTable"
+export { default as Select } from "./components/Select"
+export { default as Pagination } from "./components/Pagination"
+export { default as Input } from "./components/Input"
 
 export { default as IconArrowRight } from "./icons/IconArrowRight"
