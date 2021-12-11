@@ -9,6 +9,7 @@ import {
   Drawer,
   ConceptPage,
   ButtonPage,
+  TablePage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 import { Flex, Grid } from "ui-kit"
@@ -72,6 +73,9 @@ function App() {
             <Box>
               <Link to="/drawer">drawer</Link>
             </Box>
+            <Box>
+              <Link to="/table">table</Link>
+            </Box>
           </Grid>
         </Route>
         <Route path="/tabs" exact>
@@ -106,6 +110,9 @@ function App() {
         </Route>
         <Route path="/drawer" exact>
           <Drawer />
+        </Route>
+        <Route path="/table" exact>
+          <TablePage />
         </Route>
       </Switch>
     </Router>
