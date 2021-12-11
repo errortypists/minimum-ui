@@ -39,6 +39,7 @@ const Wrapper = styled.textarea`
   color: ${BaseColor.font};
   padding: 5px;
   box-sizing: border-box;
+  border-radius: ${BaseStyle.radius};
 `
 
 export default TextArea
