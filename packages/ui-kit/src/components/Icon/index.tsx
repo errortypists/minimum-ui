@@ -6,6 +6,10 @@ import {
   ArrowUp,
   Cancel,
   Confirm,
+  RadioOn,
+  RadioOff,
+  CheckboxOn,
+  CheckboxOff,
 } from "icons"
 
 interface IconProps {
@@ -16,6 +20,10 @@ interface IconProps {
     | "arrowDown"
     | "cancel"
     | "confirm"
+    | "radioOn"
+    | "radioOff"
+    | "checkboxOn"
+    | "checkboxOff"
   color?: string
   size?: number
 }
@@ -28,6 +36,10 @@ const Icon: React.FC<IconProps> = ({ name, color, size }) => {
     arrowDown: <ArrowDown fill={color} />,
     cancel: <Cancel fill={color} />,
     confirm: <Confirm fill={color} />,
+    radioOn: <RadioOn fill={color} />,
+    radioOff: <RadioOff fill={color} />,
+    checkboxOn: <CheckboxOn fill={color} />,
+    checkboxOff: <CheckboxOff fill={color} />,
   }
   return (
     <div
