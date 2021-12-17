@@ -37,14 +37,14 @@ const Checkbox: React.FC<Props> = (props) => {
       onClick={() => onChange && onChange(value)}
     >
       <CheckboxWrapper>
-        <RadioInput type="checkbox" defaultChecked={checked} />
-        <RadioIcon>
+        <CheckboxInput type="checkbox" defaultChecked={checked} />
+        <CheckboxIcon>
           {checked ? (
             <Icon name="checkboxOn" color={color} size={24} />
           ) : (
             <Icon name="checkboxOff" color={color} size={24} />
           )}
-        </RadioIcon>
+        </CheckboxIcon>
       </CheckboxWrapper>
       {title !== "" && <Title>{title}</Title>}
     </Wrapper>
@@ -80,7 +80,7 @@ const CheckboxWrapper = styled.div`
   margin: 4px;
 `
 
-const RadioInput = styled.input<any>`
+const CheckboxInput = styled.input<any>`
   cursor: inherit;
   position: absolute;
   opacity: 0;
@@ -93,7 +93,7 @@ const RadioInput = styled.input<any>`
   z-index: 1;
 `
 
-const RadioIcon = styled.div<any>`
+const CheckboxIcon = styled.div<any>`
   cursor: pointer;
 `
 
