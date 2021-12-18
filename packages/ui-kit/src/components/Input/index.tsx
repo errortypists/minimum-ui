@@ -26,6 +26,7 @@ const Input: React.FC<Props> = ({
   const onBlurEvent = (value: string) => {
     if (onBlur) {
       setInput(value)
+      onBlur(input)
     }
     setIsFocused((isFocused) => !isFocused)
   }
@@ -33,9 +34,6 @@ const Input: React.FC<Props> = ({
   useEffect(() => {
     if (onChange) {
       onChange(input)
-    }
-    if (onBlur) {
-      onBlur(input)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input])
@@ -49,7 +47,7 @@ const Input: React.FC<Props> = ({
           onChange && setInput(e.target.value)
         }
         onBlur={(e: React.ChangeEvent<HTMLInputElement>) =>
-          onBlurEvent(e.target.value)
+          onBlur && onBlurEvent(e.target.value)
         }
         onFocus={() => setIsFocused(true)}
         {...rest}
