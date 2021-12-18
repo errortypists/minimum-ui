@@ -53,6 +53,7 @@ const Wrapper = styled.div<any>`
   border-radius: ${BaseStyle.radius};
   border: 1px solid ${BaseColor.inputBorder};
   background: #fff;
+  box-sizing: border-box;
 `
 
 const SelectWrapper = styled.select<any>`
