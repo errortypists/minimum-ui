@@ -30,7 +30,12 @@ const RadioButtonPage: React.FC = () => {
         />
       </Flex>
       <Flex direction="row" gap={0}>
-        <RadioGroup>
+        <RadioGroup
+          defaultIndex={3}
+          onChange={(val, index) => {
+            console.log(val, index)
+          }}
+        >
           <RadioButton
             title={"사과"}
             titleDirection={"bottom"}
