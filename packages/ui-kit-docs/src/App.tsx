@@ -14,6 +14,8 @@ import {
   PaginationPage,
   InputPage,
   MenuPage,
+  RadioButtonPage,
+  CheckboxPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 import { Flex, Grid } from "ui-kit"
@@ -92,6 +94,12 @@ function App() {
             <Box>
               <Link to="/menu">menu</Link>
             </Box>
+            <Box>
+              <Link to="/radiobutton">radiobutton</Link>
+            </Box>
+            <Box>
+              <Link to="/checkbox">checkbox</Link>
+            </Box>
           </Grid>
         </Route>
         <Route path="/tabs" exact>
@@ -141,6 +149,12 @@ function App() {
         </Route>
         <Route path="/menu" exact>
           <MenuPage />
+        </Route>
+        <Route path="/radiobutton" exact>
+          <RadioButtonPage />
+        </Route>
+        <Route path="/checkbox" exact>
+          <CheckboxPage />
         </Route>
       </Switch>
     </Router>
