@@ -15,5 +15,8 @@ export { default as Select } from "./components/Select"
 export { default as Pagination } from "./components/Pagination"
 export { default as Input } from "./components/Input"
 export { default as Menu } from "./components/Menu"
+export { default as RadioButton } from "./components/RadioButton"
+export { default as Checkbox } from "./components/Checkbox"
+export { default as RadioGroup } from "./components/RadioButton/RadioGroup"
 
 export { default as IconArrowRight } from "./icons/IconArrowRight"
