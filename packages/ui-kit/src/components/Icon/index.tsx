@@ -6,6 +6,7 @@ import {
   ArrowUp,
   Cancel,
   Confirm,
+  Check,
 } from "icons"
 
 interface IconProps {
@@ -16,11 +17,13 @@ interface IconProps {
     | "arrowDown"
     | "cancel"
     | "confirm"
+    | "check"
   color?: string
   size?: number
+  style?: React.CSSProperties
 }
 
-const Icon: React.FC<IconProps> = ({ name, color, size }) => {
+const Icon: React.FC<IconProps> = ({ name, color, size, style }) => {
   const ICON_TYPES = {
     arrowLeft: <ArrowLeft fill={color} />,
     arrowRight: <ArrowRight fill={color} />,
@@ -28,17 +31,18 @@ const Icon: React.FC<IconProps> = ({ name, color, size }) => {
     arrowDown: <ArrowDown fill={color} />,
     cancel: <Cancel fill={color} />,
     confirm: <Confirm fill={color} />,
+    check: <Check fill={color} />,
   }
-  return (
-    <div
-      style={{
-        width: size ? `${size}px` : "100%",
-        height: size ? `${size}px` : "100%",
-      }}
-    >
-      {ICON_TYPES[name]}
-    </div>
-  )
+  const iconStyle = {
+    width: "100%",
+    height: "100%",
+    ...style,
+  }
+  if (size !== undefined && size > 0) {
+    iconStyle.width = `${size}px`
+    iconStyle.height = `${size}px`
+  }
+  return <div style={iconStyle}>{ICON_TYPES[name]}</div>
 }
 
 export default Icon
