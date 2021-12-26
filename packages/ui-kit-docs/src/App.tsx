@@ -13,6 +13,7 @@ import {
   SelectPage,
   PaginationPage,
   InputPage,
+  MenuPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 import { Flex, Grid } from "ui-kit"
@@ -88,6 +89,9 @@ function App() {
             <Box>
               <Link to="/input">input</Link>
             </Box>
+            <Box>
+              <Link to="/menu">menu</Link>
+            </Box>
           </Grid>
         </Route>
         <Route path="/tabs" exact>
@@ -134,6 +138,9 @@ function App() {
         </Route>
         <Route path="/input" exact>
           <InputPage />
+        </Route>
+        <Route path="/menu" exact>
+          <MenuPage />
         </Route>
       </Switch>
     </Router>
