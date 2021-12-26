@@ -16,6 +16,7 @@ const RadioButtonPage: React.FC = () => {
             console.log(val)
             setValue(1)
           }}
+          disabled
         />
         <RadioButton
           title={"여자"}

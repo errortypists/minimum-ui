@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import Icon from "components/Icon"
 
@@ -10,6 +10,7 @@ interface Props {
   value?: any
   color?: string
   disabled?: boolean
+  size?: number
   onChange?: (value: any) => void
 }
 
@@ -26,25 +27,20 @@ const RadioButton: React.FC<Props> = (props) => {
     titleDirection = "right",
     checked = false,
     value,
-    color,
+    color = "#495057",
     disabled = false,
     onChange,
+    size = 24,
   } = props
 
   return (
     <Wrapper
       direction={titleDirection}
-      onClick={() => onChange && onChange(value)}
+      onClick={() => onChange && !disabled && onChange(value)}
     >
-      <RadioWrapper>
+      <RadioWrapper size={size} color={color}>
         <RadioInput type="radio" defaultChecked={checked} />
-        <RadioIcon>
-          {checked ? (
-            <Icon name="radioOn" color={color} size={24} />
-          ) : (
-            <Icon name="radioOff" color={color} size={24} />
-          )}
-        </RadioIcon>
+        {checked && <RadioIcon size={size} color={color} />}
       </RadioWrapper>
       {title !== "" && <Title>{title}</Title>}
     </Wrapper>
@@ -63,7 +59,7 @@ const Wrapper = styled.div<any>`
     }`};
 `
 
-const RadioWrapper = styled.div`
+const RadioWrapper = styled.div<any>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +72,14 @@ const RadioWrapper = styled.div`
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
-  margin: 4px;
+  margin: 2px;
+  ${(props) => css`
+    width: ${props.size}px;
+    height: ${props.size}px;
+    color: ${props.color};
+    border: ${props.size * 0.13}px solid ${props.color};
+    border-radius: ${props.size * 0.5}px;
+  `}
 `
 
 const RadioInput = styled.input<any>`
@@ -94,6 +97,12 @@ const RadioInput = styled.input<any>`
 
 const RadioIcon = styled.div<any>`
   cursor: pointer;
+  ${(props) => css`
+    width: ${props.size * 0.55}px;
+    height: ${props.size * 0.55}px;
+    background-color: ${props.color};
+    border-radius: ${props.size * 0.55 * 0.5}px;
+  `}
 `
 
 const Title = styled.div<any>`

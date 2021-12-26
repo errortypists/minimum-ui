@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import Icon from "components/Icon"
 
@@ -10,6 +10,7 @@ interface Props {
   value?: any
   color?: string
   disabled?: boolean
+  size?: number
   onChange?: (value: any) => void
 }
 
@@ -26,23 +27,27 @@ const Checkbox: React.FC<Props> = (props) => {
     titleDirection = "right",
     checked = false,
     value,
-    color,
+    color = "#495057",
     disabled = false,
+    size = 24,
     onChange,
   } = props
 
   return (
     <Wrapper
       direction={titleDirection}
-      onClick={() => onChange && onChange(value)}
+      onClick={() => onChange && !disabled && onChange(value)}
     >
-      <CheckboxWrapper>
+      <CheckboxWrapper size={size} color={color}>
         <CheckboxInput type="checkbox" defaultChecked={checked} />
         <CheckboxIcon>
-          {checked ? (
-            <Icon name="checkboxOn" color={color} size={24} />
-          ) : (
-            <Icon name="checkboxOff" color={color} size={24} />
+          {checked && (
+            <Icon
+              style={{ position: "relative" }}
+              name="check"
+              color={color}
+              size={(size as number) - 8}
+            />
           )}
         </CheckboxIcon>
       </CheckboxWrapper>
@@ -64,7 +69,7 @@ const Wrapper = styled.div<any>`
     }`};
 `
 
-const CheckboxWrapper = styled.div`
+const CheckboxWrapper = styled.div<any>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +82,14 @@ const CheckboxWrapper = styled.div`
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
-  margin: 4px;
+  margin: 2px;
+  ${(props) => css`
+    width: ${props.size}px;
+    height: ${props.size}px;
+    color: ${props.color};
+    border: ${props.size * 0.13}px solid ${props.color};
+    border-radius: ${props.size * 0.2}px;
+  `}
 `
 
 const CheckboxInput = styled.input<any>`
@@ -95,6 +107,8 @@ const CheckboxInput = styled.input<any>`
 
 const CheckboxIcon = styled.div<any>`
   cursor: pointer;
+  margin: 1px;
+  position: "relative";
 `
 
 const Title = styled.div<any>`
