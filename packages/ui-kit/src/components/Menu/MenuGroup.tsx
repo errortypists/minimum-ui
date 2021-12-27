@@ -31,7 +31,7 @@ const MenuGroup: React.FC<MenuGroupProps> = ({
 
   useEffect(() => {
     setIsOpen(isGroupSelected)
-  }, [isGroupSelected])
+  }, [selected, isGroupSelected])
 
   const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
