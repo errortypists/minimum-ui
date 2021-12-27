@@ -13,6 +13,7 @@ import {
   SelectPage,
   PaginationPage,
   InputPage,
+  MenuPage,
   RadioButtonPage,
   CheckboxPage,
 } from "./pages"
@@ -91,6 +92,9 @@ function App() {
               <Link to="/input">input</Link>
             </Box>
             <Box>
+              <Link to="/menu">menu</Link>
+            </Box>
+            <Box>
               <Link to="/radiobutton">radiobutton</Link>
             </Box>
             <Box>
@@ -142,6 +146,9 @@ function App() {
         </Route>
         <Route path="/input" exact>
           <InputPage />
+        </Route>
+        <Route path="/menu" exact>
+          <MenuPage />
         </Route>
         <Route path="/radiobutton" exact>
           <RadioButtonPage />
