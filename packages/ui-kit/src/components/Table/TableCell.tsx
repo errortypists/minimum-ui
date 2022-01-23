@@ -1,3 +1,4 @@
+import { BaseColor } from "assets/styles/color"
 import React from "react"
 import styled, { css } from "styled-components"
 import TableContext from "../Table/TableContext"
@@ -42,7 +43,11 @@ const Wrapper = styled.div<any>`
   letter-spacing: 0.01071em;
   display: table-cell;
   text-align: left;
-  padding: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  word-break: break-word;
+  color: ${BaseColor.font};
 
   ${(props) => {
     if (Number(props.width) === 0) {

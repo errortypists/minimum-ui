@@ -1,0 +1,853 @@
+{
+  "Tabs" : {"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Progress":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Layout":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Divider":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "TypoGraphy":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Modal":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Collapse":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Button":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "TextArea":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Drawer":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Table":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Select":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Pagination":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Input":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "Menu":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "RadioButton":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]},
+   "CheckBox":{"props":[
+            {
+              "name": "variant",
+              "type": ["default", "outline", "text"],
+              "default": "medium",
+              "description": "The variant type"
+            },
+            {
+              "name": "size",
+              "type": ["samll", "medium", "large"],
+              "default": "medium",
+              "description": "The size of button"
+            },
+            {
+              "name": "primary",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "Set the primary button"
+            },
+            {
+              "name": "width",
+              "type": ["string"],
+              "default": "",
+              "description": "The width size"
+            },
+            {
+              "name": "leftIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with left icon"
+            },
+            {
+              "name": "rightIcon",
+              "type": ["any"],
+              "default": "",
+              "description": "Button with right icon"
+            },
+            {
+              "name": "loading",
+              "type": ["boolean"],
+              "default": "false",
+              "description": "The status of loading"
+            },
+            {
+              "name": "style",
+              "type": ["object"],
+              "default": "",
+              "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
+            }
+          ]}
+ }
+ 

@@ -1,8 +1,8 @@
 /*
-  Title       32px
+  Title       24px
   Subtitle    20px
   Body        16px
-  Caption     13px
+  Caption     14px
   letter spacing -0.3
   line height 1.6
 */
@@ -16,7 +16,7 @@ interface Props {
 
 const Title: React.FC<Props> = React.memo(({ children, style }) => {
   return (
-    <Text fontSize={32} fontWeight="bold" style={style}>
+    <Text fontSize={24} fontWeight="bold" style={style}>
       {children}
     </Text>
   )
@@ -40,7 +40,7 @@ const Body: React.FC<Props> = React.memo(({ children, style }) => {
 
 const Caption: React.FC<Props> = React.memo(({ children, style }) => {
   return (
-    <Text fontSize={13} style={style}>
+    <Text fontSize={14} style={style}>
       {children}
     </Text>
   )

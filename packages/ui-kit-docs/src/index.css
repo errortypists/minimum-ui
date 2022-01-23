@@ -1,0 +1,14 @@
+html, body {
+  height:100%;
+}
+
+#root {
+  height: 100%;;
+}
+
+@font-face {
+  font-family: 'Sarpanch';
+  src: url('./assets/font/Sarpanch-Black.ttf') format('truetype');
+  font-style: bold;
+  font-weight: 900;
+}

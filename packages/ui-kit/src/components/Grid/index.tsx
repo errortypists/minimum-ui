@@ -38,6 +38,7 @@ const Wrapper = styled.div<any>`
   justify-items: center;
   box-sizing: border-box;
   text-align: left;
+  width: 100%;
 
   ${(props) =>
     props.gap > 0 &&
