@@ -4,7 +4,7 @@ import TableBody from "./TableBody"
 import TableRow from "./TableRow"
 import TableCell from "./TableCell"
 import TableContext from "./TableContext"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 interface Props {
   style?: React.CSSProperties

@@ -5,6 +5,7 @@ import SyntaxHighlighter from "react-syntax-highlighter"
 import Layout from "../../components/Layout"
 import Header from "../../components/Header"
 import styled from "styled-components"
+import { ComponentBox, PropsBox } from "../../components"
 
 const { MainLayout, LeftWrapper, RightWrapper, ComponentWrapper, CodeWrapper } =
   Layout
@@ -14,7 +15,10 @@ const RadioButtonPage: React.FC = () => {
   const [values, setValues] = useState([false, false])
   return (
     <MainLayout>
-      <LeftWrapper>123</LeftWrapper>
+      <LeftWrapper>
+        <ComponentBox />
+        <PropsBox name="Button" />
+      </LeftWrapper>
       <RightWrapper>
         <Header />
         <Wrapper>

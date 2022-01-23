@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import { Flex, Grid, Drawer } from "ui-kit"
-import React, { useState } from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { Drawer } from "ui-kit"
+import { useState } from "react"
 
 import {
   Tabs,
@@ -22,27 +22,11 @@ import {
   OverviewPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
-import styled from "styled-components"
 import TextAreaPage from "./pages/TextArea"
 import "./assets/styles/reset.css"
 import { StatusContext } from "./contexts/StatusContext"
-
-const Box: React.FC = ({ children }) => {
-  return (
-    <Flex
-      align="center"
-      justify="center"
-      style={{
-        width: "100%",
-        height: "100px",
-        border: "1px solid black",
-        borderRadius: "2px",
-      }}
-    >
-      <Children>{children}</Children>
-    </Flex>
-  )
-}
+import styled from "styled-components"
+import { BaseColor } from "./assets/styles/color"
 
 function App() {
   const [menu, setMenu] = useState("")
@@ -53,65 +37,10 @@ function App() {
         value={{ menu, isLeftMenu, setMenu, setLeftMenu }}
       >
         <Router>
+          <Logo>WhatUI</Logo>
           <Switch>
             <Route path="/" exact>
               <OverviewPage />
-              {/* <Grid col={5} gap={5}>
-              <Box>
-                <Link to="/tabs">tabs</Link>
-              </Box>
-              <Box>
-                <Link to="/progress">progress</Link>
-              </Box>
-              <Box>
-                <Link to="/layout">layout</Link>
-              </Box>
-              <Box>
-                <Link to="/divider">divider</Link>
-              </Box>
-              <Box>
-                <Link to="/typography">typography</Link>
-              </Box>
-              <Box>
-                <Link to="/modal">modal</Link>
-              </Box>
-              <Box>
-                <Link to="/collapse">collapse</Link>
-              </Box>
-              <Box>
-                <Link to="/concept">concept</Link>
-              </Box>
-              <Box>
-                <Link to="/button">button</Link>
-              </Box>
-              <Box>
-                <Link to="/textarea">textarea</Link>
-              </Box>
-              <Box>
-                <Link to="/drawer">drawer</Link>
-              </Box>
-              <Box>
-                <Link to="/table">table</Link>
-              </Box>
-              <Box>
-                <Link to="/select">select</Link>
-              </Box>
-              <Box>
-                <Link to="/pagination">pagination</Link>
-              </Box>
-              <Box>
-                <Link to="/input">input</Link>
-              </Box>
-              <Box>
-                <Link to="/menu">menu</Link>
-              </Box>
-              <Box>
-                <Link to="/radiobutton">radiobutton</Link>
-              </Box>
-              <Box>
-                <Link to="/checkbox">checkbox</Link>
-              </Box>
-            </Grid> */}
             </Route>
             <Route path="/tabs" exact>
               <Tabs />
@@ -183,12 +112,17 @@ function App() {
   )
 }
 
-const Children = styled.div`
-  a {
-    color: #000;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 700;
+const Logo = styled.div`
+  height: 45px;
+  position: absolute;
+  left: 10px;
+  top: -5px;
+  font-size: 2rem;
+  font-family: Sarpanch;
+  user-select: none;
+  color: ${BaseColor.font};
+  @media only screen and (max-width: 414px) {
+    display: none;
   }
 `
 
