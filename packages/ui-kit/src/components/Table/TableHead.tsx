@@ -1,5 +1,6 @@
+import { BaseColor } from "assets/styles/color"
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 interface Props {
   style?: React.CSSProperties
@@ -13,6 +14,13 @@ const TableHead: React.FC<Props> = (props) => {
 
 const Wrapper = styled.div<any>`
   display: table-header-group;
+  border-bottom: 2px solid ${BaseColor.border};
+
+  & div {
+    font-weight: 700;
+    font-size: 1rem;
+    height: 50px;
+  }
 `
 
 export default TableHead
