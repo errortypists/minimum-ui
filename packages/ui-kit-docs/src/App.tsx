@@ -29,7 +29,11 @@ import { BaseColor } from "./assets/styles/color"
 import DrawerMenu from "./components/DrawerMenu"
 
 function App() {
-  const [menu, setMenu] = useState("")
+  const path = window.location.pathname.slice(1)
+  const [menu, setMenu] = useState({
+    displayName: path.charAt(0).toUpperCase() + path.slice(1),
+    url: window.location.pathname,
+  })
   const [isLeftMenu, setLeftMenu] = useState(false)
   return (
     <>
@@ -97,8 +101,8 @@ function App() {
               <CheckboxPage />
             </Route>
           </Switch>
+          <DrawerMenu />
         </Router>
-        <DrawerMenu />
       </StatusContext.Provider>
     </>
   )
