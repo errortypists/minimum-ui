@@ -2,6 +2,12 @@ import styled from "styled-components"
 import SyntaxHighlighter from "react-syntax-highlighter"
 import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/esm/styles/hljs"
 import Color, { BaseColor } from "../../assets/styles/color"
+import {
+  LayoutComponentDescription,
+  LayoutComponentTitle,
+  LayoutTitle,
+  LayoutTitleDescription,
+} from "./LayoutContents"
 
 const MainLayout = styled.div`
   width: 100%;
@@ -18,7 +24,7 @@ const MainLayout = styled.div`
 const LeftWrapper = styled.div`
   flex: 1;
   position: relative;
-  min-width: 420px;
+  min-width: 375px;
   max-width: 604px;
   padding-right: 80px;
   padding-top: 100px;
@@ -33,7 +39,10 @@ const RightAreaWrapper = styled.div`
   position: relative;
   width: 420px;
   border: 1px solid ${BaseColor.border};
-  /* zoom: 1.25; */
+
+  @media only screen and (max-width: 820px) {
+    width: 100%;
+  }
 `
 
 const RightWrapper: React.FC = (props) => {
@@ -52,7 +61,10 @@ const ComponentWrapper = styled.div`
 const CodeWrapper: React.FC<{ code: string }> = (props) => {
   const { code } = props
   return (
-    <SyntaxHighlighter language="typescript" style={atomOneDarkReasonable}>
+    <SyntaxHighlighter
+      style={atomOneDarkReasonable}
+      customStyle={{ padding: 0 }}
+    >
       {code}
     </SyntaxHighlighter>
   )
@@ -64,6 +76,10 @@ const Layout = {
   RightWrapper,
   ComponentWrapper,
   CodeWrapper,
+  Title: LayoutTitle,
+  Description: LayoutTitleDescription,
+  ComponentTitle: LayoutComponentTitle,
+  ComponentDescription: LayoutComponentDescription,
 }
 
 export default Layout

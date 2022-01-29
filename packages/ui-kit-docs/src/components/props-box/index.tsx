@@ -33,12 +33,17 @@ const PropsBox: React.FC<Props> = ({ name }) => {
   }
 
   return (
-    <Flex gap={0} direction="column" align="flex-start">
+    <Flex
+      gap={0}
+      direction="column"
+      align="flex-start"
+      style={{ marginTop: "20px" }}
+    >
       <SubTitle>Props</SubTitle>
       <Flex style={{ width: "100%", overflowX: "auto" }}>
         <Flex style={{ minWidth: "500px" }}>
           <QuickTable
-            ratio={[20, 15, 15, 50]}
+            ratio={[20, 20, 20, 40]}
             header={["Name", "Type", "Default", "Description"]}
             data={components[name].props}
             createRow={(item: ItemProps) => {
