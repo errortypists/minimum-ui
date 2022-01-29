@@ -20,7 +20,7 @@ const LeftWrapper = styled.div`
   position: relative;
   min-width: 420px;
   max-width: 604px;
-  padding-right: 100px;
+  padding-right: 80px;
   padding-top: 100px;
   overflow-y: auto;
 
