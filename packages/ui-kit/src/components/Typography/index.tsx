@@ -1,12 +1,3 @@
-/*
-  Title       24px
-  Subtitle    20px
-  Body        16px
-  Caption     14px
-  letter spacing -0.3
-  line height 1.6
-*/
-
 import React from "react"
 import styled, { css } from "styled-components"
 
@@ -55,7 +46,7 @@ const Typography = {
 
 const Text = styled.div<any>`
   letter-spacing: -0.3px;
-  line-height: 1.6;
+  line-height: 1.5;
   word-break: break-all;
   white-space: pre-line;
 
