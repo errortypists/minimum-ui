@@ -1,13 +1,15 @@
 import styled from "styled-components"
 import SyntaxHighlighter from "react-syntax-highlighter"
 import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/esm/styles/hljs"
+
+import { ComponentBox, PropsBox, Header } from "../"
 import Color, { BaseColor } from "../../assets/styles/color"
 import {
   LayoutComponentDescription,
   LayoutComponentTitle,
   LayoutTitle,
   LayoutTitleDescription,
-} from "./LayoutContents"
+} from "./Contents"
 
 const MainLayout = styled.div`
   width: 100%;
@@ -70,12 +72,36 @@ const CodeWrapper: React.FC<{ code: string }> = (props) => {
   )
 }
 
+const ContentsLayout: React.FC = (props) => {
+  const { children } = props
+  return (
+    <MainLayout>
+      <LeftWrapper>
+        <ComponentBox />
+        <PropsBox name="Button" />
+      </LeftWrapper>
+      <RightWrapper>
+        <Header />
+        <RightContentWrapper>{children}</RightContentWrapper>
+      </RightWrapper>
+    </MainLayout>
+  )
+}
+
+const RightContentWrapper = styled.div`
+  height: calc(100% - 40px);
+  overflow: auto;
+  width: 100%;
+  padding: 18px;
+`
+
 const Layout = {
   MainLayout,
   LeftWrapper,
   RightWrapper,
   ComponentWrapper,
   CodeWrapper,
+  ContentsLayout,
   Title: LayoutTitle,
   Description: LayoutTitleDescription,
   ComponentTitle: LayoutComponentTitle,

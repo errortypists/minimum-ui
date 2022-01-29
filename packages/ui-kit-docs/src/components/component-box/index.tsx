@@ -1,24 +1,54 @@
 import { Grid } from "ui-kit"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
+
 import BaseStyle from "../../assets/styles/base"
 import Color, { BaseColor } from "../../assets/styles/color"
 import component from "../../assets/json/component.json"
+import useStatus from "../../hooks/useStatus"
 
 const ComponentBox: React.FC = () => {
   const names = Object.keys(component)
+  const { menu, setMenu } = useStatus()
   return (
     <Grid gap={10} col={4} style={{ marginBottom: "50px" }}>
-      {names.map((name: string) => (
-        <BoxWrapper
-          key={name}
-          onClick={() => console.log(name.toLowerCase())}
-        >{`<${name} />`}</BoxWrapper>
-      ))}
+      {names.map((menuName, index) => {
+        const id = `cb-${index}`
+        const lowerMenuName = menuName.toLocaleLowerCase()
+        const url = `/${lowerMenuName}`
+        console.log(menu, url)
+        const isSelected = menu?.url === url
+        return (
+          <BoxWrapper
+            key={id}
+            to={url}
+            onClick={() => {
+              setMenu({
+                displayName: menuName,
+                url: url,
+              })
+            }}
+          >
+            <div
+              style={{ fontWeight: isSelected ? "bold" : 400 }}
+            >{`<${menuName} />`}</div>
+          </BoxWrapper>
+        )
+      })}
     </Grid>
   )
 }
 
-const BoxWrapper = styled.div`
+const BoxWrapper = styled(Link)`
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+
   border: 1px solid ${BaseColor.border};
   width: 100%;
   height: 40px;
