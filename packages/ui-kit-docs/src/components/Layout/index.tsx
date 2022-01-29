@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import SyntaxHighlighter from "react-syntax-highlighter"
-import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/esm/styles/hljs"
+import { CodeBlock, hopscotch } from "react-code-blocks"
 import Color, { BaseColor } from "../../assets/styles/color"
 import {
   LayoutComponentDescription,
@@ -61,12 +60,21 @@ const ComponentWrapper = styled.div`
 const CodeWrapper: React.FC<{ code: string }> = (props) => {
   const { code } = props
   return (
-    <SyntaxHighlighter
-      style={atomOneDarkReasonable}
-      customStyle={{ padding: 0 }}
-    >
-      {code}
-    </SyntaxHighlighter>
+    <CodeBlock
+      language="jsx"
+      text={code}
+      theme={hopscotch}
+      wrapLines={true}
+      codeBlock
+      showLineNumbers={false}
+      customStyle={{
+        padding: "2px",
+        paddingBottom: 0,
+        margin: "10px 0",
+        borderRadius: 0,
+        fontSize: "14px",
+      }}
+    />
   )
 }
 
