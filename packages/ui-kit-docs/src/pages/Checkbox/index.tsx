@@ -1,18 +1,22 @@
-import { useState } from "react"
-import { Checkbox, Flex, Typography } from "ui-kit"
-import SyntaxHighlighter from "react-syntax-highlighter"
-
+import { Checkbox, Flex } from "ui-kit"
 import Layout from "../../components/Layout"
 import Header from "../../components/Header"
 import styled from "styled-components"
 import { ComponentBox, PropsBox } from "../../components"
 
-const { MainLayout, LeftWrapper, RightWrapper, ComponentWrapper, CodeWrapper } =
-  Layout
-const { Body, Caption, SubTitle, Title } = Typography
+const {
+  MainLayout,
+  LeftWrapper,
+  RightWrapper,
+  ComponentWrapper,
+  CodeWrapper,
+  Title,
+  Description,
+  ComponentTitle,
+  ComponentDescription,
+} = Layout
 
 const RadioButtonPage: React.FC = () => {
-  const [values, setValues] = useState([false, false])
   return (
     <MainLayout>
       <LeftWrapper>
@@ -23,13 +27,13 @@ const RadioButtonPage: React.FC = () => {
         <Header />
         <Wrapper>
           <Title>Checkbox</Title>
-          <Body>
+          <Description>
             Checkboxes can be used to turn an option on or off. If you have
             multiple options appearing in a list, you can preserve space by
             using checkboxes instead of on/off switches. If you have a single
             option, avoid using a checkbox and use an on/off switch instead.
-          </Body>
-          <SubTitle>Basic checkboxes</SubTitle>
+          </Description>
+          <ComponentTitle>Basic checkboxes</ComponentTitle>
           <ComponentWrapper>
             <Flex direction="row" justify="center" gap={0}>
               <Checkbox checked={true} />
@@ -73,11 +77,11 @@ const RadioButtonPage: React.FC = () => {
   <Checkbox checked={false} disabled />
             `}
           />
-          <SubTitle>Label checkboxes</SubTitle>
-          <Body>
+          <ComponentTitle>Label checkboxes</ComponentTitle>
+          <ComponentDescription>
             You can provide a label to the Checkbox thanks to the
             FormControlLabel component.
-          </Body>
+          </ComponentDescription>
           <ComponentWrapper>
             <Flex direction="row" justify="center" gap={0}>
               <Checkbox title={"남자"} checked={true} />
@@ -90,11 +94,10 @@ const RadioButtonPage: React.FC = () => {
   <Checkbox title={"여자"} checked={false} />
             `}
           />
-          <SubTitle>Size</SubTitle>
-          <Body>
+          <ComponentDescription>
             Use the size prop or customize the font size of the svg icons to
             change the size of the checkboxes.
-          </Body>
+          </ComponentDescription>
           <ComponentWrapper>
             <Flex direction="row" justify="center" gap={0}>
               <Checkbox size={12} checked={true} />
