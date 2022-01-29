@@ -29,7 +29,6 @@ const RadioButtonPage: React.FC = () => {
             using checkboxes instead of on/off switches. If you have a single
             option, avoid using a checkbox and use an on/off switch instead.
           </Body>
-          <br />
           <SubTitle>Basic checkboxes</SubTitle>
           <ComponentWrapper>
             <Flex direction="row" justify="center" gap={0}>
@@ -74,7 +73,6 @@ const RadioButtonPage: React.FC = () => {
   <Checkbox checked={false} disabled />
             `}
           />
-          <br />
           <SubTitle>Label checkboxes</SubTitle>
           <Body>
             You can provide a label to the Checkbox thanks to the
@@ -92,7 +90,6 @@ const RadioButtonPage: React.FC = () => {
   <Checkbox title={"여자"} checked={false} />
             `}
           />
-          <br />
           <SubTitle>Size</SubTitle>
           <Body>
             Use the size prop or customize the font size of the svg icons to
@@ -112,6 +109,7 @@ const RadioButtonPage: React.FC = () => {
   <Checkbox size={36} checked={true} />
             `}
           />
+          <PropsBox name="Button" />
         </Wrapper>
       </RightWrapper>
     </MainLayout>
