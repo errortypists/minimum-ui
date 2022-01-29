@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { Drawer } from "ui-kit"
 import { useState } from "react"
 
 import {
@@ -27,6 +26,7 @@ import "./assets/styles/reset.css"
 import { StatusContext } from "./contexts/StatusContext"
 import styled from "styled-components"
 import { BaseColor } from "./assets/styles/color"
+import DrawerMenu from "./components/DrawerMenu"
 
 function App() {
   const [menu, setMenu] = useState("")
@@ -98,15 +98,7 @@ function App() {
             </Route>
           </Switch>
         </Router>
-        <Drawer
-          isOpen={isLeftMenu}
-          onClickOutside={() => setLeftMenu(false)}
-          direction={"left"}
-        >
-          <div style={{ width: "200px", height: "200px", background: "white" }}>
-            하이
-          </div>
-        </Drawer>
+        <DrawerMenu />
       </StatusContext.Provider>
     </>
   )
@@ -121,7 +113,7 @@ const Logo = styled.div`
   font-family: Sarpanch;
   user-select: none;
   color: ${BaseColor.font};
-  @media only screen and (max-width: 414px) {
+  @media only screen and (max-width: 820px) {
     display: none;
   }
 `
