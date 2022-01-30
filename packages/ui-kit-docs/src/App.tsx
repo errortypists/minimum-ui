@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { Drawer } from "ui-kit"
 import { useState } from "react"
 
 import {
@@ -25,9 +24,14 @@ import TypographyPage from "./pages/Typography"
 import TextAreaPage from "./pages/TextArea"
 import "./assets/styles/reset.css"
 import { StatusContext } from "./contexts/StatusContext"
+import DrawerMenu from "./components/DrawerMenu"
 
 function App() {
-  const [menu, setMenu] = useState("")
+  const path = window.location.pathname.slice(1)
+  const [menu, setMenu] = useState({
+    displayName: path.charAt(0).toUpperCase() + path.slice(1),
+    url: window.location.pathname,
+  })
   const [isLeftMenu, setLeftMenu] = useState(false)
   return (
     <>
@@ -94,16 +98,8 @@ function App() {
               <CheckboxPage />
             </Route>
           </Switch>
+          <DrawerMenu />
         </Router>
-        <Drawer
-          isOpen={isLeftMenu}
-          onClickOutside={() => setLeftMenu(false)}
-          direction={"left"}
-        >
-          <div style={{ width: "200px", height: "200px", background: "white" }}>
-            하이
-          </div>
-        </Drawer>
       </StatusContext.Provider>
     </>
   )
