@@ -1,8 +1,5 @@
 import styled from "styled-components"
-import SyntaxHighlighter from "react-syntax-highlighter"
-import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/esm/styles/hljs"
-
-import { ComponentBox, PropsBox, Header } from "../"
+import { CodeBlock, hopscotch } from "react-code-blocks"
 import Color, { BaseColor } from "../../assets/styles/color"
 import {
   LayoutComponentDescription,
@@ -10,6 +7,9 @@ import {
   LayoutTitle,
   LayoutTitleDescription,
 } from "./Contents"
+
+import { ComponentBox, PropsBox, Header } from ".."
+import { Typography } from "ui-kit"
 
 const MainLayout = styled.div`
   width: 100%;
@@ -23,18 +23,51 @@ const MainLayout = styled.div`
     justify-content: center;
   }
 `
-const LeftWrapper = styled.div`
+
+interface ILeft {
+  name?: string
+}
+
+const LeftWrapper: React.FC<ILeft> = () => {
+  const name = "Button"
+  return (
+    <LeftAreaWrapper>
+      <LogoWrapper>WhatUI</LogoWrapper>
+      <ComponentBox />
+      {name && (
+        <>
+          <Typography.Title>PROPS</Typography.Title>
+          <LeftAreaPropsWrapper>
+            <PropsBox name={name} />
+          </LeftAreaPropsWrapper>
+        </>
+      )}
+    </LeftAreaWrapper>
+  )
+}
+
+const LeftAreaWrapper = styled.div`
   flex: 1;
   position: relative;
   min-width: 375px;
   max-width: 604px;
   padding-right: 80px;
   padding-top: 100px;
-  overflow-y: auto;
+  padding-left: 20px;
+  overflow: hidden;
+
+  @media only screen and (max-width: 1050px) {
+    padding-right: 20px;
+  }
 
   @media only screen and (max-width: 820px) {
     display: none;
   }
+`
+
+const LeftAreaPropsWrapper = styled.div`
+  height: 450px;
+  overflow-y: auto;
 `
 
 const RightAreaWrapper = styled.div`
@@ -63,12 +96,21 @@ const ComponentWrapper = styled.div`
 const CodeWrapper: React.FC<{ code: string }> = (props) => {
   const { code } = props
   return (
-    <SyntaxHighlighter
-      style={atomOneDarkReasonable}
-      customStyle={{ padding: 0 }}
-    >
-      {code}
-    </SyntaxHighlighter>
+    <CodeBlock
+      language="jsx"
+      text={code}
+      theme={hopscotch}
+      wrapLines={true}
+      codeBlock
+      showLineNumbers={false}
+      customStyle={{
+        padding: "2px",
+        paddingBottom: 0,
+        margin: "10px 0",
+        borderRadius: 0,
+        fontSize: "14px",
+      }}
+    />
   )
 }
 
@@ -93,6 +135,20 @@ const RightContentWrapper = styled.div`
   overflow: auto;
   width: 100%;
   padding: 18px;
+`
+
+const LogoWrapper = styled.div`
+  height: 45px;
+  position: absolute;
+  left: 30px;
+  top: -5px;
+  font-size: 2.5rem;
+  font-family: Sarpanch;
+  user-select: none;
+  color: ${BaseColor.font};
+  @media only screen and (max-width: 820px) {
+    display: none;
+  }
 `
 
 const Layout = {

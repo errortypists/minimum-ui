@@ -3,9 +3,9 @@ import Layout from "../../components/Layout"
 import { PropsBox } from "../../components"
 
 const {
+  ContentsLayout,
   ComponentWrapper,
   CodeWrapper,
-  ContentsLayout,
   Title,
   Description,
   ComponentTitle,
@@ -59,12 +59,10 @@ const RadioButtonPage: React.FC = () => {
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`
-  <Checkbox checked={true} />
-  <Checkbox checked={false} />
-  <Checkbox checked={true} disabled />
-  <Checkbox checked={false} disabled />
-            `}
+        code={`<Checkbox checked={true} />
+<Checkbox checked={false} />
+<Checkbox checked={true} disabled />
+<Checkbox checked={false} disabled />`}
       />
       <ComponentTitle>Label checkboxes</ComponentTitle>
       <ComponentDescription>
@@ -78,10 +76,9 @@ const RadioButtonPage: React.FC = () => {
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`
-  <Checkbox title={"남자"} checked={true} />
-  <Checkbox title={"여자"} checked={false} />
-            `}
+        code={`<Checkbox title={"남자"} checked={true} />
+<Checkbox title={"여자"} checked={false} />
+`}
       />
       <ComponentDescription>
         Use the size prop or customize the font size of the svg icons to change
@@ -95,12 +92,11 @@ const RadioButtonPage: React.FC = () => {
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`
-  <Checkbox size={12} checked={true} />
-  <Checkbox size={24} checked={true} />
-  <Checkbox size={36} checked={true} />
-            `}
+        code={`<Checkbox size={12} checked={true} />
+<Checkbox size={24} checked={true} />
+<Checkbox size={36} checked={true} />`}
       />
+      <ComponentTitle>Props</ComponentTitle>
       <PropsBox name="Button" />
     </ContentsLayout>
   )
