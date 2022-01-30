@@ -2,7 +2,7 @@ import { Checkbox, Flex } from "ui-kit"
 import Layout from "../../components/Layout"
 import Header from "../../components/Header"
 import styled from "styled-components"
-import { ComponentBox, PropsBox } from "../../components"
+import { PropsBox } from "../../components"
 
 const {
   MainLayout,
@@ -19,10 +19,7 @@ const {
 const RadioButtonPage: React.FC = () => {
   return (
     <MainLayout>
-      <LeftWrapper>
-        <ComponentBox />
-        <PropsBox name="Button" />
-      </LeftWrapper>
+      <LeftWrapper name="Button" />
       <RightWrapper>
         <Header />
         <Wrapper>
@@ -107,6 +104,7 @@ const RadioButtonPage: React.FC = () => {
 <Checkbox size={24} checked={true} />
 <Checkbox size={36} checked={true} />`}
           />
+          <ComponentTitle>Props</ComponentTitle>
           <PropsBox name="Button" />
         </Wrapper>
       </RightWrapper>
