@@ -1,5 +1,6 @@
-import { Grid } from "ui-kit"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { Grid } from "ui-kit"
 import styled from "styled-components"
 
 import BaseStyle from "../../assets/styles/base"
@@ -9,14 +10,26 @@ import useStatus from "../../hooks/useStatus"
 
 const ComponentBox: React.FC = () => {
   const names = Object.keys(component)
+  const [width, setWidth] = useState(window.innerWidth)
   const { menu, setMenu } = useStatus()
+
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      const currentWidth = window.innerWidth
+      setWidth(currentWidth)
+    }
+
+    window.addEventListener("resize", updateWindowDimensions)
+
+    return () => window.removeEventListener("resize", updateWindowDimensions)
+  }, [])
+
   return (
-    <Grid gap={10} col={4} style={{ marginBottom: "50px" }}>
+    <Grid gap={10} col={width > 1050 ? 4 : 3} style={{ marginBottom: "50px" }}>
       {names.map((menuName, index) => {
         const id = `cb-${index}`
         const lowerMenuName = menuName.toLocaleLowerCase()
         const url = `/${lowerMenuName}`
-        console.log(menu, url)
         const isSelected = menu?.url === url
         return (
           <BoxWrapper
