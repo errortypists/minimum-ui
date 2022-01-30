@@ -6,8 +6,9 @@ import {
   LayoutComponentTitle,
   LayoutTitle,
   LayoutTitleDescription,
-} from "./LayoutContents"
-import { ComponentBox, PropsBox } from ".."
+} from "./Contents"
+
+import { ComponentBox, PropsBox, Header } from ".."
 import { Typography } from "ui-kit"
 
 const MainLayout = styled.div`
@@ -27,7 +28,8 @@ interface ILeft {
   name?: string
 }
 
-const LeftWrapper: React.FC<ILeft> = ({ name }) => {
+const LeftWrapper: React.FC<ILeft> = () => {
+  const name = "Button"
   return (
     <LeftAreaWrapper>
       <LogoWrapper>WhatUI</LogoWrapper>
@@ -112,6 +114,29 @@ const CodeWrapper: React.FC<{ code: string }> = (props) => {
   )
 }
 
+const ContentsLayout: React.FC = (props) => {
+  const { children } = props
+  return (
+    <MainLayout>
+      <LeftWrapper>
+        <ComponentBox />
+        <PropsBox name="Button" />
+      </LeftWrapper>
+      <RightWrapper>
+        <Header />
+        <RightContentWrapper>{children}</RightContentWrapper>
+      </RightWrapper>
+    </MainLayout>
+  )
+}
+
+const RightContentWrapper = styled.div`
+  height: calc(100% - 40px);
+  overflow: auto;
+  width: 100%;
+  padding: 18px;
+`
+
 const LogoWrapper = styled.div`
   height: 45px;
   position: absolute;
@@ -132,6 +157,7 @@ const Layout = {
   RightWrapper,
   ComponentWrapper,
   CodeWrapper,
+  ContentsLayout,
   Title: LayoutTitle,
   Description: LayoutTitleDescription,
   ComponentTitle: LayoutComponentTitle,
