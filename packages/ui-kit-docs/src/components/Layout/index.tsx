@@ -7,6 +7,8 @@ import {
   LayoutTitle,
   LayoutTitleDescription,
 } from "./LayoutContents"
+import { ComponentBox, PropsBox } from ".."
+import { Typography } from "ui-kit"
 
 const MainLayout = styled.div`
   width: 100%;
@@ -20,18 +22,50 @@ const MainLayout = styled.div`
     justify-content: center;
   }
 `
-const LeftWrapper = styled.div`
+
+interface ILeft {
+  name?: string
+}
+
+const LeftWrapper: React.FC<ILeft> = ({ name }) => {
+  return (
+    <LeftAreaWrapper>
+      <LogoWrapper>WhatUI</LogoWrapper>
+      <ComponentBox />
+      {name && (
+        <>
+          <Typography.Title>PROPS</Typography.Title>
+          <LeftAreaPropsWrapper>
+            <PropsBox name={name} />
+          </LeftAreaPropsWrapper>
+        </>
+      )}
+    </LeftAreaWrapper>
+  )
+}
+
+const LeftAreaWrapper = styled.div`
   flex: 1;
   position: relative;
   min-width: 375px;
   max-width: 604px;
   padding-right: 80px;
   padding-top: 100px;
-  overflow-y: auto;
+  padding-left: 20px;
+  overflow: hidden;
+
+  @media only screen and (max-width: 1050px) {
+    padding-right: 20px;
+  }
 
   @media only screen and (max-width: 820px) {
     display: none;
   }
+`
+
+const LeftAreaPropsWrapper = styled.div`
+  height: 450px;
+  overflow-y: auto;
 `
 
 const RightAreaWrapper = styled.div`
@@ -77,6 +111,20 @@ const CodeWrapper: React.FC<{ code: string }> = (props) => {
     />
   )
 }
+
+const LogoWrapper = styled.div`
+  height: 45px;
+  position: absolute;
+  left: 30px;
+  top: -5px;
+  font-size: 2.5rem;
+  font-family: Sarpanch;
+  user-select: none;
+  color: ${BaseColor.font};
+  @media only screen and (max-width: 820px) {
+    display: none;
+  }
+`
 
 const Layout = {
   MainLayout,

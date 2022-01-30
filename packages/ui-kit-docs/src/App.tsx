@@ -25,8 +25,6 @@ import TypographyPage from "./pages/Typography"
 import TextAreaPage from "./pages/TextArea"
 import "./assets/styles/reset.css"
 import { StatusContext } from "./contexts/StatusContext"
-import styled from "styled-components"
-import { BaseColor } from "./assets/styles/color"
 
 function App() {
   const [menu, setMenu] = useState("")
@@ -37,7 +35,6 @@ function App() {
         value={{ menu, isLeftMenu, setMenu, setLeftMenu }}
       >
         <Router>
-          <Logo>WhatUI</Logo>
           <Switch>
             <Route path="/" exact>
               <OverviewPage />
@@ -111,19 +108,5 @@ function App() {
     </>
   )
 }
-
-const Logo = styled.div`
-  height: 45px;
-  position: absolute;
-  left: 10px;
-  top: -5px;
-  font-size: 2rem;
-  font-family: Sarpanch;
-  user-select: none;
-  color: ${BaseColor.font};
-  @media only screen and (max-width: 414px) {
-    display: none;
-  }
-`
 
 export default App

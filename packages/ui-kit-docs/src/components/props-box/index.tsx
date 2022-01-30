@@ -1,10 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Flex, QuickTable, Typography } from "ui-kit"
+import { Flex, QuickTable } from "ui-kit"
 import Color from "../../assets/styles/color"
 import JsonData from "../../assets/json/component.json"
-
-const { SubTitle } = Typography
 
 interface Props {
   name: string
@@ -33,13 +31,7 @@ const PropsBox: React.FC<Props> = ({ name }) => {
   }
 
   return (
-    <Flex
-      gap={0}
-      direction="column"
-      align="flex-start"
-      style={{ marginTop: "20px" }}
-    >
-      <SubTitle>Props</SubTitle>
+    <Flex gap={0} direction="column" align="flex-start">
       <Flex style={{ width: "100%", overflowX: "auto" }}>
         <Flex style={{ minWidth: "500px" }}>
           <QuickTable
@@ -62,7 +54,7 @@ const PropsBox: React.FC<Props> = ({ name }) => {
 }
 
 const PropsTypeBox = styled.span`
-  border-radius: 4px;
+  border-radius: 2px;
   background: ${Color.GRAY[2]};
   padding: 2px 4px;
   font-size: 13px;
