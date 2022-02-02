@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import { CodeBlock, hopscotch } from "react-code-blocks"
+import { Typography } from "ui-kit"
+
 import Color, { BaseColor } from "../../assets/styles/color"
 import {
   LayoutComponentDescription,
@@ -9,7 +11,7 @@ import {
 } from "./Contents"
 
 import { ComponentBox, PropsBox, Header } from ".."
-import { Typography } from "ui-kit"
+import useStatus from "../../hooks/useStatus"
 
 const MainLayout = styled.div`
   width: 100%;
@@ -29,16 +31,16 @@ interface ILeft {
 }
 
 const LeftWrapper: React.FC<ILeft> = () => {
-  const name = "Button"
+  const { menu } = useStatus()
   return (
     <LeftAreaWrapper>
       <LogoWrapper>WhatUI</LogoWrapper>
       <ComponentBox />
-      {name && (
+      {menu?.displayName && (
         <>
           <Typography.Title>PROPS</Typography.Title>
           <LeftAreaPropsWrapper>
-            <PropsBox name={name} />
+            <PropsBox name={menu?.displayName || ""} />
           </LeftAreaPropsWrapper>
         </>
       )}
@@ -95,6 +97,7 @@ const ComponentWrapper = styled.div`
 
 const CodeWrapper: React.FC<{ code: string }> = (props) => {
   const { code } = props
+
   return (
     <CodeBlock
       language="jsx"
@@ -116,11 +119,12 @@ const CodeWrapper: React.FC<{ code: string }> = (props) => {
 
 const ContentsLayout: React.FC = (props) => {
   const { children } = props
+  const { menu } = useStatus()
   return (
     <MainLayout>
       <LeftWrapper>
         <ComponentBox />
-        <PropsBox name="Button" />
+        <PropsBox name={menu?.displayName || ""} />
       </LeftWrapper>
       <RightWrapper>
         <Header />

@@ -1,13 +1,28 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { Flex, Menu, Drawer } from "ui-kit"
+import { useHistory } from "react-router-dom"
+import { useEffect } from "react"
 
 import useStatus from "../../hooks/useStatus"
 import component from "../../assets/json/component.json"
 
 const Header: React.FC = () => {
+  const history = useHistory()
   const names = Object.keys(component)
   const { isLeftMenu, setLeftMenu, menu, setMenu } = useStatus()
+
+  useEffect(() => {
+    if (history) {
+      history.listen(() => {
+        const path = window.location.pathname.slice(1)
+        setMenu({
+          displayName: path.charAt(0).toUpperCase() + path.slice(1),
+          url: window.location.pathname,
+        })
+      })
+    }
+  }, [history, setMenu])
 
   const createMenus = () => {
     return names.map((menuName, index) => {

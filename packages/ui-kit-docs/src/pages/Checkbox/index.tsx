@@ -1,4 +1,6 @@
 import { Checkbox, Flex } from "ui-kit"
+
+import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
 import { PropsBox } from "../../components"
 
@@ -13,6 +15,8 @@ const {
 } = Layout
 
 const RadioButtonPage: React.FC = () => {
+  const { menu } = useStatus()
+
   return (
     <ContentsLayout>
       <Title>Checkbox</Title>
@@ -97,7 +101,7 @@ const RadioButtonPage: React.FC = () => {
 <Checkbox size={36} checked={true} />`}
       />
       <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name="Button" />
+      <PropsBox name={menu?.displayName || ""} />
     </ContentsLayout>
   )
 }
