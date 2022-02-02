@@ -89,7 +89,7 @@ const Wrapper = styled.button<any>`
   }
 
   &:disabled {
-    opacity: 0.2;
+    opacity: ${BaseStyle.disabledOpacity};
     background: ${BaseColor.default};
     color: #fff;
     border: 0;

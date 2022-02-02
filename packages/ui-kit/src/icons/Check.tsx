@@ -14,7 +14,7 @@ const Check: React.FC<Props> = ({ fill }) => {
       viewBox="0 0 492 492"
       xmlSpace="preserve"
       fill={fill || "#495057"}
-      style={{ position: "absolute", top: 0 }}
+      // style={{ position: "absolute", top: 0 }}
     >
       <g>
         <g>
