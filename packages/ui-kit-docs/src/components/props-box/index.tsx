@@ -29,24 +29,34 @@ const PropsBox: React.FC<Props> = ({ name }) => {
       </React.Fragment>
     ))
   }
+  // if (name !== "" && !!components[name]) {
+  //   return <></>
+  // }
+  console.log("ytim", name, components[name], components)
+  const hasPropsTable = name !== "" && !!components[name]
 
   return (
     <Flex gap={0} direction="column" align="flex-start">
+      <p>{name}</p>
       <Flex style={{ width: "100%", overflowX: "auto" }}>
         <Flex style={{ minWidth: "500px" }}>
-          <QuickTable
-            ratio={[20, 20, 20, 40]}
-            header={["Name", "Type", "Default", "Description"]}
-            data={components[name].props}
-            createRow={(item: ItemProps) => {
-              return [
-                <div>{item.name}</div>,
-                <div>{typeOfButtonProps(item.type)}</div>,
-                <div>{item.default || "-"}</div>,
-                <div>{item.description}</div>,
-              ]
-            }}
-          />
+          {hasPropsTable ? (
+            <QuickTable
+              ratio={[20, 20, 20, 40]}
+              header={["Name", "Type", "Default", "Description"]}
+              data={components[name].props}
+              createRow={(item: ItemProps) => {
+                return [
+                  <div>{item.name}</div>,
+                  <div>{typeOfButtonProps(item.type)}</div>,
+                  <div>{item.default || "-"}</div>,
+                  <div>{item.description}</div>,
+                ]
+              }}
+            />
+          ) : (
+            <p>not found props item</p>
+          )}
         </Flex>
       </Flex>
     </Flex>
