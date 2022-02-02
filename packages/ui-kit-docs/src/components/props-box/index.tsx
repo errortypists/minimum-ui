@@ -9,7 +9,7 @@ interface Props {
 }
 
 interface ItemProps {
-  name: string
+  name: string // url 구조로 올것이므로 첫자리 제거후 사용 예정
   type: string[]
   default: string
   description: string
@@ -20,6 +20,7 @@ interface ComponentProps {
 }
 
 const PropsBox: React.FC<Props> = ({ name }) => {
+  const urlRemoveName = name ? name.slice(1) : ""
   const components: ComponentProps = JsonData
   const typeOfButtonProps = (arr: string[]) => {
     return arr.map((_: string, index: number) => (
@@ -29,22 +30,18 @@ const PropsBox: React.FC<Props> = ({ name }) => {
       </React.Fragment>
     ))
   }
-  // if (name !== "" && !!components[name]) {
-  //   return <></>
-  // }
-  console.log("ytim", name, components[name], components)
-  const hasPropsTable = name !== "" && !!components[name]
+
+  const hasPropsTable = urlRemoveName !== "" && !!components[urlRemoveName]
 
   return (
     <Flex gap={0} direction="column" align="flex-start">
-      <p>{name}</p>
       <Flex style={{ width: "100%", overflowX: "auto" }}>
         <Flex style={{ minWidth: "500px" }}>
           {hasPropsTable ? (
             <QuickTable
               ratio={[20, 20, 20, 40]}
               header={["Name", "Type", "Default", "Description"]}
-              data={components[name].props}
+              data={components[urlRemoveName].props}
               createRow={(item: ItemProps) => {
                 return [
                   <div>{item.name}</div>,
@@ -55,7 +52,11 @@ const PropsBox: React.FC<Props> = ({ name }) => {
               }}
             />
           ) : (
-            <p>not found props item</p>
+            <>
+              <p>{urlRemoveName}</p>
+              <br />
+              <p>not found props item</p>
+            </>
           )}
         </Flex>
       </Flex>
