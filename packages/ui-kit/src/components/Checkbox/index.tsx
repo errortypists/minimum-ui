@@ -1,7 +1,9 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled, { css } from "styled-components"
 
 import Icon from "components/Icon"
+import { BaseColor } from "assets/styles/color"
+import BaseStyle from "assets/styles/base"
 
 interface Props {
   title?: string
@@ -10,7 +12,7 @@ interface Props {
   value?: any
   color?: string
   disabled?: boolean
-  size?: number
+  size?: "small" | "medium" | "large"
   onChange?: (value: any) => void
 }
 
@@ -21,15 +23,26 @@ const TITLE_DIRECTION = {
   bottom: "column",
 }
 
+const convertHexColorToRGB = (hex: string, opacity: number = 1) => {
+  if (!hex || !hex.includes("#")) return hex
+
+  const _hex = hex.replace("#", "")
+  const r = parseInt(_hex.substring(0, 2), 16)
+  const g = parseInt(_hex.substring(2, 4), 16)
+  const b = parseInt(_hex.substring(4, 6), 16)
+
+  return "rgba(" + r + "," + g + "," + b + "," + opacity + ")"
+}
+
 const Checkbox: React.FC<Props> = (props) => {
   const {
     title = "",
     titleDirection = "right",
     checked = false,
     value,
-    color = "#495057",
+    color = "",
     disabled = false,
-    size = 24,
+    size = "medium",
     onChange,
   } = props
 
@@ -38,17 +51,15 @@ const Checkbox: React.FC<Props> = (props) => {
       direction={titleDirection}
       onClick={() => onChange && !disabled && onChange(value)}
     >
-      <CheckboxWrapper size={size} color={color}>
+      <CheckboxWrapper
+        data-size={size}
+        color={color}
+        data-disabled={disabled}
+        data-checked={checked}
+      >
         <CheckboxInput type="checkbox" defaultChecked={checked} />
-        <CheckboxIcon>
-          {checked && (
-            <Icon
-              style={{ position: "relative" }}
-              name="check"
-              color={color}
-              size={(size as number) - 8}
-            />
-          )}
+        <CheckboxIcon data-size={size}>
+          {checked && <Icon name="check" color="#fff" />}
         </CheckboxIcon>
       </CheckboxWrapper>
       {title !== "" && <Title>{title}</Title>}
@@ -60,8 +71,8 @@ const Wrapper = styled.div<any>`
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: ${BaseStyle.padding};
+  margin-right: ${BaseStyle.padding};
   flex-direction: row;
   flex-direction: ${(props) =>
     `${
@@ -69,7 +80,24 @@ const Wrapper = styled.div<any>`
     }`};
 `
 
-const CheckboxWrapper = styled.div<any>`
+const CheckboxSize = styled.div`
+  &[data-size="small"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  &[data-size="medium"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  &[data-size="large"] {
+    width: 20px;
+    height: 20px;
+  }
+`
+
+const CheckboxWrapper = styled(CheckboxSize)<any>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -82,14 +110,21 @@ const CheckboxWrapper = styled.div<any>`
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
-  margin: 2px;
   ${(props) => css`
-    width: ${props.size}px;
-    height: ${props.size}px;
-    color: ${props.color};
-    border: ${props.size * 0.13}px solid ${props.color};
-    border-radius: ${props.size * 0.2}px;
+    border: 1px solid ${props.color || BaseColor.font};
+    border-radius: 2px;
+
+    &[data-checked="true"] {
+      background: ${props.color
+        ? convertHexColorToRGB(props.color, 0.8)
+        : convertHexColorToRGB(BaseColor.font, 0.8)};
+    }
   `}
+
+  &[data-disabled="true"] {
+    opacity: ${BaseStyle.disabledOpacity};
+    cursor: not-allowed;
+  }
 `
 
 const CheckboxInput = styled.input<any>`
@@ -105,14 +140,20 @@ const CheckboxInput = styled.input<any>`
   z-index: 1;
 `
 
-const CheckboxIcon = styled.div<any>`
+const CheckboxIcon = styled(CheckboxSize)<any>`
   cursor: pointer;
-  margin: 1px;
-  position: "relative";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
 `
 
 const Title = styled.div<any>`
   user-select: none;
+  margin-left: 8px;
+  padding-top: 2px;
 `
 
 export default React.memo(Checkbox)

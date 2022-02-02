@@ -8,6 +8,7 @@ import {
   Confirm,
   Check,
 } from "icons"
+import { Flex } from "index"
 
 interface IconProps {
   name:
@@ -33,16 +34,28 @@ const Icon: React.FC<IconProps> = ({ name, color, size, style }) => {
     confirm: <Confirm fill={color} />,
     check: <Check fill={color} />,
   }
-  const iconStyle = {
-    width: "100%",
-    height: "100%",
-    ...style,
-  }
-  if (size !== undefined && size > 0) {
-    iconStyle.width = `${size}px`
-    iconStyle.height = `${size}px`
-  }
-  return <div style={iconStyle}>{ICON_TYPES[name]}</div>
+  // const iconStyle = {
+  //   width: "100%",
+  //   height: "100%",
+  //   ...style,
+  // }
+  // if (size !== undefined && size > 0) {
+  //   iconStyle.width = `${size}px`
+  //   iconStyle.height = `${size}px`
+  // }
+  // return <div style={iconStyle}>{ICON_TYPES[name]}</div>
+  return (
+    <Flex
+      align="center"
+      justify="center"
+      style={{
+        width: size ? `${size}px` : "100%",
+        height: size ? `${size}px` : "100%",
+      }}
+    >
+      {ICON_TYPES[name]}
+    </Flex>
+  )
 }
 
 export default Icon

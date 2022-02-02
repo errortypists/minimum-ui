@@ -31,7 +31,6 @@ const RadioButtonPage: React.FC = () => {
         <Flex direction="row" justify="center" gap={0}>
           <Checkbox checked={true} />
           <Checkbox checked={false} />
-          {/* disabled 에 대한 디자인 안잡았었네;;; */}
           <Checkbox checked={true} disabled />
           <Checkbox checked={false} disabled />
           {/* <Checkbox
@@ -75,13 +74,13 @@ const RadioButtonPage: React.FC = () => {
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
-          <Checkbox title={"남자"} checked={true} />
-          <Checkbox title={"여자"} checked={false} />
+          <Checkbox title="남자" checked={true} />
+          <Checkbox title="여자" checked={false} />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Checkbox title={"남자"} checked={true} />
-<Checkbox title={"여자"} checked={false} />
+        code={`<Checkbox title="남자" checked={true} />
+<Checkbox title="여자" checked={false} />
 `}
       />
       <ComponentDescription>
@@ -90,15 +89,15 @@ const RadioButtonPage: React.FC = () => {
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
-          <Checkbox size={12} checked={true} />
-          <Checkbox size={24} checked={true} />
-          <Checkbox size={36} checked={true} />
+          <Checkbox size="small" checked={true} />
+          <Checkbox size="medium" checked={true} />
+          <Checkbox size="large" checked={true} />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Checkbox size={12} checked={true} />
-<Checkbox size={24} checked={true} />
-<Checkbox size={36} checked={true} />`}
+        code={`<Checkbox size="small" checked={true} />
+<Checkbox size="medium" checked={true} />
+<Checkbox size="large" checked={true} />`}
       />
       <ComponentTitle>Props</ComponentTitle>
       <PropsBox name={menu?.displayName || ""} />
