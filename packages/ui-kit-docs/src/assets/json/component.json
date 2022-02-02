@@ -1,5 +1,5 @@
 {
-  "Tabs" : {"props":[
+  "tabs" : {"displayName": "Tabs", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -49,7 +49,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Progress":{"props":[
+   "progress":{"displayName": "Progress", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -99,7 +99,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Layout":{"props":[
+   "layout":{"displayName": "Layout", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -149,7 +149,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Divider":{"props":[
+   "divider":{"displayName": "Divider", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -199,7 +199,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "TypoGraphy":{"props":[
+   "typography":{"displayName": "Typography", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -249,7 +249,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Modal":{"props":[
+   "modal":{"displayName": "Modal", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -299,7 +299,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Collapse":{"props":[
+   "collapse":{"displayName": "Collapse", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -349,7 +349,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Button":{"props":[
+   "button":{"displayName": "Button", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -399,7 +399,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "TextArea":{"props":[
+   "textarea":{"displayName": "Textarea", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -449,7 +449,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Drawer":{"props":[
+   "drawer":{"displayName": "Drawer", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -499,7 +499,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Table":{"props":[
+   "table":{"displayName": "Table", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -549,7 +549,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Select":{"props":[
+   "select":{"displayName": "Select", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -599,7 +599,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Pagination":{"props":[
+   "pagination":{"displayName": "Pagination", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -649,7 +649,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Input":{"props":[
+   "input":{"displayName": "Input", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -699,7 +699,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Menu":{"props":[
+   "menu":{"displayName": "Menu", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -749,7 +749,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "RadioButton":{"props":[
+   "radio":{"displayName": "Radio", "props":[
             {
               "name": "variant",
               "type": ["default", "outline", "text"],
@@ -799,7 +799,7 @@
               "description": "The CSS style with object The CSS style with object The CSS style with object The CSS style with object"
             }
           ]},
-   "Checkbox":{"props":[
+   "checkbox":{"displayName": "Checkbox", "props":[
             {
               "name": "title",
               "type": ["string"],
