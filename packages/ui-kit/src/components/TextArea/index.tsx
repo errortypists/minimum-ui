@@ -12,7 +12,7 @@ interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   style?: React.CSSProperties
 }
 
-const TextArea: React.FC<Props> = ({
+const Textarea: React.FC<Props> = ({
   width = "100%",
   height,
   placeholder,
@@ -42,4 +42,4 @@ const Wrapper = styled.textarea`
   border-radius: ${BaseStyle.radius};
 `
 
-export default TextArea
+export default Textarea

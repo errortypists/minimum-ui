@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 
-import RadioButton from "components/RadioButton"
+import Radio from "components/Radio"
 import Icon from "components/Icon"
 
 interface Props {
-  children: typeof RadioButton[]
+  children: typeof Radio[]
   defaultIndex?: number
   direction?: "row" | "column"
   checked?: boolean

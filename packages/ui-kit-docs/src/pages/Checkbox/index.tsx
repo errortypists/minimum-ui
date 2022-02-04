@@ -14,8 +14,8 @@ const {
   ComponentDescription,
 } = Layout
 
-const RadioButtonPage: React.FC = () => {
-  const { menu } = useStatus()
+const RadioPage: React.FC = () => {
+  const { selectedMenu } = useStatus()
 
   return (
     <ContentsLayout>
@@ -100,9 +100,9 @@ const RadioButtonPage: React.FC = () => {
 <Checkbox size="large" checked={true} />`}
       />
       <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={menu?.displayName || ""} />
+      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }
 
-export default RadioButtonPage
+export default RadioPage

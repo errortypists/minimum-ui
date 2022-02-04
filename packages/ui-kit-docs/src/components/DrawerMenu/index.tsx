@@ -5,43 +5,42 @@ import { useHistory } from "react-router-dom"
 import { useEffect } from "react"
 
 import useStatus from "../../hooks/useStatus"
-import component from "../../assets/json/component.json"
+import component from "../../assets/components"
 
 const Header: React.FC = () => {
   const history = useHistory()
   const names = Object.keys(component)
-  const { isLeftMenu, setLeftMenu, menu, setMenu } = useStatus()
+  const { isLeftMenu, setLeftMenu, selectedMenu, setSelectedMenu } = useStatus()
 
   useEffect(() => {
     if (history) {
       history.listen(() => {
         const path = window.location.pathname.slice(1)
-        setMenu({
-          displayName: path.charAt(0).toUpperCase() + path.slice(1),
+        setSelectedMenu({
+          id: path,
           url: window.location.pathname,
         })
       })
     }
-  }, [history, setMenu])
+  }, [history, setSelectedMenu])
 
   const createMenus = () => {
     return names.map((menuName, index) => {
       const id = `menu-${index}`
-      const lowerMenuName = menuName.toLocaleLowerCase()
-      const url = `/${lowerMenuName}`
+      const url = `/${menuName}`
       return (
         <StyledLink
           key={id}
           to={url}
           onClick={() => {
-            setMenu({
-              displayName: menuName,
+            setSelectedMenu({
+              id: menuName,
               url: url,
             })
           }}
         >
-          <Menu.Item selected={menu?.url} name={url}>
-            {menuName}
+          <Menu.Item selected={selectedMenu?.url} name={url}>
+            {component[menuName].displayName}
           </Menu.Item>
         </StyledLink>
       )

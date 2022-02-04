@@ -2,26 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { Flex, QuickTable } from "ui-kit"
 import Color from "../../assets/styles/color"
-import JsonData from "../../assets/json/component.json"
+import components, { ItemProps } from "../../assets/components"
 
 interface Props {
   name: string
 }
 
-interface ItemProps {
-  name: string // url 구조로 올것이므로 첫자리 제거후 사용 예정
-  type: string[]
-  default: string
-  description: string
-}
-
-interface ComponentProps {
-  [key: string]: { props: ItemProps[] }
-}
-
 const PropsBox: React.FC<Props> = ({ name }) => {
-  const urlRemoveName = name ? name.slice(1) : ""
-  const components: ComponentProps = JsonData
+  const urlRemoveName = name ? name.toLocaleLowerCase() : ""
   const typeOfButtonProps = (arr: string[]) => {
     return arr.map((_: string, index: number) => (
       <React.Fragment key={index}>

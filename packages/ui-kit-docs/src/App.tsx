@@ -16,27 +16,27 @@ import {
   PaginationPage,
   InputPage,
   MenuPage,
-  RadioButtonPage,
+  RadioPage,
   CheckboxPage,
   OverviewPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
-import TextAreaPage from "./pages/TextArea"
+import TextareaPage from "./pages/Textarea"
 import "./assets/styles/reset.css"
 import { StatusContext } from "./contexts/StatusContext"
 import DrawerMenu from "./components/DrawerMenu"
 
 function App() {
   const path = window.location.pathname.slice(1)
-  const [menu, setMenu] = useState({
-    displayName: path.charAt(0).toUpperCase() + path.slice(1),
+  const [selectedMenu, setSelectedMenu] = useState({
+    id: path,
     url: window.location.pathname,
   })
   const [isLeftMenu, setLeftMenu] = useState(false)
   return (
     <>
       <StatusContext.Provider
-        value={{ menu, isLeftMenu, setMenu, setLeftMenu }}
+        value={{ selectedMenu, isLeftMenu, setSelectedMenu, setLeftMenu }}
       >
         <Router>
           <Switch>
@@ -71,7 +71,7 @@ function App() {
               <ButtonPage />
             </Route>
             <Route path="/textarea" exact>
-              <TextAreaPage />
+              <TextareaPage />
             </Route>
             <Route path="/drawer" exact>
               <DrawerPage />
@@ -91,8 +91,8 @@ function App() {
             <Route path="/menu" exact>
               <MenuPage />
             </Route>
-            <Route path="/radiobutton" exact>
-              <RadioButtonPage />
+            <Route path="/radio" exact>
+              <RadioPage />
             </Route>
             <Route path="/checkbox" exact>
               <CheckboxPage />
