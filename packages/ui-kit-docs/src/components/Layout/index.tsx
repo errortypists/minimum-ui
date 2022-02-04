@@ -9,7 +9,6 @@ import {
   LayoutTitle,
   LayoutTitleDescription,
 } from "./Contents"
-
 import { ComponentBox, PropsBox, Header } from ".."
 import useStatus from "../../hooks/useStatus"
 
@@ -31,16 +30,16 @@ interface ILeft {
 }
 
 const LeftWrapper: React.FC<ILeft> = () => {
-  const { menu } = useStatus()
+  const { selectedMenu } = useStatus()
   return (
     <LeftAreaWrapper>
       <LogoWrapper>WhatUI</LogoWrapper>
       <ComponentBox />
-      {menu?.displayName && (
+      {selectedMenu?.id && (
         <>
           <Typography.Title>PROPS</Typography.Title>
           <LeftAreaPropsWrapper>
-            <PropsBox name={menu?.displayName || ""} />
+            <PropsBox name={selectedMenu?.id || ""} />
           </LeftAreaPropsWrapper>
         </>
       )}
@@ -119,12 +118,12 @@ const CodeWrapper: React.FC<{ code: string }> = (props) => {
 
 const ContentsLayout: React.FC = (props) => {
   const { children } = props
-  const { menu } = useStatus()
+  const { selectedMenu } = useStatus()
   return (
     <MainLayout>
       <LeftWrapper>
         <ComponentBox />
-        <PropsBox name={menu?.displayName || ""} />
+        <PropsBox name={selectedMenu?.id || ""} />
       </LeftWrapper>
       <RightWrapper>
         <Header />

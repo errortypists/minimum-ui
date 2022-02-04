@@ -1,13 +1,13 @@
-import { Flex, TextArea } from "ui-kit"
+import { Flex, Textarea } from "ui-kit"
 
-const TextAreaPage: React.FC = () => {
+const TextareaPage: React.FC = () => {
   return (
     <Flex direction="column" align="flex-start">
-      <TextArea />
-      <TextArea width="200px" placeholder="width 200px" />
-      <TextArea width="400px" placeholder="width 400px, 10 row" rows={10} />
+      <Textarea />
+      <Textarea width="200px" placeholder="width 200px" />
+      <Textarea width="400px" placeholder="width 400px, 10 row" rows={10} />
     </Flex>
   )
 }
 
-export default TextAreaPage
+export default TextareaPage

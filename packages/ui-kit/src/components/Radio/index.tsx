@@ -21,7 +21,7 @@ const TITLE_DIRECTION = {
   bottom: "column",
 }
 
-const RadioButton: React.FC<Props> = (props) => {
+const Radio: React.FC<Props> = (props) => {
   const {
     title = "",
     titleDirection = "right",
@@ -109,4 +109,4 @@ const Title = styled.div<any>`
   user-select: none;
 `
 
-export default React.memo(RadioButton)
+export default React.memo(Radio)

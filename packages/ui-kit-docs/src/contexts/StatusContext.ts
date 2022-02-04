@@ -1,23 +1,23 @@
 import React from "react"
 
 interface Menu {
-  displayName: string
+  id: string
   url: string
 }
 interface Status {
-  menu: Menu | undefined
+  selectedMenu: Menu | undefined
   isLeftMenu: boolean | undefined
-  setMenu: React.Dispatch<React.SetStateAction<Menu>>
+  setSelectedMenu: React.Dispatch<React.SetStateAction<Menu>>
   setLeftMenu: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const initialState: Status = {
-  menu: {
-    displayName: "",
+  selectedMenu: {
+    id: "",
     url: "/",
   },
   isLeftMenu: false,
-  setMenu: () => {},
+  setSelectedMenu: () => {},
   setLeftMenu: () => {},
 }
 

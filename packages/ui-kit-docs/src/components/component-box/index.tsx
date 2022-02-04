@@ -5,13 +5,13 @@ import styled from "styled-components"
 
 import BaseStyle from "../../assets/styles/base"
 import Color, { BaseColor } from "../../assets/styles/color"
-import component from "../../assets/json/component.json"
+import components from "../../assets/components"
 import useStatus from "../../hooks/useStatus"
 
 const ComponentBox: React.FC = () => {
-  const names = Object.keys(component)
+  const names = Object.keys(components)
   const [width, setWidth] = useState(window.innerWidth)
-  const { menu, setMenu } = useStatus()
+  const { selectedMenu, setSelectedMenu } = useStatus()
 
   useEffect(() => {
     const updateWindowDimensions = () => {
@@ -28,23 +28,22 @@ const ComponentBox: React.FC = () => {
     <Grid gap={10} col={width > 1050 ? 4 : 3} style={{ marginBottom: "50px" }}>
       {names.map((menuName, index) => {
         const id = `cb-${index}`
-        const lowerMenuName = menuName.toLocaleLowerCase()
-        const url = `/${lowerMenuName}`
-        const isSelected = menu?.url === url
+        const url = `/${menuName}`
+        const isSelected = selectedMenu?.url === url
         return (
           <BoxWrapper
             key={id}
             to={url}
             onClick={() => {
-              setMenu({
-                displayName: menuName,
+              setSelectedMenu({
+                id: menuName,
                 url: url,
               })
             }}
           >
             <div
               style={{ fontWeight: isSelected ? "bold" : 400 }}
-            >{`<${menuName} />`}</div>
+            >{`<${components[menuName].displayName} />`}</div>
           </BoxWrapper>
         )
       })}
