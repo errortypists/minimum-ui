@@ -29,8 +29,8 @@ const Radio: React.FC<Props> = (props) => {
     value,
     color = "#495057",
     disabled = false,
-    onChange,
     size = 24,
+    onChange,
   } = props
 
   return (
