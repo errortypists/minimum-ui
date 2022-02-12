@@ -1,13 +1,16 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
+import { SVGUniqueID } from "react-svg-unique-id"
 
 interface Props {
   type: "circle" | "linear" | "circular"
+  color?: string
+  bgColor?: string
   progress?: number
 }
 
 const Circle: React.FC<Props> = (props) => {
-  const { progress = 100 } = props
+  const { progress = 100, color, bgColor } = props
   const circleRef = useRef(null)
   const size = 24
   const strokeWidth = 5
@@ -32,7 +35,7 @@ const Circle: React.FC<Props> = (props) => {
     >
       <circle
         // stroke={"transparent"}
-        stroke={"#dbdbdb"}
+        stroke={bgColor}
         cx={center}
         cy={center}
         r={radius}
@@ -41,7 +44,7 @@ const Circle: React.FC<Props> = (props) => {
       <circle
         style={{ transition: "stroke-dashoffset 850ms ease-in-out" }}
         ref={circleRef}
-        stroke={"#00ff00"}
+        stroke={color}
         cx={center}
         cy={center}
         r={radius}
@@ -54,7 +57,7 @@ const Circle: React.FC<Props> = (props) => {
 }
 
 const Circular: React.FC<Props> = (props) => {
-  const { progress = 85 } = props
+  const { progress = 85, color, bgColor } = props
   const circleRef = useRef(null)
   const size = 24
   const strokeWidth = 5
@@ -73,7 +76,7 @@ const Circular: React.FC<Props> = (props) => {
       fill="none"
     >
       <circle
-        stroke={"#dbdbdb"}
+        stroke={bgColor}
         cx={center}
         cy={center}
         r={radius}
@@ -82,7 +85,7 @@ const Circular: React.FC<Props> = (props) => {
       <RotationCircle>
         <circle
           ref={circleRef}
-          stroke={"#00ff00"}
+          stroke={color}
           cx={center}
           cy={center}
           r={radius}
@@ -113,44 +116,52 @@ const RotationCircle = styled.g`
 `
 
 const Linear: React.FC<Props> = (props) => {
-  const { progress = 0 } = props
+  const { progress = 0, color, bgColor } = props
+  console.log(progress)
   return (
-    <svg
-      width="100%"
-      height="10px"
-      // viewBox="0 0 100 50"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <linearGradient id="left-to-right">
-          <stop offset="0" stopColor="#00ff00">
-            <animate
-              dur="0.1s"
-              attributeName="offset"
-              fill="freeze"
-              from="0"
-              to={`${progress / 100}`}
-            />
-          </stop>
-          <stop offset="0" stopColor="#D8D8D8">
-            <animate
-              dur="0.1s"
-              attributeName="offset"
-              fill="freeze"
-              from="0"
-              to={`${progress / 100}`}
-            />
-          </stop>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="0" width="100%" height="10" fill="url(#left-to-right)" />
-    </svg>
+    <SVGUniqueID>
+      <svg
+        width="100%"
+        height="10px"
+        // viewBox="0 0 100 50"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="prefix__bga">
+            <stop offset="0" stopColor={color}>
+              <animate
+                dur="0.1s"
+                attributeName="offset"
+                fill="freeze"
+                from="0"
+                to={`${progress / 100}`}
+              />
+            </stop>
+            <stop offset="0" stopColor={bgColor}>
+              <animate
+                dur="0.1s"
+                attributeName="offset"
+                fill="freeze"
+                from="0"
+                to={`${progress / 100}`}
+              />
+            </stop>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="100%" height="10" fill="url(#prefix__bga)" />
+      </svg>
+    </SVGUniqueID>
   )
 }
 
-const Tabs: React.FC<Props> = (props) => {
+const Progress: React.FC<Props> = (props) => {
   const { type } = props
+  const defaultProps = {
+    color: "#00ff00",
+    bgColor: "#dbdbdb",
+    ...props,
+  }
   let Component = undefined
   switch (type) {
     case "circular":
@@ -163,7 +174,7 @@ const Tabs: React.FC<Props> = (props) => {
       Component = Circle
   }
 
-  return <Component {...props} />
+  return <Component {...defaultProps} />
 }
 
-export default Tabs
+export default Progress
