@@ -27,7 +27,7 @@ const PropsBox: React.FC<Props> = ({ name }) => {
         <Flex style={{ minWidth: "500px" }}>
           {hasPropsTable ? (
             <QuickTable
-              ratio={[20, 20, 20, 40]}
+              ratio={[20, 23, 20, 37]}
               header={["Name", "Type", "Default", "Description"]}
               data={components[urlRemoveName].props}
               createRow={(item: ItemProps) => {
@@ -56,7 +56,7 @@ const PropsTypeBox = styled.span`
   border-radius: 2px;
   background: ${Color.GRAY[2]};
   padding: 2px 4px;
-  font-size: 13px;
+  font-size: 12px;
   user-select: none;
 `
 
