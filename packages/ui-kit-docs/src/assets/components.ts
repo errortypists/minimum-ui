@@ -456,53 +456,49 @@ const menus: ComponentProps = {
     displayName: "Table",
     props: [
       {
-        name: "variant",
-        type: ["default", "outline", "text"],
-        default: "medium",
-        description: "The variant type",
-      },
-      {
-        name: "size",
-        type: ["samll", "medium", "large"],
-        default: "medium",
-        description: "The size of button",
-      },
-      {
-        name: "primary",
-        type: ["boolean"],
-        default: "false",
-        description: "Set the primary button",
-      },
-      {
-        name: "width",
-        type: ["string"],
-        default: "",
-        description: "The width size",
-      },
-      {
-        name: "leftIcon",
-        type: ["any"],
-        default: "",
-        description: "Button with left icon",
-      },
-      {
-        name: "rightIcon",
-        type: ["any"],
-        default: "",
-        description: "Button with right icon",
-      },
-      {
-        name: "loading",
-        type: ["boolean"],
-        default: "false",
-        description: "The status of loading",
-      },
-      {
         name: "style",
-        type: ["CSSProperties"],
+        type: ["object"],
         default: "",
         description:
-          "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
+          "구성하는 Root, Head, Body, Row, Cell 에 각각의 스타일을 주입할 수 있습니다.",
+      },
+      {
+        name: "ratio",
+        type: ["array"],
+        default: "",
+        description:
+          "Root에 주입하면 하위 구성요소의 각 열의 비율이 전달됩니다. 미기입시 기본적으로 행의 데이터에 따라 균일하게 표현됩니다.",
+      },
+    ],
+  },
+  quicktable: {
+    displayName: "QuickTable",
+    props: [
+      {
+        name: "header",
+        type: ["array"],
+        default: "",
+        description: "문자열 배열을 사용해 테이블의 헤더를 구성합니다.",
+      },
+      {
+        name: "data",
+        type: ["array"],
+        default: "",
+        description:
+          "테이블의 각 행을 표현할 데이터 객체 배열입니다. 행을 표현할때 해당 데이터를 기반으로 하여 테이블을 그려냅니다.",
+      },
+      {
+        name: "ratio",
+        type: ["array"],
+        default: "",
+        description: "테이블 각 행의 비율을 정합니다.",
+      },
+      {
+        name: "createRow",
+        type: ["function"],
+        default: "",
+        description:
+          "테이블을 그려낼때 각 행의 각 셀을 어떻게 그려낼지 함수의 리턴으로 그려냅니다.",
       },
     ],
   },
@@ -764,8 +760,8 @@ const menus: ComponentProps = {
       },
       {
         name: "size",
-        type: ["number"],
-        default: "24",
+        type: ["small", "medium", "large"],
+        default: "medium",
         description: "라디오의 크기를 결정합니다.",
       },
       {
@@ -818,8 +814,8 @@ const menus: ComponentProps = {
       },
       {
         name: "size",
-        type: ["number"],
-        default: "24",
+        type: ["small", "medium", "large"],
+        default: "medium",
         description: "체크박스의 크기를 지정합니다.",
       },
       {

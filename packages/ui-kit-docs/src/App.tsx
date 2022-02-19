@@ -18,6 +18,7 @@ import {
   RadioPage,
   CheckboxPage,
   OverviewPage,
+  QuickTablePage,
   GridPage,
   FlexPage,
 } from "./pages"
@@ -82,6 +83,9 @@ function App() {
             </Route>
             <Route path="/table" exact>
               <TablePage />
+            </Route>
+            <Route path="/quicktable" exact>
+              <QuickTablePage />
             </Route>
             <Route path="/select" exact>
               <SelectPage />
