@@ -60,7 +60,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description:
           "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
@@ -96,8 +96,8 @@ const menus: ComponentProps = {
       },
     ],
   },
-  layout: {
-    displayName: "Layout",
+  flex: {
+    displayName: "Flex",
     props: [
       {
         name: "align",
@@ -139,10 +139,15 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description: "The CSS style with object",
       },
+    ],
+  },
+  grid: {
+    displayName: "Grid",
+    props: [
       {
         name: "row",
         type: ["number"],
@@ -175,7 +180,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description: "The CSS style with object",
       },
@@ -191,12 +196,6 @@ const menus: ComponentProps = {
         description: "The size of divider (only box type)",
       },
       {
-        name: "type",
-        type: ["box", "line"],
-        default: "box",
-        description: "The line type has fixed height",
-      },
-      {
         name: "color",
         type: ["string"],
         default: "",
@@ -204,7 +203,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description: "The style object",
       },
@@ -215,7 +214,7 @@ const menus: ComponentProps = {
     props: [
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description: "The CSS style with object",
       },
@@ -268,7 +267,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description:
           "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
@@ -293,7 +292,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description: "The CSS style with object",
       },
@@ -309,16 +308,16 @@ const menus: ComponentProps = {
     displayName: "Button",
     props: [
       {
-        name: "variant",
-        type: ["default", "outline", "text"],
-        default: "medium",
-        description: "The variant type",
-      },
-      {
         name: "size",
         type: ["samll", "medium", "large"],
         default: "medium",
         description: "The size of button",
+      },
+      {
+        name: "variant",
+        type: ["default", "outline", "text"],
+        default: "default",
+        description: "The variant type",
       },
       {
         name: "primary",
@@ -334,15 +333,15 @@ const menus: ComponentProps = {
       },
       {
         name: "leftIcon",
-        type: ["any"],
+        type: ["ReactNode"],
         default: "",
-        description: "Button with left icon",
+        description: "Text with left icon",
       },
       {
         name: "rightIcon",
-        type: ["any"],
+        type: ["ReactNode"],
         default: "",
-        description: "Button with right icon",
+        description: "Text with right icon",
       },
       {
         name: "loading",
@@ -352,10 +351,9 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
-        description:
-          "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
+        description: "The CSS style with object",
       },
     ],
   },
@@ -363,53 +361,40 @@ const menus: ComponentProps = {
     displayName: "Textarea",
     props: [
       {
-        name: "variant",
-        type: ["default", "outline", "text"],
-        default: "medium",
-        description: "The variant type",
-      },
-      {
-        name: "size",
-        type: ["samll", "medium", "large"],
-        default: "medium",
-        description: "The size of button",
-      },
-      {
-        name: "primary",
-        type: ["boolean"],
-        default: "false",
-        description: "Set the primary button",
-      },
-      {
         name: "width",
         type: ["string"],
-        default: "",
-        description: "The width size",
+        default: "100%",
+        description: "The width of textarea",
       },
       {
-        name: "leftIcon",
-        type: ["any"],
+        name: "height",
+        type: ["string"],
         default: "",
-        description: "Button with left icon",
+        description: "The height of textarea",
       },
       {
-        name: "rightIcon",
-        type: ["any"],
+        name: "placeholder",
+        type: ["string"],
         default: "",
-        description: "Button with right icon",
+        description: "The placeholder of textarea",
       },
       {
-        name: "loading",
-        type: ["boolean"],
-        default: "false",
-        description: "The status of loading",
+        name: "cols",
+        type: ["number"],
+        default: "",
+        description: "The cols of textarea",
+      },
+      {
+        name: "rows",
+        type: ["number"],
+        default: "4",
+        description: "The rows of textarea",
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
-        description:
-          "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
+        description: "The CSS style with object",
       },
     ],
   },
@@ -460,7 +445,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description:
           "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
@@ -564,7 +549,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description:
           "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
@@ -618,7 +603,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description:
           "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
@@ -672,7 +657,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description:
           "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",
@@ -726,7 +711,7 @@ const menus: ComponentProps = {
       },
       {
         name: "style",
-        type: ["object"],
+        type: ["CSSProperties"],
         default: "",
         description:
           "The CSS style with object The CSS style with object The CSS style with object The CSS style with object",

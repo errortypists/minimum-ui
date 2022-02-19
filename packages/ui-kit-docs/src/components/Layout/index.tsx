@@ -9,8 +9,9 @@ import {
   LayoutTitle,
   LayoutTitleDescription,
 } from "./Contents"
-import { ComponentBox, PropsBox, Header } from ".."
+import { ComponentBox, PropsBox, Header, Footer } from ".."
 import useStatus from "../../hooks/useStatus"
+import BaseStyle from "../../assets/styles/base"
 
 const MainLayout = styled.div`
   width: 100%;
@@ -37,7 +38,7 @@ const LeftWrapper: React.FC<ILeft> = () => {
       <ComponentBox />
       {selectedMenu?.id && (
         <>
-          <Typography.Title>PROPS</Typography.Title>
+          <Typography.Title>Props</Typography.Title>
           <LeftAreaPropsWrapper>
             <PropsBox name={selectedMenu?.id || ""} />
           </LeftAreaPropsWrapper>
@@ -53,7 +54,7 @@ const LeftAreaWrapper = styled.div`
   min-width: 375px;
   max-width: 604px;
   padding-right: 80px;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-left: 20px;
   overflow: hidden;
 
@@ -92,6 +93,7 @@ const ComponentWrapper = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
+  border-radius: ${BaseStyle.radius};
 `
 
 const CodeWrapper: React.FC<{ code: string }> = (props) => {
@@ -109,7 +111,7 @@ const CodeWrapper: React.FC<{ code: string }> = (props) => {
         padding: "2px",
         paddingBottom: 0,
         margin: "10px 0",
-        borderRadius: 0,
+        borderRadius: BaseStyle.radius,
         fontSize: "14px",
       }}
     />
@@ -128,13 +130,14 @@ const ContentsLayout: React.FC = (props) => {
       <RightWrapper>
         <Header />
         <RightContentWrapper>{children}</RightContentWrapper>
+        <Footer />
       </RightWrapper>
     </MainLayout>
   )
 }
 
 const RightContentWrapper = styled.div`
-  height: calc(100% - 40px);
+  height: calc(100% - 80px);
   overflow: auto;
   width: 100%;
   padding: 18px;
@@ -143,7 +146,7 @@ const RightContentWrapper = styled.div`
 const LogoWrapper = styled.div`
   height: 45px;
   position: absolute;
-  left: 30px;
+  left: 20px;
   top: -5px;
   font-size: 2.5rem;
   font-family: Sarpanch;
