@@ -108,7 +108,7 @@ const RadioWrapper = styled.div<any>`
     color: ${props.color
       ? convertHexColorToRGB(props.color, 0.8)
       : convertHexColorToRGB(BaseColor.font, 0.8)};
-    border: ${props.size * 0.13}px solid ${props.color || BaseColor.font};
+    border: ${props.size * 0.08}px solid ${props.color || BaseColor.font};
     border-radius: ${props.size * 0.5}px;
   `}
 `
