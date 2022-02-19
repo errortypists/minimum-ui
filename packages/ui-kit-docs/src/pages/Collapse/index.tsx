@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { Collapse, Flex } from "ui-kit"
+import { Collapse, Button, Flex } from "ui-kit"
 
 import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
@@ -32,10 +32,14 @@ const CollapsePage: React.FC = () => {
       </Description>
       <ComponentTitle>Basic Collapse</ComponentTitle>
       <ComponentWrapper>
-        <Flex direction="column" justify="center" gap={20}>
-          <button onClick={() => setOpen1(!isOpen1)}>{`${
-            !isOpen1 ? "열림" : "닫힘"
-          }`}</button>
+        <Flex direction="column" justify="center" gap={10}>
+          <Button
+            width="120px"
+            variant="outline"
+            onClick={() => setOpen1(!isOpen1)}
+          >
+            {"Click Me!"}
+          </Button>
           <Collapse isOpen={isOpen1}>
             <CollapseOne>Collapse One</CollapseOne>
           </Collapse>
@@ -53,10 +57,14 @@ const CollapsePage: React.FC = () => {
         열림과 닫힘의 속도를 조절합니다.
       </ComponentDescription>
       <ComponentWrapper>
-        <Flex direction="column" justify="center" gap={20}>
-          <button onClick={() => setOpen2(!isOpen2)}>{`${
-            !isOpen3 ? "열림" : "닫힘"
-          }`}</button>
+        <Flex direction="column" justify="center" gap={10}>
+          <Button
+            width="120px"
+            variant="outline"
+            onClick={() => setOpen2(!isOpen2)}
+          >
+            {"Click Me!"}
+          </Button>
           <Collapse isOpen={isOpen2} speed={1000}>
             <CollapseTwo>Collapse Two</CollapseTwo>
           </Collapse>
@@ -74,10 +82,14 @@ const CollapsePage: React.FC = () => {
         열림/펼침 영역의 너비를 지정합니다. (기본값: 100%)
       </ComponentDescription>
       <ComponentWrapper>
-        <Flex direction="column" justify="center" gap={20}>
-          <button onClick={() => setOpen3(!isOpen3)}>{`${
-            !isOpen3 ? "열림" : "닫힘"
-          }`}</button>
+        <Flex direction="column" justify="center" gap={10}>
+          <Button
+            width="120px"
+            variant="outline"
+            onClick={() => setOpen3(!isOpen3)}
+          >
+            {"Click Me!"}
+          </Button>
           <Collapse isOpen={isOpen3} width={200}>
             <CollapseTwo>Collapse Two</CollapseTwo>
           </Collapse>
