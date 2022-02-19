@@ -1,22 +1,16 @@
-import styled from "styled-components"
-import { Flex, Grid } from "ui-kit"
 import Layout from "../../components/Layout"
+import { Flex } from "ui-kit"
+import styled from "styled-components"
+import { BaseColor } from "../../assets/styles/color"
 
-const {
-  ContentsLayout,
-  ComponentWrapper,
-  CodeWrapper,
-  Title,
-  Description,
-  ComponentTitle,
-} = Layout
+const { ContentsLayout, ComponentWrapper, CodeWrapper, Title, Description } =
+  Layout
 
-const LayoutPage: React.FC = () => {
+const FlexPage: React.FC = () => {
   return (
     <ContentsLayout>
-      <Title>Layout</Title>
-      <Description>Flex, Grid를 활용한 레이아웃 구성</Description>
-      <ComponentTitle>Flex</ComponentTitle>
+      <Title>Flex</Title>
+      <Description>Flex layout</Description>
       <ComponentWrapper>
         <Flex>
           <Box style={{ flex: 1 }}>FLEX1</Box>
@@ -49,23 +43,6 @@ const LayoutPage: React.FC = () => {
           <Box style={{ flex: 2, height: "auto" }}>FLEX5</Box>
 </Flex>`}
       />
-      <ComponentTitle>Grid</ComponentTitle>
-      <ComponentWrapper>
-        <Grid row={2} col={2} gap={8}>
-          <Box>GRID1</Box>
-          <Box>GRID2</Box>
-          <Box>GRID3</Box>
-          <Box>GRID4</Box>
-        </Grid>
-      </ComponentWrapper>
-      <CodeWrapper
-        code={`<Grid row={2} col={2} gap={8}>
-          <Box>GRID1</Box>
-          <Box>GRID2</Box>
-          <Box>GRID3</Box>
-          <Box>GRID4</Box>
-</Grid>`}
-      />
     </ContentsLayout>
   )
 }
@@ -73,10 +50,10 @@ const LayoutPage: React.FC = () => {
 const Box = styled.div`
   width: 100%;
   height: 100px;
-  background-color: lightblue;
+  background-color: ${BaseColor.border};
   display: flex;
   justify-content: center;
   align-items: center;
 `
 
-export default LayoutPage
+export default FlexPage

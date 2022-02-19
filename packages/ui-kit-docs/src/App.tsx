@@ -4,7 +4,6 @@ import { useState } from "react"
 import {
   Tabs,
   DividerPage,
-  LayoutPage,
   Progress,
   Modal,
   Collapse,
@@ -19,6 +18,8 @@ import {
   RadioPage,
   CheckboxPage,
   OverviewPage,
+  GridPage,
+  FlexPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 import TextareaPage from "./pages/Textarea"
@@ -52,8 +53,11 @@ function App() {
             <Route path="/divider" exact>
               <DividerPage />
             </Route>
-            <Route path="/layout" exact>
-              <LayoutPage />
+            <Route path="/flex" exact>
+              <FlexPage />
+            </Route>
+            <Route path="/grid" exact>
+              <GridPage />
             </Route>
             <Route path="/typography" exact>
               <TypographyPage />

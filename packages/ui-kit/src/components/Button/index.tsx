@@ -1,15 +1,16 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import BaseStyle from "assets/styles/base"
 import { BaseColor } from "assets/styles/color"
 import styled from "styled-components"
+import { Progress } from "index"
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline" | "text"
   size?: "small" | "medium" | "large"
+  variant?: "default" | "outline" | "text"
   primary?: boolean
   width?: string
-  leftIcon?: any
-  rightIcon?: any
+  leftIcon?: ReactNode
+  rightIcon?: ReactNode
   loading?: boolean
   style?: React.CSSProperties
 }
@@ -32,13 +33,14 @@ const Button: React.FC<Props> = ({
     <Wrapper
       data-variant={variant}
       data-size={size}
+      data-loading={loading}
       color={color}
       {...rest}
       disabled={loading || rest.disabled}
       style={{ width: width, ...style }}
     >
       {loading ? (
-        "Loading..."
+        <Progress type="circular" progress={45} color="#fff" bgColor="#000" />
       ) : (
         <>
           {leftIcon && (
@@ -71,9 +73,20 @@ const Wrapper = styled.button<any>`
   color: #fff;
   opacity: 1;
 
+  &[data-size="small"] {
+    font-size: 14px;
+    height: ${BaseStyle.boxHeight};
+    height: 35px;
+  }
+
   &[data-size="medium"] {
     font-size: ${BaseStyle.fontSize};
     height: ${BaseStyle.boxHeight};
+  }
+
+  &[data-size="large"] {
+    font-size: 18px;
+    height: 45px;
   }
 
   &[data-variant="outline"] {
@@ -93,12 +106,15 @@ const Wrapper = styled.button<any>`
     background: ${BaseColor.default};
     color: #fff;
     border: 0;
+    cursor: not-allowed;
   }
 
-  &:active {
-    opacity: 0.85;
-    background: ${(props) => props.color};
-    color: #fff;
+  &[data-loading="false"] {
+    &:active {
+      opacity: 0.85;
+      background: ${(props) => props.color};
+      color: #fff;
+    }
   }
 `
 
@@ -108,7 +124,6 @@ const IconWrapper = styled.div`
   align-items: center;
   width: ${BaseStyle.fontSize};
   height: ${BaseStyle.fontSize};
-  padding-bottom: 2px;
 `
 
 export default Button
