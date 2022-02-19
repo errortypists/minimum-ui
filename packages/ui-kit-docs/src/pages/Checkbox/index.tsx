@@ -41,7 +41,7 @@ const CheckboxPage: React.FC = () => {
 <Checkbox checked={true} disabled />
 <Checkbox checked={false} disabled />`}
       />
-      <ComponentTitle>Label checkboxes</ComponentTitle>
+      <ComponentTitle>Label</ComponentTitle>
       <ComponentDescription>
         You can provide a label to the Checkbox thanks to the FormControlLabel
         component.
@@ -57,6 +57,7 @@ const CheckboxPage: React.FC = () => {
 <Checkbox title="여자" checked={false} />
 `}
       />
+      <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>
         Use the size prop or customize the font size of the svg icons to change
         the size of the checkboxes.

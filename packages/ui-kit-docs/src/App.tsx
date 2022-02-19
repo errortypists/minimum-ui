@@ -19,6 +19,7 @@ import {
   RadioPage,
   CheckboxPage,
   OverviewPage,
+  QuickTablePage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 import TextareaPage from "./pages/Textarea"
@@ -78,6 +79,9 @@ function App() {
             </Route>
             <Route path="/table" exact>
               <TablePage />
+            </Route>
+            <Route path="/quicktable" exact>
+              <QuickTablePage />
             </Route>
             <Route path="/select" exact>
               <SelectPage />
