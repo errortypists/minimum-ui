@@ -16,20 +16,6 @@ const DividerPage: React.FC = () => {
     <ContentsLayout>
       <Title>Divider</Title>
       <Description>영역을 분리하기 위한 구분선</Description>
-      <ComponentTitle>Type</ComponentTitle>
-      <ComponentDescription>기본 설정은 box</ComponentDescription>
-      <ComponentWrapper>
-        <Flex>Section1</Flex>
-        <Divider type="box" />
-        <Flex>Section2</Flex>
-      </ComponentWrapper>
-      <CodeWrapper code={`<Divider type="box" />`} />
-      <ComponentWrapper>
-        <Flex>Section1</Flex>
-        <Divider type="line" />
-        <Flex>Section2</Flex>
-      </ComponentWrapper>
-      <CodeWrapper code={`<Divider type="line" />`} />
       <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>type box 에서만 적용</ComponentDescription>
       <ComponentWrapper>

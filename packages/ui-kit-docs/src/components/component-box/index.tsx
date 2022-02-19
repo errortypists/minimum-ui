@@ -40,10 +40,9 @@ const ComponentBox: React.FC = () => {
                 url: url,
               })
             }}
+            data-selected={isSelected}
           >
-            <div
-              style={{ fontWeight: isSelected ? "bold" : 400 }}
-            >{`<${components[menuName].displayName} />`}</div>
+            {`<${components[menuName].displayName}/>`}
           </BoxWrapper>
         )
       })}
@@ -61,22 +60,26 @@ const BoxWrapper = styled(Link)`
     text-decoration: none;
   }
 
-  border: 1px solid ${BaseColor.border};
+  border: 1px solid ${Color.GRAY[4]};
   width: 100%;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${BaseStyle.fontSize};
+  font-size: 15px;
   color: ${BaseColor.font};
-  box-shadow: 5px 5px 5px ${BaseColor.border};
+  border-radius: 4px;
+  font-family: Kanit;
+  font-weight: 100;
 
   &:hover {
-    border-color: ${Color.GRAY[0]};
-    cursor: pointer;
-    background: ${Color.GRAY[0]};
-    font-weight: bold;
-    border-radius: ${BaseStyle.radius};
+    font-weight: 200;
+  }
+
+  &[data-selected="true"] {
+    font-weight: 200;
+    border-color: ${BaseColor.alert.information.border};
+    background-color: ${BaseColor.alert.information.background};
   }
 `
 

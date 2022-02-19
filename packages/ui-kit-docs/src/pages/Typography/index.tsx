@@ -1,4 +1,3 @@
-import styled from "styled-components"
 import { Typography } from "ui-kit"
 import Layout from "../../components/Layout"
 
@@ -10,7 +9,6 @@ const {
   Title: LayoutTitle,
   Description,
   ComponentTitle,
-  ComponentDescription,
 } = Layout
 
 const TypographyPage: React.FC = () => {
@@ -21,33 +19,40 @@ const TypographyPage: React.FC = () => {
         기본 텍스트 스타일 title, subtitle, body, caption
       </Description>
       <ComponentWrapper>
-        <Title>Title</Title>
-        <SubTitle>Subtitle</SubTitle>
-        <Body>This is Body</Body>
-        <Caption>This is Caption</Caption>
+        <Title>Example of Typography</Title>
+        <SubTitle>Example of Typography</SubTitle>
+        <Body>Example of Typography</Body>
+        <Caption>Example of Typography</Caption>
       </ComponentWrapper>
       <CodeWrapper
         code={`const { Title, SubTitle, Body, Caption } = Typography
         
-<Title>Title</Title>
-<SubTitle>Subtitle</SubTitle>
-<Body>This is Body</Body>
-<Caption>This is Caption</Caption>`}
+<Title>Example of Typography</Title>
+<SubTitle>Example of Typography</SubTitle>
+<Body>Example of Typography</Body>
+<Caption>Example of Typography</Caption>
+
+<Typography.Title>Example of Typography</Typography.Title>
+<Typography.SubTitle>Example of Typography</Typography.SubTitle>
+<Typography.Body>Example of Typography</Typography.Body>
+<Typography.Caption>Example of Typography</Typography.Caption>`}
       />
       <ComponentTitle>Style</ComponentTitle>
       <ComponentWrapper>
-        <Title style={{ color: "red" }}>Title</Title>
-        <SubTitle style={{ textDecoration: "line-through" }}>Subtitle</SubTitle>
-        <Body style={{ padding: "10px" }}>This is Body</Body>
-        <Caption style={{ letterSpacing: 3 }}>This is Caption</Caption>
+        <Title style={{ color: "red" }}>Example of Typography</Title>
+        <SubTitle style={{ textDecoration: "line-through" }}>
+          Example of Typography
+        </SubTitle>
+        <Body style={{ padding: "10px" }}>Example of Typography</Body>
+        <Caption style={{ letterSpacing: 3 }}>Example of Typography</Caption>
       </ComponentWrapper>
       <CodeWrapper
         code={`const { Title, SubTitle, Body, Caption } = Typography
 
-<Title style={{ color: "red" }}>Title</Title>
-<SubTitle style={{ textDecoration: "line-through" }}>Subtitle</SubTitle>
-<Body style={{ padding: "10px" }}>This is Body</Body>
-<Caption style={{ letterSpacing: 3 }}>This is Caption</Caption>`}
+<Title style={{ color: "red" }}>Example of Typography</Title>
+<SubTitle style={{ textDecoration: "line-through" }}>Example of Typography</SubTitle>
+<Body style={{ padding: "10px" }}>Example of Typography</Body>
+<Caption style={{ letterSpacing: 3 }}>Example of Typography</Caption>`}
       />
     </ContentsLayout>
   )
