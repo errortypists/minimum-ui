@@ -40,6 +40,8 @@ const Wrapper = styled.textarea`
   padding: 5px;
   box-sizing: border-box;
   border-radius: ${BaseStyle.radius};
+  max-width: 100%;
+  min-height: 30px;
 `
 
 export default Textarea
