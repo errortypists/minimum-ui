@@ -1,22 +1,69 @@
-import { useState } from "react"
-import { Flex, Pagination } from "ui-kit"
+import { Pagination } from "ui-kit"
+import Layout from "../../components/Layout"
+
+const {
+  ContentsLayout,
+  ComponentWrapper,
+  ComponentTitle,
+  CodeWrapper,
+  Title,
+  Description,
+} = Layout
 
 const PaginationPage: React.FC = () => {
-  const [page, setPage] = useState(1)
   return (
-    <Flex direction="column" align="flex-start">
-      <Pagination
-        currentPage={page}
-        pageSize={100}
-        onChange={(page) => setPage(page)}
+    <ContentsLayout>
+      <Title>Pagination</Title>
+      <Description>Information of page</Description>
+      <ComponentWrapper>
+        <Pagination
+          currentPage={5}
+          pageSize={100}
+          onChange={(page: number) => console.log(page)}
+        />
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`<Pagination
+  currentPage={5}
+  pageSize={100}
+  onChange={(page) => console.log(page)}
+/>`}
       />
-      <Pagination
-        currentPage={7}
-        pageSize={20}
-        onChange={(page) => console.log(page)}
-        buttonTexts={["이전", "다음"]}
+      <ComponentTitle>Texts</ComponentTitle>
+      <ComponentWrapper>
+        <Pagination
+          currentPage={7}
+          pageSize={20}
+          onChange={(page: number) => console.log(page)}
+          buttonTexts={["Prev", "Next"]}
+        />
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`<Pagination
+  currentPage={7}
+  pageSize={20}
+  onChange={(page) => console.log(page)}
+  buttonTexts={["Prev", "Next"]}
+/>`}
       />
-    </Flex>
+      <ComponentTitle>Icons</ComponentTitle>
+      <ComponentWrapper>
+        <Pagination
+          currentPage={14}
+          pageSize={35}
+          onChange={(page: number) => console.log(page)}
+          buttonIcons={[<div>{"<"}</div>, <div>{">"}</div>]}
+        />
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`<Pagination
+  currentPage={14}
+  pageSize={35}
+  onChange={(page) => console.log(page)}
+  buttonIcons={[<div>{"<"}</div>, <div>{">"}</div>]}
+/>`}
+      />
+    </ContentsLayout>
   )
 }
 

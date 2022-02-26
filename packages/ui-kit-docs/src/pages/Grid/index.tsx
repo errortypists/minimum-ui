@@ -21,10 +21,10 @@ const GridPage: React.FC = () => {
       </ComponentWrapper>
       <CodeWrapper
         code={`<Grid row={2} col={2} gap={8}>
-          <Box>GRID1</Box>
-          <Box>GRID2</Box>
-          <Box>GRID3</Box>
-          <Box>GRID4</Box>
+  <Box>GRID1</Box>
+  <Box>GRID2</Box>
+  <Box>GRID3</Box>
+  <Box>GRID4</Box>
 </Grid>`}
       />
     </ContentsLayout>

@@ -111,7 +111,7 @@ const Wrapper = styled.button<any>`
 
   &[data-loading="false"] {
     &:active {
-      opacity: 0.85;
+      opacity: 0.8;
       background: ${(props) => props.color};
       color: #fff;
     }
@@ -124,6 +124,7 @@ const IconWrapper = styled.div`
   align-items: center;
   width: ${BaseStyle.fontSize};
   height: ${BaseStyle.fontSize};
+  margin-bottom: 1px;
 `
 
 export default Button
