@@ -94,6 +94,7 @@ const ComponentWrapper = styled.div`
   margin-bottom: 10px;
   padding: 10px;
   border-radius: ${BaseStyle.radius};
+  overflow: auto;
 `
 
 const CodeWrapper: React.FC<{ code: string }> = (props) => {

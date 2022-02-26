@@ -26,7 +26,7 @@ const CheckboxPage: React.FC = () => {
         instead of on/off switches. If you have a single option, avoid using a
         checkbox and use an on/off switch instead.
       </Description>
-      <ComponentTitle>Basic checkboxes</ComponentTitle>
+      <ComponentTitle>Basic Checkbox</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
           <Checkbox checked={true} />
@@ -41,21 +41,23 @@ const CheckboxPage: React.FC = () => {
 <Checkbox checked={true} disabled />
 <Checkbox checked={false} disabled />`}
       />
-      <ComponentTitle>Label</ComponentTitle>
+      <ComponentTitle>Title direction</ComponentTitle>
       <ComponentDescription>
-        You can provide a label to the Checkbox thanks to the FormControlLabel
-        component.
+        체크박스의 타이틀 위치를 결정합니다.
       </ComponentDescription>
       <ComponentWrapper>
-        <Flex direction="row" justify="center" gap={0}>
-          <Checkbox title="남자" checked={true} />
-          <Checkbox title="여자" checked={false} />
+        <Flex direction="row" justify="center" gap={20}>
+          <Checkbox title="Right" checked={true} />
+          <Checkbox title="Top" checked={true} titleDirection={"top"} />
+          <Checkbox title="Bottom" checked={true} titleDirection={"bottom"} />
+          <Checkbox title="Left" checked={true} titleDirection={"left"} />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Checkbox title="남자" checked={true} />
-<Checkbox title="여자" checked={false} />
-`}
+        code={`<Checkbox title="Right" checked={true} />
+<Checkbox title="Top" checked={true} titleDirection={"top"} />
+<Checkbox title="Bottom" checked={true} titleDirection={"bottom"} />
+<Checkbox title="Left" checked={true} titleDirection={"left"} />`}
       />
       <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>

@@ -31,26 +31,26 @@ const TablePage: React.FC = () => {
           <Table.Root>
             <Table.Head>
               <Table.Row>
-                <Table.Cell>head1</Table.Cell>
-                <Table.Cell>head2</Table.Cell>
-                <Table.Cell>head3</Table.Cell>
+                <Table.Cell>Job</Table.Cell>
+                <Table.Cell>Base Salary</Table.Cell>
+                <Table.Cell>Growth</Table.Cell>
               </Table.Row>
             </Table.Head>
             <Table.Body>
               <Table.Row>
-                <Table.Cell>{"row1 - cell1"}</Table.Cell>
-                <Table.Cell>{"row1 - cell2"}</Table.Cell>
-                <Table.Cell>{"row1 - cell3"}</Table.Cell>
+                <Table.Cell>{"Nurse"}</Table.Cell>
+                <Table.Cell>{"$93,203"}</Table.Cell>
+                <Table.Cell>{"20.33%"}</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell>{"row2 - cell1"}</Table.Cell>
-                <Table.Cell>{"row2 - cell2"}</Table.Cell>
-                <Table.Cell>{"row2 - cell3"}</Table.Cell>
+                <Table.Cell>{"Product Owner"}</Table.Cell>
+                <Table.Cell>{"$90,311"}</Table.Cell>
+                <Table.Cell>{"103.23"}</Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell>{"row3 - cell1"}</Table.Cell>
-                <Table.Cell>{"row3 - cell2"}</Table.Cell>
-                <Table.Cell>{"row3 - cell3"}</Table.Cell>
+                <Table.Cell>{"IT Technician"}</Table.Cell>
+                <Table.Cell>{"$110,264"}</Table.Cell>
+                <Table.Cell>{"35.16%"}</Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table.Root>
@@ -60,26 +60,26 @@ const TablePage: React.FC = () => {
         code={`<Table.Root>
 <Table.Head>
   <Table.Row>
-    <Table.Cell>head1</Table.Cell>
-    <Table.Cell>head2</Table.Cell>
-    <Table.Cell>head3</Table.Cell>
+    <Table.Cell>Job</Table.Cell>
+    <Table.Cell>Base Salary</Table.Cell>
+    <Table.Cell>Growth</Table.Cell>
   </Table.Row>
 </Table.Head>
 <Table.Body>
   <Table.Row>
-    <Table.Cell>{"row1 - cell1"}</Table.Cell>
-    <Table.Cell>{"row1 - cell2"}</Table.Cell>
-    <Table.Cell>{"row1 - cell3"}</Table.Cell>
+    <Table.Cell>{"Nurse"}</Table.Cell>
+    <Table.Cell>{"$93,203"}</Table.Cell>
+    <Table.Cell>{"20.33%"}</Table.Cell>
   </Table.Row>
   <Table.Row>
-    <Table.Cell>{"row2 - cell1"}</Table.Cell>
-    <Table.Cell>{"row2 - cell2"}</Table.Cell>
-    <Table.Cell>{"row2 - cell3"}</Table.Cell>
+    <Table.Cell>{"Product Owner"}</Table.Cell>
+    <Table.Cell>{"$90,311"}</Table.Cell>
+    <Table.Cell>{"103.23"}</Table.Cell>
   </Table.Row>
   <Table.Row>
-    <Table.Cell>{"row3 - cell1"}</Table.Cell>
-    <Table.Cell>{"row3 - cell2"}</Table.Cell>
-    <Table.Cell>{"row3 - cell3"}</Table.Cell>
+    <Table.Cell>{"IT Technician"}</Table.Cell>
+    <Table.Cell>{"$110,264"}</Table.Cell>
+    <Table.Cell>{"35.16%"}</Table.Cell>
   </Table.Row>
 </Table.Body>
 </Table.Root>`}
@@ -93,16 +93,16 @@ const TablePage: React.FC = () => {
           <Table.Root ratio={[25, 60, 25]}>
             <Table.Head>
               <Table.Row>
-                <Table.Cell>head1</Table.Cell>
-                <Table.Cell>head2</Table.Cell>
-                <Table.Cell>head3</Table.Cell>
+                <Table.Cell>Job</Table.Cell>
+                <Table.Cell>Base Salary</Table.Cell>
+                <Table.Cell>Growth</Table.Cell>
               </Table.Row>
             </Table.Head>
             <Table.Body>
               <Table.Row>
-                <Table.Cell>{"cell1"}</Table.Cell>
-                <Table.Cell>{"cell2"}</Table.Cell>
-                <Table.Cell>{"cell3"}</Table.Cell>
+                <Table.Cell>{"Nurse"}</Table.Cell>
+                <Table.Cell>{"$93,203"}</Table.Cell>
+                <Table.Cell>{"20.33%"}</Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table.Root>
@@ -112,16 +112,16 @@ const TablePage: React.FC = () => {
         code={`<Table.Root ratio={[25, 60, 25]}>
 <Table.Head>
   <Table.Row>
-    <Table.Cell>head1</Table.Cell>
-    <Table.Cell>head2</Table.Cell>
-    <Table.Cell>head3</Table.Cell>
+    <Table.Cell>Job</Table.Cell>
+    <Table.Cell>Base Salary</Table.Cell>
+    <Table.Cell>Growth</Table.Cell>
   </Table.Row>
 </Table.Head>
 <Table.Body>
   <Table.Row>
-    <Table.Cell>{"cell1"}</Table.Cell>
-    <Table.Cell>{"cell2"}</Table.Cell>
-    <Table.Cell>{"cell3"}</Table.Cell>
+    <Table.Cell>{"Nurse"}</Table.Cell>
+    <Table.Cell>{"$93,203"}</Table.Cell>
+    <Table.Cell>{"20.33%"}</Table.Cell>
   </Table.Row>
 </Table.Body>
 </Table.Root>`}
