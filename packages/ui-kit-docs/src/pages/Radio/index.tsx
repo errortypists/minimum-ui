@@ -46,29 +46,29 @@ const RadioPage: React.FC = () => {
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
-          <Radio title={"title"} checked={true} />
-          <Radio title={"title"} checked={true} titleDirection={"top"} />
-          <Radio title={"title"} checked={true} titleDirection={"bottom"} />
-          <Radio title={"title"} checked={true} titleDirection={"left"} />
+          <Radio title={"Right"} checked={true} />
+          <Radio title={"Top"} checked={true} titleDirection={"top"} />
+          <Radio title={"Bottom"} checked={true} titleDirection={"bottom"} />
+          <Radio title={"Left"} checked={true} titleDirection={"left"} />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Radio title={"title"} checked={true} />
-<Radio title={"title"} checked={true} titleDirection={"top"} />
-<Radio title={"title"} checked={true} titleDirection={"bottom"} />
-<Radio title={"title"} checked={true} titleDirection={"left"} />`}
+        code={`<Radio title={"Right"} checked={true} />
+<Radio title={"Top"} checked={true} titleDirection={"top"} />
+<Radio title={"Bottom"} checked={true} titleDirection={"bottom"} />
+<Radio title={"Left"} checked={true} titleDirection={"left"} />`}
       />
       <ComponentTitle>Color</ComponentTitle>
       <ComponentDescription>라디오의 색깔을 지정합니다</ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
-          <Radio title={"title"} checked={true} color={"#ff00ff"} />
-          <Radio title={"title"} color={"#ff00ff"} />
+          <Radio title={"Title 1"} checked={true} color={"#ff00ff"} />
+          <Radio title={"Title 2"} color={"#ff00ff"} />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Radio title={"아이템 1"} checked={true} color={"#ff00ff"} />
-<Radio title={"아이템 2"} color={"#ff00ff"} />`}
+        code={`<Radio title={"Title 1"} checked={true} color={"#ff00ff"} />
+<Radio title={"Title 2"} color={"#ff00ff"} />`}
       />
       <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>라디오의 사이즈를 지정합니다.</ComponentDescription>

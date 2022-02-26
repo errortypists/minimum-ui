@@ -16,10 +16,10 @@ interface Props {
 }
 
 const TITLE_DIRECTION = {
-  left: "row-reverse",
-  right: "row",
-  top: "column-reverse",
-  bottom: "column",
+  left: { direction: "row-reverse", margin: "margin-right: 8px" },
+  right: { direction: "row", margin: "margin-left: 8px" },
+  top: { direction: "column-reverse", margin: "margin-bottom: 4px" },
+  bottom: { direction: "column", margin: "margin-top: 4px" },
 }
 
 const getSize = (size: "small" | "medium" | "large") => {
@@ -68,7 +68,7 @@ const Radio: React.FC<Props> = (props) => {
         <RadioInput type="radio" defaultChecked={checked} />
         {checked && <RadioIcon size={getSize(size)} color={color} />}
       </RadioWrapper>
-      {title !== "" && <Title>{title}</Title>}
+      {title !== "" && <Title direction={titleDirection}>{title}</Title>}
     </Wrapper>
   )
 }
@@ -80,6 +80,7 @@ const Wrapper = styled.div<any>`
   flex-direction: ${(props) =>
     `${
       TITLE_DIRECTION[props.direction as "left" | "right" | "top" | "bottom"]
+        .direction
     }`};
 
   &[data-disabled="true"] {
@@ -101,14 +102,13 @@ const RadioWrapper = styled.div<any>`
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
-  margin: 2px;
   ${(props) => css`
     width: ${props.size}px;
     height: ${props.size}px;
     color: ${props.color
       ? convertHexColorToRGB(props.color, 0.8)
       : convertHexColorToRGB(BaseColor.font, 0.8)};
-    border: ${props.size * 0.08}px solid ${props.color || BaseColor.font};
+    border: 1px solid ${props.color || BaseColor.font};
     border-radius: ${props.size * 0.5}px;
   `}
 `
@@ -129,19 +129,22 @@ const RadioInput = styled.input<any>`
 const RadioIcon = styled.div<any>`
   cursor: pointer;
   ${(props) => css`
-    width: ${props.size * 0.55}px;
-    height: ${props.size * 0.55}px;
+    width: ${props.size - 8}px;
+    height: ${props.size - 8}px;
     background-color: ${props.color
       ? convertHexColorToRGB(props.color, 0.8)
       : convertHexColorToRGB(BaseColor.font, 0.8)};
-    border-radius: ${props.size * 0.55 * 0.5}px;
+    border-radius: ${(props.size - 8) * 0.5}px;
   `}
 `
 
 const Title = styled.div<any>`
   user-select: none;
-  flex: 1;
-  white-space: nowrap;
+  ${(props) =>
+    `${
+      TITLE_DIRECTION[props.direction as "left" | "right" | "top" | "bottom"]
+        .margin
+    }`};
 `
 
 export default React.memo(Radio)

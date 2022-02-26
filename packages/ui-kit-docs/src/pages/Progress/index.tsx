@@ -111,6 +111,23 @@ const ProgressPage: React.FC = () => {
 <Progress type={"linear"} progress={50} color="blue" bgColor="#aaaaaa" />
 <Progress type={"linear"} progress={90} color="green" bgColor="#888888" />`}
       />
+      <ComponentTitle>Speed</ComponentTitle>
+      <ComponentDescription>
+        Progress의 회전 속도를 조절합니다. Circular 타입인 경우에만 제공됩니다.
+      </ComponentDescription>
+      <ComponentWrapper>
+        <Flex direction="row" justify="center" gap={20}>
+          <Progress type={"circular"} progress={60} speed={500} />
+          <Progress type={"circular"} progress={60} />
+          <Progress type={"circular"} progress={60} speed={3500} />
+        </Flex>
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`<Progress type={"circular"} progress={60} speed={500} />
+<Progress type={"circular"} progress={60} />
+<Progress type={"circular"} progress={60} speed={3500} />`}
+      />
+      <ComponentTitle>Props</ComponentTitle>
       <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
