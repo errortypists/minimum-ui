@@ -1,11 +1,12 @@
 import React from "react"
 import styled, { css } from "styled-components"
 
+type TabStatus = "default" | "disabled" | "selected"
 interface TabProps {
-  text: string // 탭 텍스트
-  icon?: any // 아이콘 유무, 타입을 svg 타입으로 못할까;;;
+  text: string
+  icon?: any
   type?: "round" | "rectangle"
-  status?: "default" | "disabled" | "selected" // 기본 default
+  status?: TabStatus
   onClick: () => void
 }
 
@@ -29,7 +30,10 @@ const Tab: React.FC<TabProps> = (props) => {
       Wrapper = DefaultWrapper
   }
   return (
-    <Wrapper onClick={onClick} isRound={type === "round"}>
+    <Wrapper
+      onClick={status !== "disabled" ? onClick : () => {}}
+      isRound={type === "round"}
+    >
       {icon}
       <div>{`${text}`}</div>
     </Wrapper>
@@ -78,4 +82,4 @@ const SelectedWrapper = styled(BaseWrapper)`
   background-color: red;
 `
 
-export { Tab as default, TabProps }
+export { Tab as default, TabProps, TabStatus }
