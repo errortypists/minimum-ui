@@ -20,9 +20,9 @@ const FlexPage: React.FC = () => {
       </ComponentWrapper>
       <CodeWrapper
         code={`<Flex>
-          <Box style={{ flex: 1 }}>FLEX1</Box>
-          <Box style={{ flex: 2 }}>FLEX2</Box>
-          <Box style={{ flex: 1 }}>FLEX3</Box>
+  <Box style={{ flex: 1 }}>FLEX1</Box>
+  <Box style={{ flex: 2 }}>FLEX2</Box>
+  <Box style={{ flex: 1 }}>FLEX3</Box>
 </Flex>`}
       />
       <ComponentWrapper>
@@ -36,11 +36,11 @@ const FlexPage: React.FC = () => {
       </ComponentWrapper>
       <CodeWrapper
         code={`<Flex direction="column" style={{ height: "300px" }}>
-          <Box style={{ flex: 2, height: "auto" }}>FLEX1</Box>
-          <Box style={{ flex: 1, height: "auto" }}>FLEX2</Box>
-          <Box style={{ flex: 3, height: "auto" }}>FLEX3</Box>
-          <Box style={{ flex: 1, height: "auto" }}>FLEX4</Box>
-          <Box style={{ flex: 2, height: "auto" }}>FLEX5</Box>
+  <Box style={{ flex: 2, height: "auto" }}>FLEX1</Box>
+  <Box style={{ flex: 1, height: "auto" }}>FLEX2</Box>
+  <Box style={{ flex: 3, height: "auto" }}>FLEX3</Box>
+  <Box style={{ flex: 1, height: "auto" }}>FLEX4</Box>
+  <Box style={{ flex: 2, height: "auto" }}>FLEX5</Box>
 </Flex>`}
       />
     </ContentsLayout>

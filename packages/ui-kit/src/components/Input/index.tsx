@@ -71,9 +71,10 @@ const Wrapper = styled.div`
   fieldset {
     text-align: left;
     position: absolute;
-    height: 47px;
+    height: 45px;
     inset: -9px 0px 0px;
     margin: 0px;
+    margin-top: 4px;
     padding: 0px 8px;
     pointer-events: none;
     border-radius: inherit;
@@ -95,7 +96,7 @@ const Wrapper = styled.div`
     float: unset;
     display: block;
     width: auto;
-    padding: 1px 8px 6px 8px;
+    padding: 0px 8px 6px 8px;
     height: 11px;
     max-width: 100%;
     -webkit-transition: max-width 100ms cubic-bezier(0, 0, 0.2, 1) 0ms;

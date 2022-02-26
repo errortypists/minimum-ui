@@ -1,4 +1,6 @@
 import { Flex, Button } from "ui-kit"
+import ArrowLeft from "../../components/Icon/ArrowLeft"
+import ArrowRight from "../../components/Icon/ArrowRight"
 import Github from "../../components/Icon/Github"
 import Layout from "../../components/Layout"
 
@@ -90,17 +92,17 @@ const ButtonPage: React.FC = () => {
       <ComponentDescription>Text with icon (left / right)</ComponentDescription>
       <ComponentWrapper>
         <Flex>
-          <Button leftIcon={<Github />} variant="outline">
+          <Button leftIcon={<ArrowLeft />} variant="outline">
             Left
           </Button>
-          <Button rightIcon={<Github />} variant="outline">
+          <Button rightIcon={<ArrowRight />} variant="outline">
             Right
           </Button>
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Button leftIcon={<Github />} variant="outline">Left</Button>
-<Button rightIcon={<Github />} variant="outline">Right</Button>`}
+        code={`<Button leftIcon={<ArrowLeft />} variant="outline">Left</Button>
+<Button rightIcon={<ArrowRight />} variant="outline">Right</Button>`}
       />
     </ContentsLayout>
   )
