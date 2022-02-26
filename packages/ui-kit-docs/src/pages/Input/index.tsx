@@ -1,33 +1,77 @@
 import { useState } from "react"
-import { Divider, Flex, Input } from "ui-kit"
+import { Input } from "ui-kit"
+import Layout from "../../components/Layout"
+
+const {
+  ContentsLayout,
+  ComponentWrapper,
+  ComponentTitle,
+  CodeWrapper,
+  Title,
+  Description,
+} = Layout
 
 const InputPage: React.FC = () => {
   const [id, setId] = useState("")
   const [password, setPassword] = useState("")
   return (
-    <Flex direction="column" align="flex-start">
-      <Input value={id} onChange={(value) => setId(value)} placeholder="ID" />
-      <Input
-        value={password}
-        onChange={(value) => setPassword(value)}
-        type="password"
-        placeholder="password"
+    <ContentsLayout>
+      <Title>Input</Title>
+      <Description>
+        A basic text field. Also the input component includes html input
+        attributes.
+      </Description>
+      <ComponentWrapper>
+        <Input
+          value={id}
+          placeholder="ID"
+          onChange={(value: string) => setId(value)}
+        />
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`const [id, setId] = useState("")
+<Input
+  value={id}
+  onChange={(value) => setId(value)}
+  placeholder="ID"
+/>`}
       />
-      <Divider />
-      <Input
-        value={id}
-        onChange={(value) => setId(value)}
-        title="ID"
-        width="300px"
+      <ComponentTitle>Width</ComponentTitle>
+      <ComponentWrapper>
+        <Input
+          value={password}
+          width="200px"
+          type="password"
+          placeholder="password"
+          onChange={(value: string) => setPassword(value)}
+        />
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`const [password, setPassword] = useState("")
+<Input
+  value={password}
+  width="200px"
+  onChange={(value) => setPassword(value)}
+  type="password"
+  placeholder="password"
+/>`}
       />
-      <Input
-        value={password}
-        onChange={(value) => setPassword(value)}
-        type="password"
-        title="Password"
-        width="300px"
+      <ComponentTitle>title</ComponentTitle>
+      <ComponentWrapper>
+        <Input
+          value={id}
+          onChange={(value: string) => setId(value)}
+          title="ID"
+        />
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`<Input
+  value={id}
+  onChange={(value) => setId(value)}
+  title="ID"
+/>`}
       />
-    </Flex>
+    </ContentsLayout>
   )
 }
 

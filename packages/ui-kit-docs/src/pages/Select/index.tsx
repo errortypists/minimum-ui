@@ -1,28 +1,68 @@
 import { Flex, Select } from "ui-kit"
+import Layout from "../../components/Layout"
+
+const {
+  ContentsLayout,
+  ComponentWrapper,
+  ComponentTitle,
+  CodeWrapper,
+  Title,
+  Description,
+} = Layout
 
 const SelectPage: React.FC = () => {
   return (
-    <Flex direction="column" align="flex-start">
-      <Select
-        options={[
-          { name: "첫번째", value: "first" },
-          { name: "두번째", value: "second" },
-          { name: "세번째", value: "third" },
-          { name: "네번째", value: "forth" },
-        ]}
-        onChange={(e) => console.log(e)}
+    <ContentsLayout>
+      <Title>Select</Title>
+      <Description>Select</Description>
+      <ComponentWrapper>
+        <Select
+          options={[
+            { name: "first", value: "first" },
+            { name: "second", value: "second" },
+            { name: "third", value: "third" },
+            { name: "forth", value: "forth" },
+          ]}
+          onChange={(value: string) => console.log(value)}
+        />
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`<Select
+  options={[
+    { name: "first", value: "first" },
+    { name: "second", value: "second" },
+    { name: "third", value: "third" },
+    { name: "forth", value: "forth" },
+  ]}
+  onChange={(value) => console.log(value)}
+/>`}
       />
-      <Select
-        width="200px"
-        options={[
-          { name: "첫번째", value: "first" },
-          { name: "두번째", value: "second" },
-          { name: "세번째", value: "third" },
-          { name: "네번째", value: "forth" },
-        ]}
-        onChange={(e) => console.log(e)}
+      <ComponentTitle>Width</ComponentTitle>
+      <ComponentWrapper>
+        <Select
+          width="200px"
+          options={[
+            { name: "first", value: "first" },
+            { name: "second", value: "second" },
+            { name: "third", value: "third" },
+            { name: "forth", value: "forth" },
+          ]}
+          onChange={(value: string) => console.log(value)}
+        />
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`<Select
+  width="200px"
+  options={[
+    { name: "first", value: "first" },
+    { name: "second", value: "second" },
+    { name: "third", value: "third" },
+    { name: "forth", value: "forth" },
+  ]}
+  onChange={(value) => console.log(value)}
+/>`}
       />
-    </Flex>
+    </ContentsLayout>
   )
 }
 

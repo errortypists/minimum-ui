@@ -59,10 +59,8 @@ const Pagination: React.FC<Props> = ({
   }
 
   useEffect(() => {
-    if (page !== currentPage) {
-      onChange(page)
-    }
-  }, [page, currentPage, onChange])
+    onChange(page)
+  }, [page, onChange])
 
   return (
     <Flex>
@@ -152,6 +150,7 @@ const IconWrapper = styled.div`
   width: 13px;
   height: 13px;
   line-height: 13px;
+  margin-bottom: 1px;
 `
 
 export default Pagination
