@@ -7,7 +7,7 @@ interface Props {
   zIndex?: number
   size?: number
   style?: React.CSSProperties
-  direction?: "left" | "right" | "top" | "bottom" | "none"
+  direction?: "left" | "right" | "top" | "bottom"
   onClickOutside?: () => void
 }
 
@@ -69,8 +69,6 @@ const Drawer: React.FC<Props> = (props) => {
     case "bottom":
       contentDirectionStyles = bottomContentDirectionStyle(size)
       break
-    case "none":
-      contentDirectionStyles = {}
   }
 
   const [isActive, setActive] = useState(false)
