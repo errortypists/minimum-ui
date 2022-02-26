@@ -17,10 +17,10 @@ interface Props {
 }
 
 const TITLE_DIRECTION = {
-  left: "row-reverse",
-  right: "row",
-  top: "column-reverse",
-  bottom: "column",
+  left: { direction: "row-reverse", margin: "margin-right: 8px" },
+  right: { direction: "row", margin: "margin-left: 8px" },
+  top: { direction: "column-reverse", margin: "margin-bottom: 4px" },
+  bottom: { direction: "column", margin: "margin-top: 4px" },
 }
 
 const convertHexColorToRGB = (hex: string, opacity: number = 1) => {
@@ -62,7 +62,7 @@ const Checkbox: React.FC<Props> = (props) => {
           {checked && <Icon name="check" color="#fff" />}
         </CheckboxIcon>
       </CheckboxWrapper>
-      {title !== "" && <Title>{title}</Title>}
+      {title !== "" && <Title direction={titleDirection}>{title}</Title>}
     </Wrapper>
   )
 }
@@ -77,6 +77,7 @@ const Wrapper = styled.div<any>`
   flex-direction: ${(props) =>
     `${
       TITLE_DIRECTION[props.direction as "left" | "right" | "top" | "bottom"]
+        .direction
     }`};
 `
 
@@ -152,8 +153,11 @@ const CheckboxIcon = styled(CheckboxSize)<any>`
 
 const Title = styled.div<any>`
   user-select: none;
-  margin-left: 8px;
-  padding-top: 2px;
+  ${(props) =>
+    `${
+      TITLE_DIRECTION[props.direction as "left" | "right" | "top" | "bottom"]
+        .margin
+    }`};
 `
 
 export default React.memo(Checkbox)

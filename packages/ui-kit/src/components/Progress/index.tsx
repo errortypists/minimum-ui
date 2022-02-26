@@ -7,6 +7,7 @@ interface Props {
   color?: string
   bgColor?: string
   progress?: number
+  speed?: number
 }
 
 const Circle: React.FC<Props> = (props) => {
@@ -57,7 +58,7 @@ const Circle: React.FC<Props> = (props) => {
 }
 
 const Circular: React.FC<Props> = (props) => {
-  const { progress = 85, color, bgColor } = props
+  const { progress = 85, color, bgColor, speed = 2000 } = props
   const circleRef = useRef(null)
   const size = 24
   const strokeWidth = 5
@@ -82,7 +83,7 @@ const Circular: React.FC<Props> = (props) => {
         r={radius}
         strokeWidth={strokeWidth}
       />
-      <RotationCircle>
+      <RotationCircle animationSpeed={speed}>
         <circle
           ref={circleRef}
           stroke={color}
@@ -98,11 +99,11 @@ const Circular: React.FC<Props> = (props) => {
   )
 }
 
-const RotationCircle = styled.g`
+const RotationCircle = styled.g<any>`
   transform-box: fill-box;
   transform-origin: center;
   animation-name: rotation;
-  animation-duration: 2000ms;
+  animation-duration: ${(props) => `${props.animationSpeed}ms`};
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   @keyframes rotation {

@@ -1,85 +1,4 @@
-// import React from "react"
-// import { QuickTable, Table } from "ui-kit"
-
-// const TabsPage: React.FC = () => {
-//   return (
-//     <div>
-//       <h3>직접 - 비율 30, 70, 0</h3>
-//       <Table.Root ratio={[30, 70, 0]}>
-//         <Table.Head>
-//           <Table.Row>
-//             <Table.Cell>head1</Table.Cell>
-//             <Table.Cell>head2</Table.Cell>
-//             <Table.Cell>head3</Table.Cell>
-//           </Table.Row>
-//         </Table.Head>
-//         <Table.Body>
-//           <Table.Row>
-//             <Table.Cell>{"cell1"}</Table.Cell>
-//             <Table.Cell>{"cell2"}</Table.Cell>
-//             <Table.Cell>{"cell3"}</Table.Cell>
-//           </Table.Row>
-//         </Table.Body>
-//       </Table.Root>
-
-//       <h3>비율 10, 10, 80</h3>
-//       <QuickTable
-//         ratio={[10, 10, 80]}
-//         header={["헤더1", "헤더2", "헤더3"]}
-//         data={[
-//           { name: "김XX", phone: "010-0000-0000", address: "서울1" },
-//           { name: "이XX", phone: "010-1111-1111", address: "서울2" },
-//           { name: "박XX", phone: "010-2222-2222", address: "서울3" },
-//         ]}
-//         createRow={(item: { name: string; phone: string; address: string }) => {
-//           return [
-//             <div style={{ color: "red" }}>{item.name}</div>,
-//             <div style={{ color: "green" }}>{item.phone}</div>,
-//             <div style={{ color: "blue" }}>{item.address}</div>,
-//           ]
-//         }}
-//       />
-//       <h3>비율 80, 10, 10</h3>
-//       <QuickTable
-//         ratio={[80, 10, 10]}
-//         header={["헤더1", "헤더2", "헤더3"]}
-//         data={[
-//           { name: "김XX", phone: "010-0000-0000", address: "서울1" },
-//           { name: "이XX", phone: "010-1111-1111", address: "서울2" },
-//           { name: "박XX", phone: "010-2222-2222", address: "서울3" },
-//         ]}
-//         createRow={(item: { name: string; phone: string; address: string }) => {
-//           return [
-//             <div style={{ color: "red" }}>{item.name}</div>,
-//             <div style={{ color: "green" }}>{item.phone}</div>,
-//             <div style={{ color: "blue" }}>{item.address}</div>,
-//           ]
-//         }}
-//       />
-//       <h3>비율 0, 10, 10</h3>
-//       <QuickTable
-//         ratio={[0, 10, 10]}
-//         header={["헤더1", "헤더2", "헤더3"]}
-//         data={[
-//           { name: "김XX", phone: "010-0000-0000", address: "서울1" },
-//           { name: "이XX", phone: "010-1111-1111", address: "서울2" },
-//           { name: "박XX", phone: "010-2222-2222", address: "서울3" },
-//         ]}
-//         createRow={(item: { name: string; phone: string; address: string }) => {
-//           return [
-//             <div style={{ color: "red" }}>{item.name}</div>,
-//             <div style={{ color: "green" }}>{item.phone}</div>,
-//             <div style={{ color: "blue" }}>{item.address}</div>,
-//           ]
-//         }}
-//       />
-//     </div>
-//   )
-// }
-
-// export default TabsPage
-
-import { Flex, Radio, QuickTable } from "ui-kit"
+import { Flex, QuickTable } from "ui-kit"
 
 import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
@@ -110,32 +29,32 @@ const QuickTablePage: React.FC = () => {
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <QuickTable
-            header={["이름", "전화번호", "주소"]}
+            header={["Name", "Cell Phone", "Address"]}
             data={[
-              { name: "김XX", phone: "010-0000-0000", address: "서울1" },
-              { name: "이XX", phone: "010-1111-1111", address: "서울2" },
-              { name: "박XX", phone: "010-2222-2222", address: "서울3" },
+              { name: "Charles", phone: "010-0000-0000", address: "Seoul" },
+              { name: "John", phone: "010-1111-1111", address: "New York" },
+              { name: "Alice", phone: "010-2222-2222", address: "Rome" },
             ]}
             createRow={(item) => [
-              <div style={{ color: "red" }}>{item.name}</div>,
-              <div style={{ color: "green" }}>{item.phone}</div>,
-              <div style={{ color: "blue" }}>{item.address}</div>,
+              <div>{item.name}</div>,
+              <div>{item.phone}</div>,
+              <div>{item.address}</div>,
             ]}
           />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
         code={`<QuickTable
-  header={["이름", "전화번호", "주소"]}
+  header={["Name", "Cell Phone", "Address"]}
   data={[
-    { name: "김XX", phone: "010-0000-0000", address: "서울1" },
-    { name: "이XX", phone: "010-1111-1111", address: "서울2" },
-    { name: "박XX", phone: "010-2222-2222", address: "서울3" },
+    { name: "Charles", phone: "010-0000-0000", address: "Seoul" },
+    { name: "John", phone: "010-1111-1111", address: "New York" },
+    { name: "Alice", phone: "010-2222-2222", address: "Rome" },
   ]}
   createRow={(item) => [
-      <div style={{ color: "red" }}>{item.name}</div>,
-      <div style={{ color: "green" }}>{item.phone}</div>,
-      <div style={{ color: "blue" }}>{item.address}</div>,
+    <div>{item.name}</div>,
+    <div>{item.phone}</div>,
+    <div>{item.address}</div>,
   ]}
 />`}
       />
@@ -148,11 +67,51 @@ const QuickTablePage: React.FC = () => {
         <Flex direction="row" justify="center" gap={20}>
           <QuickTable
             ratio={[0, 10, 10]}
-            header={["이름", "전화번호", "주소"]}
+            header={["Name", "Cell Phone", "Address"]}
             data={[
-              { name: "김XX", phone: "010-0000-0000", address: "서울1" },
-              { name: "이XX", phone: "010-1111-1111", address: "서울2" },
-              { name: "박XX", phone: "010-2222-2222", address: "서울3" },
+              { name: "Charles", phone: "010-0000-0000", address: "Seoul" },
+              { name: "John", phone: "010-1111-1111", address: "New York" },
+              { name: "Alice", phone: "010-2222-2222", address: "Rome" },
+            ]}
+            createRow={(item) => [
+              <div>{item.name}</div>,
+              <div>{item.phone}</div>,
+              <div>{item.address}</div>,
+            ]}
+          />
+        </Flex>
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`<QuickTable
+  ratio={[0, 10, 10]}
+  header={["Name", "Cell Phone", "Address"]}
+  data={[
+    { name: "Charles", phone: "010-0000-0000", address: "Seoul" },
+    { name: "John", phone: "010-1111-1111", address: "New York" },
+    { name: "Alice", phone: "010-2222-2222", address: "Rome" },
+  ]}
+  createRow={(item) => [
+    <div>{item.name}</div>,
+    <div>{item.phone}</div>,
+    <div>{item.address}</div>,
+  ]}
+/>`}
+      />
+
+      <ComponentTitle>Custom Cell</ComponentTitle>
+      <ComponentDescription>
+        테이블을 구성하는 각각의 셀에 스타일 혹은 원하는 코드를 집어넣어 셀을
+        그려낼 수 있습니다. createRow 속성의 매개변수에는 각 행에 해당되는
+        객체가 담겨있습니다.
+      </ComponentDescription>
+      <ComponentWrapper>
+        <Flex direction="row" justify="center" gap={20}>
+          <QuickTable
+            header={["Name", "Cell Phone", "Address"]}
+            data={[
+              { name: "Charles", phone: "010-0000-0000", address: "Seoul" },
+              { name: "John", phone: "010-1111-1111", address: "New York" },
+              { name: "Alice", phone: "010-2222-2222", address: "Rome" },
             ]}
             createRow={(item) => [
               <div style={{ color: "red" }}>{item.name}</div>,
@@ -164,12 +123,11 @@ const QuickTablePage: React.FC = () => {
       </ComponentWrapper>
       <CodeWrapper
         code={`<QuickTable
-  ratio={[0, 10, 10]}
-  header={["이름", "전화번호", "주소"]}
+  header={["Name", "Cell Phone", "Address"]}
   data={[
-    { name: "김XX", phone: "010-0000-0000", address: "서울1" },
-    { name: "이XX", phone: "010-1111-1111", address: "서울2" },
-    { name: "박XX", phone: "010-2222-2222", address: "서울3" },
+    { name: "Charles", phone: "010-0000-0000", address: "Seoul" },
+    { name: "John", phone: "010-1111-1111", address: "New York" },
+    { name: "Alice", phone: "010-2222-2222", address: "Rome" },
   ]}
   createRow={(item) => [
     <div style={{ color: "red" }}>{item.name}</div>,
