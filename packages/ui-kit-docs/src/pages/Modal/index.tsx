@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { Flex, Button, Modal } from "ui-kit"
+import { Flex, Button, Modal, Typography } from "ui-kit"
 
 import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
 import { PropsBox } from "../../components"
+import styled from "styled-components"
 
 const {
   ContentsLayout,
@@ -37,39 +38,55 @@ const ModalPage: React.FC = () => {
             {"Click Me!"}
           </Button>
           {isOpen && (
-            <Modal onClickOutside={() => setOpen(false)}>
-              <div
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  background: "#ffffff",
-                }}
-              >
-                hello world
-              </div>
+            <Modal
+              style={{
+                width: "80%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+              onClickOutside={() => setOpen(false)}
+            >
+              <Wrapper>
+                <Typography.Title>알림</Typography.Title>
+                <Typography.Body>기본적인 모달</Typography.Body>
+                <Button onClick={() => setOpen(false)}>닫기</Button>
+              </Wrapper>
             </Modal>
           )}
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
         code={`{isOpen && (
-  <Modal onClickOutside={() => setOpen(false)}>
-    <div
-      style={{
-        width: "200px",
-        height: "200px",
-        background: "#ffffff",
-      }}
-    >
-      hello world
-    </div>
+  <Modal
+    style={{
+      width: "80%",
+      display: "flex",
+      justifyContent: "center",
+    }}
+    onClickOutside={() => setOpen(false)}
+  >
+    <Wrapper>
+      <Typography.Title>알림</Typography.Title>
+      <Typography.Body>기본적인 모달</Typography.Body>
+      <Button onClick={() => setOpen(false)}>닫기</Button>
+    </Wrapper>
   </Modal>
 )}`}
       />
-      <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }
 
 export default ModalPage
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 200px;
+  max-width: 360px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+`

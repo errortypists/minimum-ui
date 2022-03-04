@@ -130,7 +130,10 @@ const ContentsLayout: React.FC = (props) => {
       </LeftWrapper>
       <RightWrapper>
         <Header />
-        <RightContentWrapper>{children}</RightContentWrapper>
+        <RightContentWrapper>
+          {children}
+          <PropsBox hasTitle={true} name={selectedMenu?.id || ""} />
+        </RightContentWrapper>
         <Footer />
       </RightWrapper>
     </MainLayout>
