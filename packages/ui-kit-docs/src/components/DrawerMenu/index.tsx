@@ -68,9 +68,10 @@ const Header: React.FC = () => {
 }
 
 const Wrapper = styled.div`
-  width: 200px;
-  height: 200px;
-  background: white;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 `
 
 const StyledLink = styled(Link)`

@@ -4,11 +4,14 @@ import { Flex, QuickTable } from "ui-kit"
 import Color from "../../assets/styles/color"
 import components, { ItemProps } from "../../assets/components"
 
+import Layout from "../../components/Layout"
+
 interface Props {
   name: string
+  hasTitle?: boolean
 }
 
-const PropsBox: React.FC<Props> = ({ name }) => {
+const PropsBox: React.FC<Props> = ({ name, hasTitle = false }) => {
   const urlRemoveName = name ? name.toLocaleLowerCase() : ""
   const typeOfButtonProps = (arr: string[]) => {
     return arr.map((_: string, index: number) => (
@@ -24,27 +27,34 @@ const PropsBox: React.FC<Props> = ({ name }) => {
   return (
     <Flex gap={0} direction="column" align="flex-start">
       <Flex style={{ width: "100%", overflowX: "auto" }}>
-        <Flex style={{ minWidth: "500px" }}>
-          {hasPropsTable ? (
-            <QuickTable
-              ratio={[20, 23, 20, 37]}
-              header={["Name", "Type", "Default", "Description"]}
-              data={components[urlRemoveName].props}
-              createRow={(item: ItemProps) => {
-                return [
-                  <div>{item.name}</div>,
-                  <div>{typeOfButtonProps(item.type)}</div>,
-                  <div>{item.default || "-"}</div>,
-                  <div>{item.description}</div>,
-                ]
-              }}
-            />
+        <Flex
+          direction="column"
+          align="flex-start"
+          style={{ minWidth: "500px" }}
+        >
+          {hasPropsTable && hasTitle ? (
+            <Layout.ComponentTitle>Props</Layout.ComponentTitle>
           ) : (
+            <></>
+          )}
+          {hasPropsTable ? (
             <>
-              <p>{urlRemoveName}</p>
-              <br />
-              <p>not found props item</p>
+              <QuickTable
+                ratio={[20, 23, 20, 37]}
+                header={["Name", "Type", "Default", "Description"]}
+                data={components[urlRemoveName].props}
+                createRow={(item: ItemProps) => {
+                  return [
+                    <div>{item.name}</div>,
+                    <div>{typeOfButtonProps(item.type)}</div>,
+                    <div>{item.default || "-"}</div>,
+                    <div>{item.description}</div>,
+                  ]
+                }}
+              />
             </>
+          ) : (
+            <></>
           )}
         </Flex>
       </Flex>
