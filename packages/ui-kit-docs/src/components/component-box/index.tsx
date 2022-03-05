@@ -3,13 +3,22 @@ import { Link } from "react-router-dom"
 import { Grid } from "ui-kit"
 import styled from "styled-components"
 
-import BaseStyle from "../../assets/styles/base"
 import Color, { BaseColor } from "../../assets/styles/color"
-import components from "../../assets/components"
+import components, { ComponentProps } from "../../assets/components"
 import useStatus from "../../hooks/useStatus"
 
-const ComponentBox: React.FC = () => {
+const sortedComponents = (() => {
   const names = Object.keys(components)
+  names.sort()
+  let newComponentSet: ComponentProps = {}
+  names.forEach((name) => {
+    newComponentSet[name] = components[name]
+  })
+  return newComponentSet
+})()
+
+const ComponentBox: React.FC = () => {
+  const names = Object.keys(sortedComponents)
   const [width, setWidth] = useState(window.innerWidth)
   const { selectedMenu, setSelectedMenu } = useStatus()
 
@@ -42,7 +51,7 @@ const ComponentBox: React.FC = () => {
             }}
             data-selected={isSelected}
           >
-            {`<${components[menuName].displayName}/>`}
+            {`<${sortedComponents[menuName].displayName}/>`}
           </BoxWrapper>
         )
       })}
