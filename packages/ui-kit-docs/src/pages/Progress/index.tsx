@@ -2,9 +2,7 @@ import React from "react"
 
 import { Progress, Flex } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 
 const {
   ContentsLayout,
@@ -17,8 +15,6 @@ const {
 } = Layout
 
 const ProgressPage: React.FC = () => {
-  const { selectedMenu } = useStatus()
-
   return (
     <ContentsLayout>
       <Title>Progress</Title>
@@ -127,8 +123,6 @@ const ProgressPage: React.FC = () => {
 <Progress type={"circular"} progress={60} />
 <Progress type={"circular"} progress={60} speed={3500} />`}
       />
-      <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }

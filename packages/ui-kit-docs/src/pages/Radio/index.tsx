@@ -1,8 +1,6 @@
 import { Flex, Radio } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 
 const {
   ContentsLayout,
@@ -15,8 +13,6 @@ const {
 } = Layout
 
 const RadioPage: React.FC = () => {
-  const { selectedMenu } = useStatus()
-
   return (
     <ContentsLayout>
       <Title>Radio</Title>
@@ -84,8 +80,6 @@ const RadioPage: React.FC = () => {
 <Radio size="medium" checked={true} />
 <Radio size="large" checked={true} />`}
       />
-      <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }

@@ -1,9 +1,7 @@
 import { useState } from "react"
 import { Flex, Button, Drawer, Typography } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 import styled from "styled-components"
 
 const {
@@ -17,7 +15,6 @@ const {
 } = Layout
 
 const DrawerPage: React.FC = () => {
-  const { selectedMenu } = useStatus()
   const [isOpen, setOpen] = useState(false)
   const [isOpenLeft, setOpenLeft] = useState(false)
   const [isOpenRight, setOpenRight] = useState(false)
@@ -200,8 +197,6 @@ const DrawerPage: React.FC = () => {
   </Drawer>
 )}`}
       />
-      <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }
