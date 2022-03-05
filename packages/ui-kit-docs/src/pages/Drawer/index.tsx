@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { Flex, Button, Drawer } from "ui-kit"
+import { Flex, Button, Drawer, Typography } from "ui-kit"
 
 import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
 import { PropsBox } from "../../components"
+import styled from "styled-components"
 
 const {
   ContentsLayout,
@@ -42,11 +43,13 @@ const DrawerPage: React.FC = () => {
             variant="outline"
             onClick={() => setOpen(!isOpen)}
           >
-            {"Click Me!"}
+            {"Basic Drawer"}
           </Button>
           {isOpen && (
             <Drawer isOpen={isOpen} onClickOutside={() => setOpen(false)}>
-              <div>hello world</div>
+              <Wrapper>
+                <Typography.Title>Basic Drawer</Typography.Title>
+              </Wrapper>
             </Drawer>
           )}
         </Flex>
@@ -84,7 +87,9 @@ const DrawerPage: React.FC = () => {
               direction={"left"}
               onClickOutside={() => setOpenLeft(false)}
             >
-              <div>Left</div>
+              <Wrapper>
+                <Typography.Title>Left</Typography.Title>
+              </Wrapper>
             </Drawer>
           )}
           {isOpenRight && (
@@ -93,7 +98,9 @@ const DrawerPage: React.FC = () => {
               direction={"right"}
               onClickOutside={() => setOpenRight(false)}
             >
-              <div>Right</div>
+              <Wrapper>
+                <Typography.Title>Right</Typography.Title>
+              </Wrapper>
             </Drawer>
           )}
           {isOpenTop && (
@@ -102,7 +109,9 @@ const DrawerPage: React.FC = () => {
               direction={"top"}
               onClickOutside={() => setOpenTop(false)}
             >
-              <div>Top</div>
+              <Wrapper>
+                <Typography.Title>Top</Typography.Title>
+              </Wrapper>
             </Drawer>
           )}
           {isOpenBottom && (
@@ -111,7 +120,9 @@ const DrawerPage: React.FC = () => {
               direction={"bottom"}
               onClickOutside={() => setOpenBottom(false)}
             >
-              <div>Bottom</div>
+              <Wrapper>
+                <Typography.Title>Bottom</Typography.Title>
+              </Wrapper>
             </Drawer>
           )}
         </Flex>
@@ -150,7 +161,9 @@ const DrawerPage: React.FC = () => {
               <Button variant="outline" onClick={() => setOpenFull(false)}>
                 {"Close"}
               </Button>
-              <div>Full</div>
+              <Wrapper>
+                <Typography.Title>Full</Typography.Title>
+              </Wrapper>
             </Drawer>
           )}
           {isOpen320 && (
@@ -159,7 +172,9 @@ const DrawerPage: React.FC = () => {
               size={320}
               onClickOutside={() => setOpen320(false)}
             >
-              <div>320</div>
+              <Wrapper>
+                <Typography.Title>320</Typography.Title>
+              </Wrapper>
             </Drawer>
           )}
           {isOpenDefault && (
@@ -167,7 +182,9 @@ const DrawerPage: React.FC = () => {
               isOpen={isOpenDefault}
               onClickOutside={() => setOpenDefault(false)}
             >
-              <div>default</div>
+              <Wrapper>
+                <Typography.Title>default</Typography.Title>
+              </Wrapper>
             </Drawer>
           )}
         </Flex>
@@ -190,3 +207,11 @@ const DrawerPage: React.FC = () => {
 }
 
 export default DrawerPage
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
