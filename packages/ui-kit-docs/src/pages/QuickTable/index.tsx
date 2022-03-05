@@ -1,8 +1,6 @@
 import { Flex, QuickTable } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 
 const {
   ContentsLayout,
@@ -15,8 +13,6 @@ const {
 } = Layout
 
 const QuickTablePage: React.FC = () => {
-  const { selectedMenu } = useStatus()
-
   return (
     <ContentsLayout>
       <Title>QuickTable</Title>
@@ -136,8 +132,6 @@ const QuickTablePage: React.FC = () => {
   ]}
 />`}
       />
-      <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }

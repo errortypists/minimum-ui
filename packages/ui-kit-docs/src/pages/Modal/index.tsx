@@ -1,9 +1,7 @@
 import { useState } from "react"
 import { Flex, Button, Modal, Typography } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 import styled from "styled-components"
 
 const {
@@ -16,7 +14,6 @@ const {
 } = Layout
 
 const ModalPage: React.FC = () => {
-  const { selectedMenu } = useStatus()
   const [isOpen, setOpen] = useState(false)
 
   return (

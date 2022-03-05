@@ -1,8 +1,6 @@
 import { Checkbox, Flex } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 
 const {
   ContentsLayout,
@@ -15,8 +13,6 @@ const {
 } = Layout
 
 const CheckboxPage: React.FC = () => {
-  const { selectedMenu } = useStatus()
-
   return (
     <ContentsLayout>
       <Title>Checkbox</Title>
@@ -76,8 +72,6 @@ const CheckboxPage: React.FC = () => {
 <Checkbox size="medium" checked={true} />
 <Checkbox size="large" checked={true} />`}
       />
-      <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }

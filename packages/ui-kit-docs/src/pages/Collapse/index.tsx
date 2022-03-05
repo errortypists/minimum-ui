@@ -2,9 +2,7 @@ import React, { useState } from "react"
 
 import { Collapse, Button, Flex } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 import styled from "styled-components"
 
 const {
@@ -18,7 +16,6 @@ const {
 } = Layout
 
 const CollapsePage: React.FC = () => {
-  const { selectedMenu } = useStatus()
   const [isOpen1, setOpen1] = useState(false)
   const [isOpen2, setOpen2] = useState(true)
   const [isOpen3, setOpen3] = useState(true)
@@ -102,7 +99,6 @@ const CollapsePage: React.FC = () => {
   </div>
 </Collapse>`}
       />
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }

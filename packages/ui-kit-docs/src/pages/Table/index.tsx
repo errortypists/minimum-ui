@@ -1,8 +1,6 @@
 import { Flex, Table } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 
 const {
   ContentsLayout,
@@ -15,8 +13,6 @@ const {
 } = Layout
 
 const TablePage: React.FC = () => {
-  const { selectedMenu } = useStatus()
-
   return (
     <ContentsLayout>
       <Title>Table</Title>
@@ -126,8 +122,6 @@ const TablePage: React.FC = () => {
 </Table.Body>
 </Table.Root>`}
       />
-      <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }

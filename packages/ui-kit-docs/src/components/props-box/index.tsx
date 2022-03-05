@@ -26,17 +26,17 @@ const PropsBox: React.FC<Props> = ({ name, hasTitle = false }) => {
 
   return (
     <Flex gap={0} direction="column" align="flex-start">
+      {hasPropsTable && hasTitle ? (
+        <Layout.ComponentTitle>Props</Layout.ComponentTitle>
+      ) : (
+        <></>
+      )}
       <Flex style={{ width: "100%", overflowX: "auto" }}>
         <Flex
           direction="column"
           align="flex-start"
           style={{ minWidth: "500px" }}
         >
-          {hasPropsTable && hasTitle ? (
-            <Layout.ComponentTitle>Props</Layout.ComponentTitle>
-          ) : (
-            <></>
-          )}
           {hasPropsTable ? (
             <>
               <QuickTable

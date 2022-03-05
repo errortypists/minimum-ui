@@ -1,9 +1,7 @@
 import { useState } from "react"
-import { Flex, IconArrowRight, Tabs } from "ui-kit"
+import { Flex, Tabs } from "ui-kit"
 
-import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
-import { PropsBox } from "../../components"
 import Bell from "../../components/Icon/Bell"
 import Folder from "../../components/Icon/Folder"
 import Cart from "../../components/Icon/Cart"
@@ -20,7 +18,6 @@ const {
 } = Layout
 
 const TabsPage: React.FC = () => {
-  const { selectedMenu } = useStatus()
   const tab1List = [
     { text: "Tab 1", value: "tab1" },
     { text: "Tab 2", value: "tab2" },
@@ -147,8 +144,6 @@ const tab2List = [
         code={`<Tabs headers={tab3List} type="round" />
 <Tabs headers={tab3List} type="rectangle" />`}
       />
-      <ComponentTitle>Props</ComponentTitle>
-      <PropsBox name={selectedMenu?.id || ""} />
     </ContentsLayout>
   )
 }
