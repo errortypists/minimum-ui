@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import { SVGUniqueID } from "react-svg-unique-id"
+import { BaseColor } from "assets/styles/color"
 
 interface Props {
   type: "circle" | "linear" | "circular"
@@ -159,8 +160,8 @@ const Linear: React.FC<Props> = (props) => {
 const Progress: React.FC<Props> = (props) => {
   const { type } = props
   const defaultProps = {
-    color: "#00ff00",
-    bgColor: "#dbdbdb",
+    color: BaseColor.inputBorder,
+    bgColor: BaseColor.border,
     ...props,
   }
   let Component = undefined

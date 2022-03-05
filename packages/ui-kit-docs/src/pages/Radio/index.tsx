@@ -1,4 +1,5 @@
 import { Flex, Radio } from "ui-kit"
+import { BaseColor } from "../../assets/styles/color"
 
 import Layout from "../../components/Layout"
 
@@ -36,35 +37,35 @@ const RadioPage: React.FC = () => {
 <Radio title={"3"} disabled={true} />
 <Radio title={"4"} checked={true} disabled={true} />`}
       />
-      <ComponentTitle>Title direction</ComponentTitle>
+      <ComponentTitle>Direction</ComponentTitle>
       <ComponentDescription>
         라디오의 텍스트 위치를 결정합니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Radio title={"Right"} checked={true} />
-          <Radio title={"Top"} checked={true} titleDirection={"top"} />
-          <Radio title={"Bottom"} checked={true} titleDirection={"bottom"} />
-          <Radio title={"Left"} checked={true} titleDirection={"left"} />
+          <Radio title={"Top"} checked={true} direction={"top"} />
+          <Radio title={"Bottom"} checked={true} direction={"bottom"} />
+          <Radio title={"Left"} checked={true} direction={"left"} />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
         code={`<Radio title={"Right"} checked={true} />
-<Radio title={"Top"} checked={true} titleDirection={"top"} />
-<Radio title={"Bottom"} checked={true} titleDirection={"bottom"} />
-<Radio title={"Left"} checked={true} titleDirection={"left"} />`}
+<Radio title={"Top"} checked={true} direction={"top"} />
+<Radio title={"Bottom"} checked={true} direction={"bottom"} />
+<Radio title={"Left"} checked={true} direction={"left"} />`}
       />
       <ComponentTitle>Color</ComponentTitle>
       <ComponentDescription>라디오의 색깔을 지정합니다</ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
-          <Radio title={"Title 1"} checked={true} color={"#ff00ff"} />
-          <Radio title={"Title 2"} color={"#ff00ff"} />
+          <Radio title={"Title 1"} checked={true} color={BaseColor.primary} />
+          <Radio title={"Title 2"} color={BaseColor.primary} />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Radio title={"Title 1"} checked={true} color={"#ff00ff"} />
-<Radio title={"Title 2"} color={"#ff00ff"} />`}
+        code={`<Radio title={"Title 1"} checked={true} color="#3b5bdb" />
+<Radio title={"Title 2"} color="#3b5bdb" />`}
       />
       <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>라디오의 사이즈를 지정합니다.</ComponentDescription>

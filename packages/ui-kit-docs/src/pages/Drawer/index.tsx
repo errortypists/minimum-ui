@@ -15,14 +15,14 @@ const {
 } = Layout
 
 const DrawerPage: React.FC = () => {
-  const [isOpen, setOpen] = useState(false)
-  const [isOpenLeft, setOpenLeft] = useState(false)
-  const [isOpenRight, setOpenRight] = useState(false)
-  const [isOpenTop, setOpenTop] = useState(false)
-  const [isOpenBottom, setOpenBottom] = useState(false)
-  const [isOpenFull, setOpenFull] = useState(false)
-  const [isOpen320, setOpen320] = useState(false)
-  const [isOpenDefault, setOpenDefault] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [openLeft, setOpenLeft] = useState(false)
+  const [openRight, setOpenRight] = useState(false)
+  const [openTop, setOpenTop] = useState(false)
+  const [openBottom, setOpenBottom] = useState(false)
+  const [openFull, setOpenFull] = useState(false)
+  const [open320, setOpen320] = useState(false)
+  const [openDefault, setOpenDefault] = useState(false)
 
   return (
     <ContentsLayout>
@@ -38,12 +38,12 @@ const DrawerPage: React.FC = () => {
           <Button
             width="120px"
             variant="outline"
-            onClick={() => setOpen(!isOpen)}
+            onClick={() => setOpen(!open)}
           >
             {"Basic Drawer"}
           </Button>
-          {isOpen && (
-            <Drawer isOpen={isOpen} onClickOutside={() => setOpen(false)}>
+          {open && (
+            <Drawer open={open} onClickOutside={() => setOpen(false)}>
               <Wrapper>
                 <Typography.Title>Basic Drawer</Typography.Title>
               </Wrapper>
@@ -52,9 +52,9 @@ const DrawerPage: React.FC = () => {
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`{isOpen && (
+        code={`{open && (
   <Drawer
-    isOpen={isOpen}
+    open={open}
     onClickOutside={() => setOpen(false)}>
     <div>hello world</div>
   </Drawer>
@@ -66,21 +66,21 @@ const DrawerPage: React.FC = () => {
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
-          <Button variant="outline" onClick={() => setOpenLeft(!isOpen)}>
+          <Button variant="outline" onClick={() => setOpenLeft(!open)}>
             {"Left"}
           </Button>
-          <Button variant="outline" onClick={() => setOpenRight(!isOpen)}>
+          <Button variant="outline" onClick={() => setOpenRight(!open)}>
             {"Right"}
           </Button>
-          <Button variant="outline" onClick={() => setOpenTop(!isOpen)}>
+          <Button variant="outline" onClick={() => setOpenTop(!open)}>
             {"Top"}
           </Button>
-          <Button variant="outline" onClick={() => setOpenBottom(!isOpen)}>
+          <Button variant="outline" onClick={() => setOpenBottom(!open)}>
             {"Bottom"}
           </Button>
-          {isOpenLeft && (
+          {openLeft && (
             <Drawer
-              isOpen={isOpenLeft}
+              open={openLeft}
               direction={"left"}
               onClickOutside={() => setOpenLeft(false)}
             >
@@ -89,9 +89,9 @@ const DrawerPage: React.FC = () => {
               </Wrapper>
             </Drawer>
           )}
-          {isOpenRight && (
+          {openRight && (
             <Drawer
-              isOpen={isOpenRight}
+              open={openRight}
               direction={"right"}
               onClickOutside={() => setOpenRight(false)}
             >
@@ -100,9 +100,9 @@ const DrawerPage: React.FC = () => {
               </Wrapper>
             </Drawer>
           )}
-          {isOpenTop && (
+          {openTop && (
             <Drawer
-              isOpen={isOpenTop}
+              open={openTop}
               direction={"top"}
               onClickOutside={() => setOpenTop(false)}
             >
@@ -111,9 +111,9 @@ const DrawerPage: React.FC = () => {
               </Wrapper>
             </Drawer>
           )}
-          {isOpenBottom && (
+          {openBottom && (
             <Drawer
-              isOpen={isOpenBottom}
+              open={openBottom}
               direction={"bottom"}
               onClickOutside={() => setOpenBottom(false)}
             >
@@ -125,9 +125,9 @@ const DrawerPage: React.FC = () => {
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`{isOpenLeft && (
+        code={`{openLeft && (
   <Drawer
-    isOpen={isOpenLeft}
+    open={openLeft}
     direction={"left"}
     onClickOutside={() => setOpenLeft(false)}>
     <div>Left</div>
@@ -140,18 +140,18 @@ const DrawerPage: React.FC = () => {
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
-          <Button variant="outline" onClick={() => setOpenFull(!isOpen)}>
+          <Button variant="outline" onClick={() => setOpenFull(!open)}>
             {"Full"}
           </Button>
-          <Button variant="outline" onClick={() => setOpen320(!isOpen)}>
+          <Button variant="outline" onClick={() => setOpen320(!open)}>
             {"320"}
           </Button>
-          <Button variant="outline" onClick={() => setOpenDefault(!isOpen)}>
+          <Button variant="outline" onClick={() => setOpenDefault(!open)}>
             {"default"}
           </Button>
-          {isOpenFull && (
+          {openFull && (
             <Drawer
-              isOpen={isOpenFull}
+              open={openFull}
               size={document.querySelector("html")?.clientWidth}
               onClickOutside={() => setOpenFull(false)}
             >
@@ -163,9 +163,9 @@ const DrawerPage: React.FC = () => {
               </Wrapper>
             </Drawer>
           )}
-          {isOpen320 && (
+          {open320 && (
             <Drawer
-              isOpen={isOpen320}
+              open={open320}
               size={320}
               onClickOutside={() => setOpen320(false)}
             >
@@ -174,9 +174,9 @@ const DrawerPage: React.FC = () => {
               </Wrapper>
             </Drawer>
           )}
-          {isOpenDefault && (
+          {openDefault && (
             <Drawer
-              isOpen={isOpenDefault}
+              open={openDefault}
               onClickOutside={() => setOpenDefault(false)}
             >
               <Wrapper>
@@ -187,9 +187,9 @@ const DrawerPage: React.FC = () => {
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`{isOpenFull && (
+        code={`{openFull && (
   <Drawer
-    isOpen={isOpenFull}
+    open={openFull}
     size={document.querySelector("html")?.clientWidth}
     onClickOutside={() => setOpenFull(false)}
   >

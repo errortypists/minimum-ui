@@ -3,14 +3,14 @@ import styled, { css } from "styled-components"
 
 interface Props {
   style?: React.CSSProperties
-  isOpen?: boolean
+  open?: boolean
   speed?: number
   width?: number
 }
 
 const Collapse: React.FC<Props> = (props) => {
   const [childHeight, setChildHeight] = useState("auto")
-  const { children, isOpen = false, speed = 200, width } = props
+  const { children, open = false, speed = 200, width } = props
   const wrapperWidth = width ? `${width}px` : "100%"
   const childRef = useRef<HTMLDivElement>(null)
 
@@ -19,7 +19,7 @@ const Collapse: React.FC<Props> = (props) => {
   }, [])
   return (
     <Wrapper
-      isOpen={isOpen}
+      open={open}
       childHeight={childHeight}
       speed={speed}
       width={wrapperWidth}
@@ -33,7 +33,7 @@ const Collapse: React.FC<Props> = (props) => {
 
 const Wrapper = styled.div<any>`
   ${(props) =>
-    props.isOpen
+    props.open
       ? css`
           height: ${props.childHeight};
         `

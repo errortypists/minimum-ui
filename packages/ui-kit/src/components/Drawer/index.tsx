@@ -3,7 +3,7 @@ import { createPortal } from "react-dom"
 import styled, { css } from "styled-components"
 
 interface Props {
-  isOpen: boolean
+  open: boolean
   zIndex?: number
   size?: number
   style?: React.CSSProperties
@@ -54,7 +54,7 @@ const Drawer: React.FC<Props> = (props) => {
     children,
     onClickOutside,
     direction = "left",
-    isOpen,
+    open,
     size = 200,
   } = props
 
@@ -75,12 +75,12 @@ const Drawer: React.FC<Props> = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setActive(isOpen)
+      setActive(open)
     }, 200)
-  }, [isOpen])
+  }, [open])
 
   return createPortal(
-    <Wrapper isOpen={isOpen}>
+    <Wrapper open={open}>
       <Dimmed onClick={onClickOutside} zIndex={zIndex} />
       <Content
         isActive={isActive}
@@ -103,7 +103,7 @@ const Wrapper = styled.div<any>`
   position: fixed;
   top: 0;
   left: 0;
-  display: ${(props) => `${props.isOpen ? "flex" : "none"}`};
+  display: ${(props) => `${props.open ? "flex" : "none"}`};
   justify-content: center;
   align-items: center;
 `
