@@ -1,3 +1,4 @@
+import { BaseColor } from "assets/styles/color"
 import React, { useMemo } from "react"
 import styled from "styled-components"
 
@@ -7,7 +8,7 @@ interface HeaderItem {
   text: string
   value?: string
   status?: string
-  icon?: any
+  icon?: React.ReactElement
 }
 
 interface Props {
@@ -46,6 +47,7 @@ const Tabs: React.FC<Props> = (props) => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  border-bottom: 2px solid ${BaseColor.default};
 `
 
 export default Tabs

@@ -1,10 +1,12 @@
+import BaseStyle from "assets/styles/base"
+import { BaseColor } from "assets/styles/color"
 import React from "react"
 import styled, { css } from "styled-components"
 
 type TabStatus = "default" | "disabled" | "selected"
 interface TabProps {
   text: string
-  icon?: any
+  icon?: React.ReactElement
   type?: "round" | "rectangle"
   status?: TabStatus
   onClick: () => void
@@ -50,36 +52,39 @@ const BaseWrapper = styled.button<any>`
 
   font-weight: bold;
   padding: 10px 40px;
-  border: 1px solid black;
+  border: 1px solid ${BaseColor.default};
 
-  border-bottom: 3px solid black;
+  border-bottom: none;
   min-width: 80px;
 
   ${(props) =>
     props.isRound &&
     css`
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
     `}
   flex-direction: column;
+
+  & ~ & {
+    margin-left: 1px;
+  }
 `
 
 const DefaultWrapper = styled(BaseWrapper)`
   cursor: pointer;
-  color: black;
-  background-color: lightgray;
+  color: ${BaseColor.default};
+  background-color: #fff;
 `
 
 const DisabledWrapper = styled(BaseWrapper)`
-  cursor: default;
-  color: gray;
-  background-color: blue;
+  cursor: not-allowed;
+  opacity: ${BaseStyle.disabledOpacity};
 `
 
 const SelectedWrapper = styled(BaseWrapper)`
   cursor: pointer;
-  color: white;
-  background-color: red;
+  color: #fff;
+  background-color: ${BaseColor.default};
 `
 
 export { Tab as default, TabProps, TabStatus }

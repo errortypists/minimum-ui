@@ -72,7 +72,6 @@ const SelectWrapper = styled.select<any>`
   padding: ${BaseStyle.padding};
   padding-right: 30px;
   font-size: ${BaseStyle.fontSize};
-  z-index: 1;
   background: transparent;
 `
 
