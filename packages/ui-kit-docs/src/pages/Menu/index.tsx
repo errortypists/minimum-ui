@@ -2,17 +2,17 @@ import { useState } from "react"
 import { Flex, Button, Drawer, Menu } from "ui-kit"
 
 const MenuPage: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const [currentMenu, setCurrentMenu] = useState("menu1")
   return (
     <Flex direction="column" align="flex-start">
-      <Button width="100px" onClick={() => setIsOpen(true)}>
+      <Button width="100px" onClick={() => setOpen(true)}>
         Modal
       </Button>
-      {isOpen && (
+      {open && (
         <Drawer
-          isOpen={isOpen}
-          onClickOutside={() => setIsOpen(false)}
+          open={open}
+          onClickOutside={() => setOpen(false)}
           direction={"left"}
         >
           <Flex>

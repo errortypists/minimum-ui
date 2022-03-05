@@ -37,23 +37,23 @@ const CheckboxPage: React.FC = () => {
 <Checkbox checked={true} disabled />
 <Checkbox checked={false} disabled />`}
       />
-      <ComponentTitle>Title direction</ComponentTitle>
+      <ComponentTitle>Direction</ComponentTitle>
       <ComponentDescription>
         체크박스의 타이틀 위치를 결정합니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Checkbox title="Right" checked={true} />
-          <Checkbox title="Top" checked={true} titleDirection={"top"} />
-          <Checkbox title="Bottom" checked={true} titleDirection={"bottom"} />
-          <Checkbox title="Left" checked={true} titleDirection={"left"} />
+          <Checkbox title="Top" checked={true} direction={"top"} />
+          <Checkbox title="Bottom" checked={true} direction={"bottom"} />
+          <Checkbox title="Left" checked={true} direction={"left"} />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
         code={`<Checkbox title="Right" checked={true} />
-<Checkbox title="Top" checked={true} titleDirection={"top"} />
-<Checkbox title="Bottom" checked={true} titleDirection={"bottom"} />
-<Checkbox title="Left" checked={true} titleDirection={"left"} />`}
+<Checkbox title="Top" checked={true} direction={"top"} />
+<Checkbox title="Bottom" checked={true} direction={"bottom"} />
+<Checkbox title="Left" checked={true} direction={"left"} />`}
       />
       <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>

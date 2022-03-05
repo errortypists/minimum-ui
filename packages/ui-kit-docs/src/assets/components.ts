@@ -50,13 +50,13 @@ const menus: ComponentProps = {
       {
         name: "color",
         type: ["string"],
-        default: "#00ff00",
+        default: "",
         description: "진행바 색깔을 지정합니다",
       },
       {
         name: "backgroundColor",
         type: ["string"],
-        default: "#D8D8D8",
+        default: "",
         description: "진행바의 배경 색깔을 지정합니다.",
       },
       {
@@ -225,7 +225,7 @@ const menus: ComponentProps = {
     displayName: "Collapse",
     props: [
       {
-        name: "isOpen",
+        name: "open",
         type: ["boolean"],
         default: "false",
         description: "Collapse 컴포넌트의 펼침 여부를 결정합니다.",
@@ -349,7 +349,7 @@ const menus: ComponentProps = {
     displayName: "Drawer",
     props: [
       {
-        name: "isOpen",
+        name: "open",
         type: ["boolean"],
         default: "false",
         description: "Drawer의 열림/닫힘 상태를 결정합니다",
@@ -455,7 +455,7 @@ const menus: ComponentProps = {
       },
       {
         name: "onChange",
-        type: ["void"],
+        type: ["function"],
         default: "",
         description: "The value of select",
       },
@@ -510,7 +510,7 @@ const menus: ComponentProps = {
       },
       {
         name: "onChange",
-        type: ["void"],
+        type: ["function"],
         default: "",
         description: "The value of page",
       },
@@ -557,13 +557,13 @@ const menus: ComponentProps = {
       },
       {
         name: "onChange",
-        type: ["void"],
+        type: ["function"],
         default: "",
         description: "The value of input",
       },
       {
         name: "onBlur",
-        type: ["void"],
+        type: ["function"],
         default: "",
         description: "The blur value of input",
       },
@@ -639,7 +639,7 @@ const menus: ComponentProps = {
         description: "라디오에 제목을 붙여줍니다.",
       },
       {
-        name: "titleDirection",
+        name: "direction",
         type: ["left", "right", "top", "bottom"],
         default: "right",
         description: "라디오의 제목 방향을 지정합니다.",
@@ -660,7 +660,7 @@ const menus: ComponentProps = {
       {
         name: "color",
         type: ["string"],
-        default: "#495057",
+        default: "",
         description: "라디오의 색상을 지정합니다.",
       },
       {
@@ -693,7 +693,7 @@ const menus: ComponentProps = {
         description: "체크박스에 제목을 표기합니다.",
       },
       {
-        name: "titleDirection",
+        name: "direction",
         type: ["left", "right", "top", "bottom"],
         default: "left",
         description: "체크박스를 기준으로 제목의 위치를 지정합니다.",

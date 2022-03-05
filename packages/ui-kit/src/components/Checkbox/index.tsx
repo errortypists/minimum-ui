@@ -7,7 +7,7 @@ import BaseStyle from "assets/styles/base"
 
 interface Props {
   title?: string
-  titleDirection?: "left" | "right" | "top" | "bottom"
+  direction?: "left" | "right" | "top" | "bottom"
   checked?: boolean
   value?: any
   color?: string
@@ -37,7 +37,7 @@ const convertHexColorToRGB = (hex: string, opacity: number = 1) => {
 const Checkbox: React.FC<Props> = (props) => {
   const {
     title = "",
-    titleDirection = "right",
+    direction = "right",
     checked = false,
     value,
     color = "",
@@ -48,7 +48,7 @@ const Checkbox: React.FC<Props> = (props) => {
 
   return (
     <Wrapper
-      direction={titleDirection}
+      direction={direction}
       onClick={() => onChange && !disabled && onChange(value)}
     >
       <CheckboxWrapper
@@ -62,7 +62,7 @@ const Checkbox: React.FC<Props> = (props) => {
           {checked && <Icon name="check" color="#fff" />}
         </CheckboxIcon>
       </CheckboxWrapper>
-      {title !== "" && <Title direction={titleDirection}>{title}</Title>}
+      {title !== "" && <Title direction={direction}>{title}</Title>}
     </Wrapper>
   )
 }
