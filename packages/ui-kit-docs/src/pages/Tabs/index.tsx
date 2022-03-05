@@ -4,6 +4,10 @@ import { Flex, IconArrowRight, Tabs } from "ui-kit"
 import useStatus from "../../hooks/useStatus"
 import Layout from "../../components/Layout"
 import { PropsBox } from "../../components"
+import Bell from "../../components/Icon/Bell"
+import Folder from "../../components/Icon/Folder"
+import Cart from "../../components/Icon/Cart"
+import { BaseColor } from "../../assets/styles/color"
 
 const {
   ContentsLayout,
@@ -24,12 +28,24 @@ const TabsPage: React.FC = () => {
   ]
   const [tab1Value, setTab1Value] = useState(tab1List[0].value)
 
+  const [tab2Value, setTab2Value] = useState("bell")
   const tab2List = [
-    { text: "Tab 1", value: "tab1", icon: <IconArrowRight /> },
-    { text: "Tab 2", value: "tab2", icon: <IconArrowRight /> },
-    { text: "Tab 3", value: "tab3", icon: <IconArrowRight /> },
+    {
+      text: "Bell",
+      value: "bell",
+      icon: <Bell fill={tab2Value === "bell" ? "#fff" : BaseColor.font} />,
+    },
+    {
+      text: "Folder",
+      value: "folder",
+      icon: <Folder fill={tab2Value === "folder" ? "#fff" : BaseColor.font} />,
+    },
+    {
+      text: "Cart",
+      value: "card",
+      icon: <Cart fill={tab2Value === "card" ? "#fff" : BaseColor.font} />,
+    },
   ]
-  const [tab2Value, setTab2Value] = useState(tab2List[0].value)
 
   const tab3List = [
     { text: "Tab 1", value: "tab1", status: "selected" },
@@ -58,7 +74,14 @@ const TabsPage: React.FC = () => {
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Tabs
+        code={`const tab1List = [
+  { text: "Tab 1", value: "tab1" },
+  { text: "Tab 2", value: "tab2" },
+  { text: "Tab 3", value: "tab3", status: "disabled" },
+]
+const [tab1Value, setTab1Value] = useState(tab1List[0].value)
+
+<Tabs
   headers={tab1List}
   value={tab1Value}
   onChange={(value, item, index) => {
@@ -83,7 +106,25 @@ const TabsPage: React.FC = () => {
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Tabs
+        code={`const [tab2Value, setTab2Value] = useState("bell")
+const tab2List = [
+  {
+    text: "Bell",
+    value: "bell",
+    icon: <Bell fill={tab2Value === "bell" ? "#fff" : BaseColor.font} />,
+  },
+  {
+    text: "Folder",
+    value: "folder",
+    icon: <Folder fill={tab2Value === "folder" ? "#fff" : BaseColor.font} />,
+  },
+  {
+    text: "Cart",
+    value: "card",
+    icon: <Cart fill={tab2Value === "card" ? "#fff" : BaseColor.font} />,
+  },
+]
+<Tabs
   headers={tab2List}
   value={tab2Value}
   onChange={(value, item, index) => {
@@ -98,12 +139,12 @@ const TabsPage: React.FC = () => {
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="column" justify="center" gap={20}>
-          <Tabs headers={tab3List} type="rectangle" />
+          <Tabs headers={tab3List} type="round" />
           <Tabs headers={tab3List} type="rectangle" />
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Tabs headers={tab3List} type="rectangle" />
+        code={`<Tabs headers={tab3List} type="round" />
 <Tabs headers={tab3List} type="rectangle" />`}
       />
       <ComponentTitle>Props</ComponentTitle>

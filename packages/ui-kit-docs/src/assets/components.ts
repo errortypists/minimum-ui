@@ -19,15 +19,9 @@ const menus: ComponentProps = {
       {
         name: "headers",
         type: ["array"],
-        default: "medium",
-        description:
-          "각 헤더의 아이템을 구성하는 속성입니다. 아래 headers item을 묶음으로써 갖고 있는 속성입니다.",
-      },
-      {
-        name: "header item",
-        type: ["object"],
         default: "",
-        description: "{text: '', value: '', status: 'default', icon: ''}",
+        description:
+          "각 헤더의 아이템을 구성하는 속성입니다. (item array 구성 : [{text: '', value: '', status: 'default', icon: ''}])",
       },
       {
         name: "value",
