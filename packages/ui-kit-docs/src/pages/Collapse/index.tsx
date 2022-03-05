@@ -16,9 +16,9 @@ const {
 } = Layout
 
 const CollapsePage: React.FC = () => {
-  const [isOpen1, setOpen1] = useState(false)
-  const [isOpen2, setOpen2] = useState(true)
-  const [isOpen3, setOpen3] = useState(true)
+  const [open1, setOpen1] = useState(false)
+  const [open2, setOpen2] = useState(true)
+  const [open3, setOpen3] = useState(true)
 
   return (
     <ContentsLayout>
@@ -33,17 +33,17 @@ const CollapsePage: React.FC = () => {
           <Button
             width="120px"
             variant="outline"
-            onClick={() => setOpen1(!isOpen1)}
+            onClick={() => setOpen1(!open1)}
           >
             {"Click Me!"}
           </Button>
-          <Collapse isOpen={isOpen1}>
+          <Collapse open={open1}>
             <CollapseOne>Collapse One</CollapseOne>
           </Collapse>
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Collapse isOpen={isOpen1}>
+        code={`<Collapse open={open}>
   <div style={{ width: "100%", height: "100px", background: "#dddddd" }}>
     Collapse One
   </div>
@@ -58,17 +58,17 @@ const CollapsePage: React.FC = () => {
           <Button
             width="120px"
             variant="outline"
-            onClick={() => setOpen2(!isOpen2)}
+            onClick={() => setOpen2(!open2)}
           >
             {"Click Me!"}
           </Button>
-          <Collapse isOpen={isOpen2} speed={1000}>
+          <Collapse open={open2} speed={1000}>
             <CollapseTwo>Collapse Two</CollapseTwo>
           </Collapse>
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Collapse isOpen={isOpen3} speed={1000}>
+        code={`<Collapse open={open} speed={1000}>
   <div style={{ width: "100%", height: "100px", background: "#dddddd" }}>
     Collapse Two
   </div>
@@ -83,17 +83,17 @@ const CollapsePage: React.FC = () => {
           <Button
             width="120px"
             variant="outline"
-            onClick={() => setOpen3(!isOpen3)}
+            onClick={() => setOpen3(!open3)}
           >
             {"Click Me!"}
           </Button>
-          <Collapse isOpen={isOpen3} width={200}>
+          <Collapse open={open3} width={200}>
             <CollapseTwo>Collapse Two</CollapseTwo>
           </Collapse>
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Collapse isOpen={isOpen3} width={200}>
+        code={`<Collapse open={open} width={200}>
   <div style={{ width: "100%", height: "100px", background: "#dddddd" }}>
     Collapse Two
   </div>

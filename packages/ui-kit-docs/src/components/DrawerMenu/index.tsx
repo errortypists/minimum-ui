@@ -58,7 +58,7 @@ const Header: React.FC = () => {
   }
   return (
     <Drawer
-      isOpen={!!isLeftMenu}
+      open={!!isLeftMenu}
       onClickOutside={() => setLeftMenu(false)}
       direction={"left"}
     >
