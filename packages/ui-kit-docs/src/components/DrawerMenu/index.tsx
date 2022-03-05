@@ -5,11 +5,21 @@ import { useHistory } from "react-router-dom"
 import { useEffect } from "react"
 
 import useStatus from "../../hooks/useStatus"
-import component from "../../assets/components"
+import components, { ComponentProps } from "../../assets/components"
+
+const sortedComponents = (() => {
+  const names = Object.keys(components)
+  names.sort()
+  let newComponentSet: ComponentProps = {}
+  names.forEach((name) => {
+    newComponentSet[name] = components[name]
+  })
+  return newComponentSet
+})()
 
 const Header: React.FC = () => {
   const history = useHistory()
-  const names = Object.keys(component)
+  const names = Object.keys(sortedComponents)
   const { isLeftMenu, setLeftMenu, selectedMenu, setSelectedMenu } = useStatus()
 
   useEffect(() => {
@@ -40,7 +50,7 @@ const Header: React.FC = () => {
           }}
         >
           <Menu.Item selected={selectedMenu?.url} name={url}>
-            {component[menuName].displayName}
+            {sortedComponents[menuName].displayName}
           </Menu.Item>
         </StyledLink>
       )
