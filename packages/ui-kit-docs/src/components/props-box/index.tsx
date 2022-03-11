@@ -43,7 +43,7 @@ const PropsBox: React.FC<Props> = ({ name, hasTitle = false }) => {
                 ratio={[20, 23, 20, 37]}
                 header={["Name", "Type", "Default", "Description"]}
                 data={components[urlRemoveName].props}
-                createRow={(item: ItemProps) => {
+                customRow={(item: ItemProps) => {
                   return [
                     <div>{item.name}</div>,
                     <div>{typeOfButtonProps(item.type)}</div>,
