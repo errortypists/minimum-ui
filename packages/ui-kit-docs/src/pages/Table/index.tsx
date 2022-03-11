@@ -24,7 +24,7 @@ const TablePage: React.FC = () => {
       <ComponentTitle>Basic Table</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
-          <Table.Root>
+          <Table>
             <Table.Head>
               <Table.Row>
                 <Table.Cell>Job</Table.Cell>
@@ -49,11 +49,11 @@ const TablePage: React.FC = () => {
                 <Table.Cell>{"35.16%"}</Table.Cell>
               </Table.Row>
             </Table.Body>
-          </Table.Root>
+          </Table>
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Table.Root>
+        code={`<Table>
 <Table.Head>
   <Table.Row>
     <Table.Cell>Job</Table.Cell>
@@ -78,7 +78,7 @@ const TablePage: React.FC = () => {
     <Table.Cell>{"35.16%"}</Table.Cell>
   </Table.Row>
 </Table.Body>
-</Table.Root>`}
+</Table>`}
       />
       <ComponentTitle>Ratio</ComponentTitle>
       <ComponentDescription>
@@ -86,7 +86,7 @@ const TablePage: React.FC = () => {
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
-          <Table.Root ratio={[25, 60, 25]}>
+          <Table ratio={[25, 60, 25]}>
             <Table.Head>
               <Table.Row>
                 <Table.Cell>Job</Table.Cell>
@@ -101,26 +101,26 @@ const TablePage: React.FC = () => {
                 <Table.Cell>{"20.33%"}</Table.Cell>
               </Table.Row>
             </Table.Body>
-          </Table.Root>
+          </Table>
         </Flex>
       </ComponentWrapper>
       <CodeWrapper
-        code={`<Table.Root ratio={[25, 60, 25]}>
-<Table.Head>
-  <Table.Row>
-    <Table.Cell>Job</Table.Cell>
-    <Table.Cell>Base Salary</Table.Cell>
-    <Table.Cell>Growth</Table.Cell>
-  </Table.Row>
-</Table.Head>
-<Table.Body>
-  <Table.Row>
-    <Table.Cell>{"Nurse"}</Table.Cell>
-    <Table.Cell>{"$93,203"}</Table.Cell>
-    <Table.Cell>{"20.33%"}</Table.Cell>
-  </Table.Row>
-</Table.Body>
-</Table.Root>`}
+        code={`<Table ratio={[25, 60, 25]}>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>Job</Table.Cell>
+      <Table.Cell>Base Salary</Table.Cell>
+      <Table.Cell>Growth</Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>{"Nurse"}</Table.Cell>
+      <Table.Cell>{"$93,203"}</Table.Cell>
+      <Table.Cell>{"20.33%"}</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>`}
       />
     </ContentsLayout>
   )

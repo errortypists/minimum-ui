@@ -430,7 +430,14 @@ const menus: ComponentProps = {
         description: "테이블 각 행의 비율을 정합니다.",
       },
       {
-        name: "createRow",
+        name: "customHeader",
+        type: ["function"],
+        default: "",
+        description:
+          "테이블을 그려낼때 임의로 헤더의 스타일을 주입하고 싶은 경우 사용합니다.",
+      },
+      {
+        name: "customRow",
         type: ["function"],
         default: "",
         description:
