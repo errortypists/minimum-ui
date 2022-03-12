@@ -31,11 +31,6 @@ const QuickTablePage: React.FC = () => {
               { name: "John", phone: "010-1111-1111", address: "New York" },
               { name: "Alice", phone: "010-2222-2222", address: "Rome" },
             ]}
-            createRow={(item) => [
-              <div>{item.name}</div>,
-              <div>{item.phone}</div>,
-              <div>{item.address}</div>,
-            ]}
           />
         </Flex>
       </ComponentWrapper>
@@ -46,11 +41,6 @@ const QuickTablePage: React.FC = () => {
     { name: "Charles", phone: "010-0000-0000", address: "Seoul" },
     { name: "John", phone: "010-1111-1111", address: "New York" },
     { name: "Alice", phone: "010-2222-2222", address: "Rome" },
-  ]}
-  createRow={(item) => [
-    <div>{item.name}</div>,
-    <div>{item.phone}</div>,
-    <div>{item.address}</div>,
   ]}
 />`}
       />
@@ -69,11 +59,6 @@ const QuickTablePage: React.FC = () => {
               { name: "John", phone: "010-1111-1111", address: "New York" },
               { name: "Alice", phone: "010-2222-2222", address: "Rome" },
             ]}
-            createRow={(item) => [
-              <div>{item.name}</div>,
-              <div>{item.phone}</div>,
-              <div>{item.address}</div>,
-            ]}
           />
         </Flex>
       </ComponentWrapper>
@@ -85,11 +70,6 @@ const QuickTablePage: React.FC = () => {
     { name: "Charles", phone: "010-0000-0000", address: "Seoul" },
     { name: "John", phone: "010-1111-1111", address: "New York" },
     { name: "Alice", phone: "010-2222-2222", address: "Rome" },
-  ]}
-  createRow={(item) => [
-    <div>{item.name}</div>,
-    <div>{item.phone}</div>,
-    <div>{item.address}</div>,
   ]}
 />`}
       />
@@ -109,7 +89,12 @@ const QuickTablePage: React.FC = () => {
               { name: "John", phone: "010-1111-1111", address: "New York" },
               { name: "Alice", phone: "010-2222-2222", address: "Rome" },
             ]}
-            createRow={(item) => [
+            customHeader={(headers) => [
+              <div style={{ backgroundColor: "red" }}>{headers[0]}</div>,
+              <div style={{ backgroundColor: "green" }}>{headers[0]}</div>,
+              <div style={{ backgroundColor: "blue" }}>{headers[0]}</div>,
+            ]}
+            customRow={(item) => [
               <div style={{ color: "red" }}>{item.name}</div>,
               <div style={{ color: "green" }}>{item.phone}</div>,
               <div style={{ color: "blue" }}>{item.address}</div>,
@@ -125,7 +110,7 @@ const QuickTablePage: React.FC = () => {
     { name: "John", phone: "010-1111-1111", address: "New York" },
     { name: "Alice", phone: "010-2222-2222", address: "Rome" },
   ]}
-  createRow={(item) => [
+  customRow={(item) => [
     <div style={{ color: "red" }}>{item.name}</div>,
     <div style={{ color: "green" }}>{item.phone}</div>,
     <div style={{ color: "blue" }}>{item.address}</div>,

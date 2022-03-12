@@ -17,10 +17,10 @@ const CheckboxPage: React.FC = () => {
     <ContentsLayout>
       <Title>Checkbox</Title>
       <Description>
-        Checkboxes can be used to turn an option on or off. If you have multiple
-        options appearing in a list, you can preserve space by using checkboxes
-        instead of on/off switches. If you have a single option, avoid using a
-        checkbox and use an on/off switch instead.
+        Checkbox 컴포넌트는 체크의 유무를 표현하는 컴포넌트입니다. 복수의
+        Checkbox 컴포넌트를 활용하여 어떤 상황에 옵션을 표현하는데 사용할 수
+        있고, 단일 Checkbox를 사용해 어떤 기능이나 동작의 on/off를 구분하는데도
+        활용할 수 있습니다.
       </Description>
       <ComponentTitle>Basic Checkbox</ComponentTitle>
       <ComponentWrapper>
@@ -56,10 +56,7 @@ const CheckboxPage: React.FC = () => {
 <Checkbox title="Left" checked={true} direction={"left"} />`}
       />
       <ComponentTitle>Size</ComponentTitle>
-      <ComponentDescription>
-        Use the size prop or customize the font size of the svg icons to change
-        the size of the checkboxes.
-      </ComponentDescription>
+      <ComponentDescription>체크박스의 크기를 결정합니다.</ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
           <Checkbox size="small" checked={true} />

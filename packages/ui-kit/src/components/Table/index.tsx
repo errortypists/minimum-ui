@@ -11,7 +11,12 @@ interface Props {
   ratio?: number[]
 }
 
-const TableRoot: React.FC<Props> = (props) => {
+const Table: React.FC<Props> & {
+  Head: typeof TableHead
+  Body: typeof TableBody
+  Row: typeof TableRow
+  Cell: typeof TableCell
+} = (props) => {
   const { children, style, ratio } = props
   const table = React.useMemo(() => ({ ratio }), [ratio])
 
@@ -29,22 +34,10 @@ const Wrapper = styled.div<any>`
   border-spacing: 0;
   width: 100%;
 `
-//
-// 테이블 테마 잡기
-//
 
-const Table: {
-  Root: typeof TableRoot
-  Head: typeof TableHead
-  Body: typeof TableBody
-  Row: typeof TableRow
-  Cell: typeof TableCell
-} = {
-  Root: TableRoot,
-  Head: TableHead,
-  Body: TableBody,
-  Row: TableRow,
-  Cell: TableCell,
-}
+Table.Head = TableHead
+Table.Body = TableBody
+Table.Row = TableRow
+Table.Cell = TableCell
 
 export default Table
