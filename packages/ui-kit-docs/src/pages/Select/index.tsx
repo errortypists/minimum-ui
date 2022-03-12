@@ -1,4 +1,4 @@
-import { Flex, Select } from "ui-kit"
+import { Select } from "ui-kit"
 import Layout from "../../components/Layout"
 
 const {
@@ -14,7 +14,10 @@ const SelectPage: React.FC = () => {
   return (
     <ContentsLayout>
       <Title>Select</Title>
-      <Description>Select</Description>
+      <Description>
+        기본 html의 선택상자를 사용하기 때문에 브라우저별로 선택상자가 다르게
+        보일 수 있습니다.
+      </Description>
       <ComponentWrapper>
         <Select
           options={[

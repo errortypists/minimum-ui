@@ -66,7 +66,7 @@ const BaseWrapper = styled.button<any>`
   flex-direction: column;
 
   & ~ & {
-    margin-left: 1px;
+    border-left: none;
   }
 `
 

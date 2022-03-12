@@ -8,7 +8,6 @@ const {
   Title,
   Description,
   ComponentTitle,
-  ComponentDescription,
 } = Layout
 
 const DividerPage: React.FC = () => {
@@ -17,7 +16,6 @@ const DividerPage: React.FC = () => {
       <Title>Divider</Title>
       <Description>영역을 분리하기 위한 구분선</Description>
       <ComponentTitle>Size</ComponentTitle>
-      <ComponentDescription>type box 에서만 적용</ComponentDescription>
       <ComponentWrapper>
         <Flex>Section1</Flex>
         <Divider size={20} />

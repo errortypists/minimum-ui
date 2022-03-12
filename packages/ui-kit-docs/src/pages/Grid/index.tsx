@@ -10,7 +10,7 @@ const GridPage: React.FC = () => {
   return (
     <ContentsLayout>
       <Title>Grid</Title>
-      <Description>Grid layout</Description>
+      <Description>Grid 레이아웃</Description>
       <ComponentWrapper>
         <Grid row={2} col={2} gap={8}>
           <Box>GRID1</Box>
