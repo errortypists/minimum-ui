@@ -7,7 +7,7 @@ import Color, { BaseColor } from "../../assets/styles/color"
 import components, { ComponentProps } from "../../assets/components"
 import useStatus from "../../hooks/useStatus"
 
-const sortedComponents = (() => {
+export const sortedComponents = (() => {
   const names = Object.keys(components)
   names.sort()
   let newComponentSet: ComponentProps = {}

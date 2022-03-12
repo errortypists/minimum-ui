@@ -10,7 +10,7 @@ const FlexPage: React.FC = () => {
   return (
     <ContentsLayout>
       <Title>Flex</Title>
-      <Description>Flex layout</Description>
+      <Description>Flex 레이아웃</Description>
       <ComponentWrapper>
         <Flex>
           <Box style={{ flex: 1 }}>FLEX1</Box>

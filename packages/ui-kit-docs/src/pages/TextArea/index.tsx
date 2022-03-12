@@ -15,10 +15,11 @@ const TextareaPage: React.FC = () => {
   return (
     <ContentsLayout>
       <Title>Textarea</Title>
-      <Description>A textarea component</Description>
+      <Description>여러줄을 입력할 수 있는 텍스트 영역</Description>
       <ComponentTitle>Width / Cols</ComponentTitle>
       <ComponentDescription>
-        Default is width. The cols option ignore width option.
+        width 속성이 우선 적용되며, cols 옵션 사용시 width 옵션은 적용되지
+        않습니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Textarea placeholder="default width" />
