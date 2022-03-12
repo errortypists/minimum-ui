@@ -7,7 +7,7 @@ interface Props {
   align?: "center" | "flex-start" | "flex-end"
   justify?: "center" | "flex-start" | "flex-end" | "stretch"
   gap?: number
-  style?: React.CSSProperties
+  style?: any
 }
 
 const Grid: React.FC<Props> = ({
@@ -34,7 +34,7 @@ const Grid: React.FC<Props> = ({
 const Wrapper = styled.div<any>`
   display: grid;
   grid-template-columns: ${(props) => `repeat(${props.col}, 1fr)`};
-  grid-template-rows: ${(props) => `repeat(${props.col}, 1fr)`};
+  grid-template-rows: ${(props) => `repeat(${props.row}, 1fr)`};
   justify-items: center;
   box-sizing: border-box;
   text-align: left;

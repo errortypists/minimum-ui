@@ -1,7 +1,6 @@
 import { Flex, Button } from "ui-kit"
 import ArrowLeft from "../../components/Icon/ArrowLeft"
 import ArrowRight from "../../components/Icon/ArrowRight"
-import Github from "../../components/Icon/Github"
 import Layout from "../../components/Layout"
 
 const {
@@ -89,7 +88,9 @@ const ButtonPage: React.FC = () => {
 <Button disabled>Disabled</Button>`}
       />
       <ComponentTitle>Icon</ComponentTitle>
-      <ComponentDescription>Text with icon (left / right)</ComponentDescription>
+      <ComponentDescription>
+        텍스트의 왼쪽/오른쪽에 아이콘을 배치할 수 있습니다.
+      </ComponentDescription>
       <ComponentWrapper>
         <Flex>
           <Button leftIcon={<ArrowLeft />} variant="outline">

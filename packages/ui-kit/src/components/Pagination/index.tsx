@@ -11,8 +11,7 @@ interface Props {
   currentPage: number
   pageSize: number
   withButton?: boolean
-  buttonIcons?: [React.ReactElement, React.ReactElement]
-  buttonTexts?: [string, string]
+  customButtons?: [React.ReactElement | string, React.ReactElement | string]
   onChange(page: number): void
   style?: React.CSSProperties
   buttonStyle?: React.CSSProperties
@@ -22,16 +21,14 @@ const Pagination: React.FC<Props> = ({
   currentPage,
   pageSize,
   withButton = true,
-  buttonIcons = [null, null],
-  buttonTexts = [null, null],
+  customButtons = [null, null],
   onChange,
   style,
   buttonStyle,
 }) => {
   const PAGINATION_SIZE = 5
   const [page, setPage] = useState<number>(currentPage)
-  const [prevIcon, nextIcon] = buttonIcons
-  const [prevText, nextText] = buttonTexts
+  const [prev, next] = customButtons
 
   const generatePages = (current: number, max: number) => {
     const floorPaginationSize = Math.floor(PAGINATION_SIZE / 2)
@@ -70,7 +67,7 @@ const Pagination: React.FC<Props> = ({
           onClick={() => (disablePrev ? null : onClickNextPage(false))}
           style={buttonStyle}
         >
-          {prevText || prevIcon || (
+          {prev || (
             <IconWrapper>
               <Icon name="arrowLeft" color={BaseColor.default} />
             </IconWrapper>
@@ -93,9 +90,9 @@ const Pagination: React.FC<Props> = ({
           onClick={() => (disableNext ? null : onClickNextPage())}
           style={buttonStyle}
         >
-          {nextText || nextIcon || (
+          {next || (
             <IconWrapper>
-              <Icon name="arrowRight" />
+              <Icon name="arrowRight" color={BaseColor.default} />
             </IconWrapper>
           )}
         </PageButton>

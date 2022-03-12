@@ -18,8 +18,8 @@ const InputPage: React.FC = () => {
     <ContentsLayout>
       <Title>Input</Title>
       <Description>
-        A basic text field. Also the input component includes html input
-        attributes.
+        기본적인 텍스트 input. html의 input attributes 속성을 사용 할 수
+        있습니다.
       </Description>
       <ComponentWrapper>
         <Input
