@@ -16,8 +16,10 @@ const TypographyPage: React.FC = () => {
     <ContentsLayout>
       <LayoutTitle>Typography</LayoutTitle>
       <Description>
-        기본 텍스트 스타일 title, subtitle, body, caption
+        Typography 컴포넌트는 다양한 텍스트 조합을 사용해 문서를 구성하는데
+        사용합니다.
       </Description>
+      <ComponentTitle>Basic Typography</ComponentTitle>
       <ComponentWrapper>
         <Title>Example of Typography</Title>
         <SubTitle>Example of Typography</SubTitle>
@@ -38,6 +40,10 @@ const TypographyPage: React.FC = () => {
 <Typography.Caption>Example of Typography</Typography.Caption>`}
       />
       <ComponentTitle>Style</ComponentTitle>
+      <Description>
+        Typography 에 개별적인 스타일을 주입합니다. 이때 일반적인 태그의
+        스타일을 사용합니다.
+      </Description>
       <ComponentWrapper>
         <Title style={{ color: "red" }}>Example of Typography</Title>
         <SubTitle style={{ textDecoration: "line-through" }}>

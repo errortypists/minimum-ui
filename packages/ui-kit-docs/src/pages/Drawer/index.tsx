@@ -136,7 +136,8 @@ const DrawerPage: React.FC = () => {
       />
       <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>
-        Drawer 영역의 너비나 높이를 결정합니다
+        Drawer 영역의 크기를 결정합니다. 이때 슬라이드 되는 방향에 따라 너비
+        혹은 높이가 결정됩니다. (ex: 상하 - 높이, ex: 좌우 - 너비)
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>

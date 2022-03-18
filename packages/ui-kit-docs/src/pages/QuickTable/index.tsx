@@ -17,9 +17,9 @@ const QuickTablePage: React.FC = () => {
     <ContentsLayout>
       <Title>QuickTable</Title>
       <Description>
-        QuickTable은 테이블을 그려낼때 데이터의 요소로만 쉽게 그릴수 있도록 하는
-        컴포넌트입니다. 테이블의 헤더, 데이터, 각 행을 그려내는 방법을 결정하여
-        제공하면 이를 기반으로 테이블이 완성됩니다.
+        QuickTable 컴포넌트는 테이블을 그려낼 때 데이터의 요소로만 쉽게 테이블을
+        표현할 수 있습니다. 테이블의 헤더, 데이터, 각 행을 그려내는 방법을
+        결정하여 제공하면 이를 기반으로 테이블이 완성됩니다.
       </Description>
       <ComponentTitle>Basic QuickTable</ComponentTitle>
       <ComponentWrapper>

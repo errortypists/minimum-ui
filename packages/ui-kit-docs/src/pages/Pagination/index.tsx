@@ -14,7 +14,11 @@ const PaginationPage: React.FC = () => {
   return (
     <ContentsLayout>
       <Title>Pagination</Title>
-      <Description>페이지의 정보를 보여줍니다.</Description>
+      <Description>
+        Pagination 컴퍼넌트는 게시판등 목록화 하여 각각의 데이터를 페이지로
+        순번을 매겨 관리할때 사용합니다.
+      </Description>
+      <ComponentTitle>Basic Input</ComponentTitle>
       <ComponentWrapper>
         <Pagination
           currentPage={5}
@@ -30,6 +34,10 @@ const PaginationPage: React.FC = () => {
 />`}
       />
       <ComponentTitle>Text</ComponentTitle>
+      <Description>
+        Pagination의 이전 페이지, 다음 페이지의 구성을 텍스트로 표기할 수
+        있습니다.
+      </Description>
       <ComponentWrapper>
         <Pagination
           currentPage={7}
@@ -47,6 +55,10 @@ const PaginationPage: React.FC = () => {
 />`}
       />
       <ComponentTitle>Icon</ComponentTitle>
+      <Description>
+        Pagination의 이전 페이지, 다음 페이지의 구성을 아이콘으로 표기할 수
+        있습니다.
+      </Description>
       <ComponentWrapper>
         <Pagination
           currentPage={14}

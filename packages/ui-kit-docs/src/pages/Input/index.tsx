@@ -18,9 +18,11 @@ const InputPage: React.FC = () => {
     <ContentsLayout>
       <Title>Input</Title>
       <Description>
-        기본적인 텍스트 input. html의 input attributes 속성을 사용 할 수
-        있습니다.
+        Input 컴포넌트는 html에서 제공하는 기본적인 input 태그를 사용하여 만든
+        컴포넌트입니다. 다양한 입력 값을 받을 수 있고, 일반적인 input 태그를
+        기반으로 만들어져 있기 때문에 속성들을 그대로 사용 가능합니다.
       </Description>
+      <ComponentTitle>Basic Input</ComponentTitle>
       <ComponentWrapper>
         <Input
           value={id}
@@ -37,6 +39,7 @@ const InputPage: React.FC = () => {
 />`}
       />
       <ComponentTitle>Width</ComponentTitle>
+      <Description>Input의 너비를 조정합니다.</Description>
       <ComponentWrapper>
         <Input
           value={password}
@@ -57,6 +60,7 @@ const InputPage: React.FC = () => {
 />`}
       />
       <ComponentTitle>title</ComponentTitle>
+      <Description>Input에 타이틀을 추가합니다.</Description>
       <ComponentWrapper>
         <Input
           value={id}
