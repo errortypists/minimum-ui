@@ -18,9 +18,10 @@ const RadioPage: React.FC = () => {
     <ContentsLayout>
       <Title>Radio</Title>
       <Description>
-        Radio는 사용자에게 제공해준 항목들 중 하나를 선택하도록 제공할 때
-        사용하는 컴포넌트입니다. 선택을 하도록 제공할 때 같은 성격의 아이템들을
-        묶을 수 있도록 그룹도 같이 제공합니다.
+        Radio 컴포넌트는 사용자가 클릭 했음과, 하지 않은 상태를 나타낼 수
+        있습니다. 이 때 같은 성격의 아이템들을 묶을 수 있도록 그룹도 같이
+        제공합니다. 그룹과 함께 사용시 사용자에게 그룹 구성원중 하나만을
+        선택하도록 할 수 있습니다.
       </Description>
       <ComponentTitle>Basic Radio</ComponentTitle>
       <ComponentWrapper>
@@ -39,7 +40,7 @@ const RadioPage: React.FC = () => {
       />
       <ComponentTitle>Direction</ComponentTitle>
       <ComponentDescription>
-        라디오의 텍스트 위치를 결정합니다.
+        Radio의 타이틀 위치를 결정합니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
@@ -56,7 +57,7 @@ const RadioPage: React.FC = () => {
 <Radio title={"Left"} checked={true} direction={"left"} />`}
       />
       <ComponentTitle>Color</ComponentTitle>
-      <ComponentDescription>라디오의 색깔을 지정합니다</ComponentDescription>
+      <ComponentDescription>Radio의 색상을 지정합니다</ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Radio title={"Title 1"} checked={true} color={BaseColor.primary} />
@@ -68,7 +69,7 @@ const RadioPage: React.FC = () => {
 <Radio title={"Title 2"} color="#3b5bdb" />`}
       />
       <ComponentTitle>Size</ComponentTitle>
-      <ComponentDescription>라디오의 사이즈를 지정합니다.</ComponentDescription>
+      <ComponentDescription>Radio의 크기를 지정합니다.</ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Radio size="small" checked={true} />

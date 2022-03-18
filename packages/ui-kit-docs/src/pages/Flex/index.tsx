@@ -3,14 +3,25 @@ import { Flex } from "ui-kit"
 import styled from "styled-components"
 import { BaseColor } from "../../assets/styles/color"
 
-const { ContentsLayout, ComponentWrapper, CodeWrapper, Title, Description } =
-  Layout
+const {
+  ContentsLayout,
+  ComponentTitle,
+  ComponentWrapper,
+  CodeWrapper,
+  Title,
+  Description,
+} = Layout
 
 const FlexPage: React.FC = () => {
   return (
     <ContentsLayout>
       <Title>Flex</Title>
-      <Description>Flex 레이아웃</Description>
+      <Description>
+        Flex 컴포넌트는 자식 구성요소들의 배치를 결정하는 컴포넌트입니다. 각
+        구성 영역의 사이즈를 조정할 수 있고, 배치되는 방향성도 결정할 수
+        있습니다.
+      </Description>
+      <ComponentTitle>Basic Flex</ComponentTitle>
       <ComponentWrapper>
         <Flex>
           <Box style={{ flex: 1 }}>FLEX1</Box>
