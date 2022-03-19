@@ -19,10 +19,9 @@ const ProgressPage: React.FC = () => {
     <ContentsLayout>
       <Title>Progress</Title>
       <Description>
-        progress는 어떤 상황의 진행상태나, 유예를 표현하기위한 컴포넌트입니다.
-        비율을 입력하여 상태를 표현할 수 있습니다.
+        Progress 컴포넌트는 어떤 상황의 진행상태나, 유예를 표현하기위해
+        사용합니다. 비율을 입력하여 상태를 표현할 수 있습니다.
       </Description>
-      <ComponentTitle>Basic progress</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="column" justify="center" gap={0}>
           <Progress type={"linear"} progress={10} />
@@ -46,7 +45,7 @@ const ProgressPage: React.FC = () => {
       />
       <ComponentTitle>Type</ComponentTitle>
       <ComponentDescription>
-        진행상태를 표현할 형태를 제공합니다.
+        Progress의 진행상태를 표현할 형태를 지정합니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="column" justify="center" gap={0}>
@@ -76,7 +75,7 @@ const ProgressPage: React.FC = () => {
       />
       <ComponentTitle>Color & Background</ComponentTitle>
       <ComponentDescription>
-        진행에 표현할 색깔과 배경색깔을 지정가능합니다.
+        Progress 표현에 주요 색과 배경색을 지정합니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="column" justify="center" gap={0}>
@@ -109,7 +108,7 @@ const ProgressPage: React.FC = () => {
       />
       <ComponentTitle>Speed</ComponentTitle>
       <ComponentDescription>
-        Progress의 회전 속도를 조절합니다. Circular 타입인 경우에만 제공됩니다.
+        Progress의 회전 속도를 조절합니다. Circular 타입인 경우에만 동작됩니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>

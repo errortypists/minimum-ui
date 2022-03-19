@@ -22,7 +22,6 @@ const CheckboxPage: React.FC = () => {
         있고, 단일 Checkbox를 사용해 어떤 기능이나 동작의 on/off를 구분하는데도
         활용할 수 있습니다.
       </Description>
-      <ComponentTitle>Basic Checkbox</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
           <Checkbox checked={true} />
@@ -39,7 +38,7 @@ const CheckboxPage: React.FC = () => {
       />
       <ComponentTitle>Direction</ComponentTitle>
       <ComponentDescription>
-        체크박스의 타이틀 위치를 결정합니다.
+        Checkbox의 타이틀 위치를 결정합니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
@@ -56,7 +55,7 @@ const CheckboxPage: React.FC = () => {
 <Checkbox title="Left" checked={true} direction={"left"} />`}
       />
       <ComponentTitle>Size</ComponentTitle>
-      <ComponentDescription>체크박스의 크기를 결정합니다.</ComponentDescription>
+      <ComponentDescription>Checkbox의 크기를 지정합니다.</ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
           <Checkbox size="small" checked={true} />

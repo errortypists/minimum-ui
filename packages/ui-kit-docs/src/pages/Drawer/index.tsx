@@ -32,7 +32,6 @@ const DrawerPage: React.FC = () => {
         컴포넌트입니다. 평소에는 닫혀있는 상태로 대기하다가 Open 상태로 전환시
         원하는 방향에서 슬라이드되어 나타납니다.
       </Description>
-      <ComponentTitle>Basic Drawer</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Button
@@ -40,12 +39,12 @@ const DrawerPage: React.FC = () => {
             variant="outline"
             onClick={() => setOpen(!open)}
           >
-            {"Basic Drawer"}
+            {"Open Drawer"}
           </Button>
           {open && (
             <Drawer open={open} onClickOutside={() => setOpen(false)}>
               <Wrapper>
-                <Typography.Title>Basic Drawer</Typography.Title>
+                <Typography.Title>Drawer</Typography.Title>
               </Wrapper>
             </Drawer>
           )}
@@ -136,7 +135,8 @@ const DrawerPage: React.FC = () => {
       />
       <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>
-        Drawer 영역의 너비나 높이를 결정합니다
+        Drawer 영역의 크기를 결정합니다. 이때 슬라이드 되는 방향에 따라 너비
+        혹은 높이가 결정됩니다. (ex: 상하 - 높이, ex: 좌우 - 너비)
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
