@@ -57,8 +57,6 @@ const LogoWrapper = styled.div`
   height: 50px;
   padding: 0 20px;
   color: ${BaseColor.font};
-  font-family: "Kanit";
-  font-weight: 200;
 
   div ~ div {
     margin-left: 10px;
@@ -77,23 +75,23 @@ const BoardWrapper = styled.div`
   width: 100%;
   background: ${BaseColor.primary};
   color: #fff;
-  font-family: "Kanit";
-  font-weight: 200;
+  font-family: "NanumGothicLight";
 `
 
 const Brand = styled.span`
-  font-size: 4.5rem;
-  line-height: 4.5rem;
+  font-size: 3.5rem;
+  line-height: 3.5rem;
   margin-top: 70px;
+  font-family: "Montserrat";
+  font-weight: 900;
 `
 
 const BrandDescription = styled.span`
-  font-size: 1.2rem;
-  line-height: 1.5rem;
   margin-top: 10px;
   margin-bottom: 30px;
   padding: 0 10px;
   text-align: center;
+  line-height: 1.5rem;
 `
 
 const ComponentWrapper = styled.div`
@@ -103,15 +101,13 @@ const ComponentWrapper = styled.div`
 
 const ComponentDescription = styled.span`
   font-size: 1rem;
-  font-family: "Kanit";
   margin: 20px 0;
   color: ${BaseColor.font};
 `
 
 const ComponentName = styled.span`
   font-size: 1rem;
-  font-family: "Kanit";
-  font-weight: 100;
+  font-family: "NanumGothicLight";
   color: ${BaseColor.font};
 `
 

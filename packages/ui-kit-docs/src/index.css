@@ -1,5 +1,6 @@
 html, body {
   height:100%;
+  font-family: 'NanumGothic';
 }
 
 #root {
@@ -10,20 +11,39 @@ a {color:#212529; text-decoration: none; }
 a:active, a:hover { text-decoration: none; }
 
 @font-face {
-  font-family: 'Sarpanch';
-  src: url('./assets/font/Sarpanch-Black.ttf') format('truetype');
-  font-style: bold;
+  font-family: 'Montserrat';
+  src: url('./assets/font/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/font/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/font/Montserrat-Black.ttf') format('truetype');
   font-weight: 900;
 }
 
 @font-face {
-  font-family: 'Kanit';
-  src: url('./assets/font/Kanit-ExtraLight.ttf') format('truetype');
-  font-weight: 100;
+  font-family: 'NanumGothic';
+  src: url('./assets/font/NanumGothic.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'Kanit';
-  src: url('./assets/font/Kanit-Light.ttf') format('truetype');
-  font-weight: 200;
+  font-family: 'NanumGothicLight';
+  src: url('./assets/font/NanumGothicLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NanumGothicBold';
+  src: url('./assets/font/NanumGothicBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NanumGothicExtraBold';
+  src: url('./assets/font/NanumGothicExtraBold.otf') format('opentype');
 }

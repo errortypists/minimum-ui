@@ -1,44 +1,75 @@
 import { useState } from "react"
-import { Flex, Button, Drawer, Menu } from "ui-kit"
+import { Flex, Button, Drawer, Menu2 } from "ui-kit"
+import { sortedComponents } from "../../components/component-box"
+import Layout from "../../components/Layout"
+
+const { ContentsLayout, ComponentWrapper, CodeWrapper, Title, Description } =
+  Layout
 
 const MenuPage: React.FC = () => {
   const [open, setOpen] = useState(false)
-  const [currentMenu, setCurrentMenu] = useState("menu1")
+  const names = Object.keys(sortedComponents)
+
   return (
-    <Flex direction="column" align="flex-start">
-      <Button width="100px" onClick={() => setOpen(true)}>
-        Modal
-      </Button>
+    <ContentsLayout>
+      <Title>Menu</Title>
+      <Description>
+        기본 1depth의 구조를 가지며, Group 사용으로 최대 2depth의 메뉴를 구성 할
+        수 있습니다.
+      </Description>
+      <ComponentWrapper>
+        <Button onClick={() => setOpen(true)}>Menu</Button>
+      </ComponentWrapper>
+      <CodeWrapper
+        code={`const [open, setOpen] = useState(false)
+
+<Drawer
+  open={open}
+  onClickOutside={() => setOpen(false)}
+  direction={"left"}
+>
+  <Menu>
+    <Menu.Item selected={false}>HOME</Menu.Item>
+    <Menu.Item selected={false}>DOCUMENT</Menu.Item>
+    <Menu.Item selected={false}>GUIDE</Menu.Item>
+    <Menu.Group title="COMPONENT" open={true}>
+      <Menu.Item selected={true}>button</Menu.Item>
+      <Menu.Item selected={false}>checkbox</Menu.Item>
+      <Menu.Item selected={false}>collapse</Menu.Item>
+    </Menu.Group>
+  </Menu>
+</Drawer>`}
+      />
       {open && (
         <Drawer
           open={open}
           onClickOutside={() => setOpen(false)}
           direction={"left"}
+          // style={{ overflow: "auto" }} // 기본 옵션으로 적용할지?
         >
           <Flex>
-            <Menu
-              defaultSelected={currentMenu}
-              onChange={(value) => setCurrentMenu(value)}
-            >
-              <Menu.Item name="menu1">MENU 1</Menu.Item>
-              <Menu.Item name="menu2">MENU 2</Menu.Item>
-              <Menu.Item name="menu3">MENU 3</Menu.Item>
-              <Menu.Group title="MENU GROUP">
-                <Menu.Item name="menu4">MENU 4</Menu.Item>
-                <Menu.Item name="menu5">MENU 5</Menu.Item>
-              </Menu.Group>
-              <Menu.Item name="menu6">MENU 6</Menu.Item>
-              <Menu.Item name="menu7">MENU 7</Menu.Item>
-              <Menu.Item name="menu8">MENU 8</Menu.Item>
-              <Menu.Group title="MENU GROUP2">
-                <Menu.Item name="menu9">MENU 9</Menu.Item>
-                <Menu.Item name="menu10">MENU 10</Menu.Item>
-              </Menu.Group>
-            </Menu>
+            <Menu2>
+              <Menu2.Item selected={false}>HOME</Menu2.Item>
+              <Menu2.Item selected={false}>DOCUMENT</Menu2.Item>
+              <Menu2.Item selected={false}>GUIDE</Menu2.Item>
+              <Menu2.Group title="COMPONENT" open={true}>
+                {names.map((name) => (
+                  <Menu2.Item key={name} selected={name === "button"}>
+                    {name}
+                  </Menu2.Item>
+                ))}
+                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
+                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
+                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
+                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
+                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
+                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
+              </Menu2.Group>
+            </Menu2>
           </Flex>
         </Drawer>
       )}
-    </Flex>
+    </ContentsLayout>
   )
 }
 

@@ -4,8 +4,10 @@ import useStatus from "../../hooks/useStatus"
 import Menu from "../Icon/Menu"
 import Github from "../Icon/Github"
 import { BaseColor } from "../../assets/styles/color"
+import { useHistory } from "react-router-dom"
 
 const Header: React.FC = () => {
+  const history = useHistory()
   const { isLeftMenu, setLeftMenu } = useStatus()
 
   return (
@@ -13,7 +15,7 @@ const Header: React.FC = () => {
       <MenuIconWrapper onClick={() => setLeftMenu(!isLeftMenu)}>
         <Menu fill={"#000000"} />
       </MenuIconWrapper>
-      <Logo>WhatUI</Logo>
+      <Logo onClick={() => history.push("/")}>Minimum UI</Logo>
       <GithubIconWrapper onClick={() => setLeftMenu(!isLeftMenu)}>
         <Github fill={"#000000"} />
       </GithubIconWrapper>
@@ -50,13 +52,13 @@ const Wrapper = styled.div`
 const Logo = styled.div`
   height: 45px;
   position: absolute;
-  font-size: 2rem;
-  font-family: Sarpanch;
+  font-size: 1.5rem;
+  font-family: "Montserrat";
+  font-weight: 900;
+  line-height: 45px;
   user-select: none;
   color: ${BaseColor.font};
-  @media only screen and (min-width: 820px) {
-    display: none;
-  }
+  cursor: pointer;
 `
 
 export default Header
