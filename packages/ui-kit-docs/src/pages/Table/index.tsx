@@ -17,11 +17,10 @@ const TablePage: React.FC = () => {
     <ContentsLayout>
       <Title>Table</Title>
       <Description>
-        Table은 도표형식으로 정형화된 데이터를 표현하는데 사용하는
-        컴포넌트입니다. 각 헤더와 행을 이루는 컴포넌트로 영역을 구성할 수
-        있습니다.
+        Table 컴포넌트는 표형식으로 정형화된 데이터를 표현하는데 사용할 수
+        있습니다. 이때 구성요소로서 Head, Row, Cell등을 활용헤 다양한 영역을
+        구분 지을 수 있습니다.
       </Description>
-      <ComponentTitle>Basic Table</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Table>
@@ -82,7 +81,7 @@ const TablePage: React.FC = () => {
       />
       <ComponentTitle>Ratio</ComponentTitle>
       <ComponentDescription>
-        각 열의 비율을 조정할 수 있습니다.
+        Table의 각 열 비율을 조정할 수 있습니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>

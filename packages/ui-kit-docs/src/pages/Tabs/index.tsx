@@ -54,11 +54,10 @@ const TabsPage: React.FC = () => {
     <ContentsLayout>
       <Title>Tabs</Title>
       <Description>
-        Tabs는 연속적인 Tab으로 구성되는 컴포넌트입니다. 각각의 Tab은 아이콘이나
+        Tabs 컴포넌트는 연속적인 Tab으로 구성됩니다. 각각의 Tab은 아이콘이나
         타이틀을 사용하여 상태를 나타낼 수 있습니다. 일반적으로는 선택된 Tab에
-        따라 개별적인 화면을 보여주는데 사용합니다.
+        따라 개발자가 원하는 개별적인 상태를 보여주는데 사용합니다.
       </Description>
-      <ComponentTitle>Basic Tabs</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
           <Tabs
@@ -88,7 +87,7 @@ const [tab1Value, setTab1Value] = useState(tab1List[0].value)
       />
       <ComponentTitle>Icon</ComponentTitle>
       <ComponentDescription>
-        개별적인 탭에 아이콘을 넣을 수 있습니다.
+        Tabs를 구성하는 각 Tab에 아이콘을 넣을 수 있습니다.
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
@@ -132,7 +131,7 @@ const tab2List = [
       />
       <ComponentTitle>Type</ComponentTitle>
       <ComponentDescription>
-        각 개별 Tab의 모서리의 외형을 결정합니다
+        Tabs를 구성하는 각 Tab의 모서리의 외형을 결정합니다
       </ComponentDescription>
       <ComponentWrapper>
         <Flex direction="column" justify="center" gap={20}>

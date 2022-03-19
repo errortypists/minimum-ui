@@ -24,7 +24,6 @@ const ModalPage: React.FC = () => {
         만들어줍니다. 생성된 영역은 body 태그의 하위 요소로 생성됩니다. 영역내
         구성요소는 사용자가 자유롭게 구성해 사용합니다.
       </Description>
-      <ComponentTitle>Basic Modal</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Button
