@@ -35,8 +35,8 @@ const Wrapper = styled.footer`
 
   a {
     text-decoration: none;
-    font-family: Kanit;
-    font-weight: 200;
+    font-family: "Montserrat";
+    font-weight: 300;
   }
 `
 
