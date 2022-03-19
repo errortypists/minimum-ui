@@ -75,18 +75,17 @@ const BoxWrapper = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 14px;
   color: ${BaseColor.font};
   border-radius: 4px;
-  font-family: Kanit;
-  font-weight: 100;
+  font-family: NanumGothicLight;
 
   &:hover {
-    font-weight: 200;
+    font-family: NanumGothicBold;
   }
 
   &[data-selected="true"] {
-    font-weight: 200;
+    font-family: NanumGothicBold;
     border-color: ${BaseColor.alert.information.border};
     background-color: ${BaseColor.alert.information.background};
   }

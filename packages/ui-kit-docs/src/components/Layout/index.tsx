@@ -34,7 +34,6 @@ const LeftWrapper: React.FC<ILeft> = () => {
   const { selectedMenu } = useStatus()
   return (
     <LeftAreaWrapper>
-      <LogoWrapper>WhatUI</LogoWrapper>
       <ComponentBox />
       {selectedMenu?.id && (
         <>
@@ -145,20 +144,6 @@ const RightContentWrapper = styled.div`
   overflow: auto;
   width: 100%;
   padding: 18px;
-`
-
-const LogoWrapper = styled.div`
-  height: 45px;
-  position: absolute;
-  left: 20px;
-  top: -5px;
-  font-size: 2.5rem;
-  font-family: Sarpanch;
-  user-select: none;
-  color: ${BaseColor.font};
-  @media only screen and (max-width: 820px) {
-    display: none;
-  }
 `
 
 const Layout = {
