@@ -21,7 +21,6 @@ const FlexPage: React.FC = () => {
         구성 영역의 사이즈를 조정할 수 있고, 배치되는 방향성도 결정할 수
         있습니다.
       </Description>
-      <ComponentTitle>Basic Flex</ComponentTitle>
       <ComponentWrapper>
         <Flex>
           <Box style={{ flex: 1 }}>FLEX1</Box>

@@ -23,7 +23,6 @@ const RadioPage: React.FC = () => {
         제공합니다. 그룹과 함께 사용시 사용자에게 그룹 구성원중 하나만을
         선택하도록 할 수 있습니다.
       </Description>
-      <ComponentTitle>Basic Radio</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Radio title={"1"} />

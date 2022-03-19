@@ -27,7 +27,6 @@ const CollapsePage: React.FC = () => {
         Collapse 컴포넌트는 영역의 접혀짐과 펼쳐짐을 나타내는 컴포넌트입니다.
         원하는 영역을 숨기거나 나타낼 때 사용할 수 있습니다.
       </Description>
-      <ComponentTitle>Basic Collapse</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="column" justify="center" gap={10}>
           <Button

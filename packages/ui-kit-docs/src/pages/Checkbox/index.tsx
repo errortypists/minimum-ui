@@ -22,7 +22,6 @@ const CheckboxPage: React.FC = () => {
         있고, 단일 Checkbox를 사용해 어떤 기능이나 동작의 on/off를 구분하는데도
         활용할 수 있습니다.
       </Description>
-      <ComponentTitle>Basic Checkbox</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
           <Checkbox checked={true} />

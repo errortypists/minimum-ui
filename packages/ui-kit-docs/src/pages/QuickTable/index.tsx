@@ -21,7 +21,6 @@ const QuickTablePage: React.FC = () => {
         표현할 수 있습니다. 테이블의 헤더, 데이터, 각 행을 그려내는 방법을
         결정하여 제공하면 이를 기반으로 테이블이 완성됩니다.
       </Description>
-      <ComponentTitle>Basic QuickTable</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <QuickTable

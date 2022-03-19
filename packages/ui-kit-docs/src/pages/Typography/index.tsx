@@ -19,7 +19,6 @@ const TypographyPage: React.FC = () => {
         Typography 컴포넌트는 다양한 텍스트 조합을 사용해 문서를 구성하는데
         사용합니다.
       </Description>
-      <ComponentTitle>Basic Typography</ComponentTitle>
       <ComponentWrapper>
         <Title>Example of Typography</Title>
         <SubTitle>Example of Typography</SubTitle>

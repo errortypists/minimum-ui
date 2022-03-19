@@ -22,7 +22,6 @@ const InputPage: React.FC = () => {
         컴포넌트입니다. 다양한 입력 값을 받을 수 있고, 일반적인 input 태그를
         기반으로 만들어져 있기 때문에 속성들을 그대로 사용 가능합니다.
       </Description>
-      <ComponentTitle>Basic Input</ComponentTitle>
       <ComponentWrapper>
         <Input
           value={id}

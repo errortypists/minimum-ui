@@ -19,7 +19,6 @@ const TextareaPage: React.FC = () => {
         Textarea 컴포넌트는 텍스트 입력시 여러 줄을 입력할 수 있는 영역을
         표현합니다.
       </Description>
-      <ComponentTitle>Basic Textarea</ComponentTitle>
       <ComponentWrapper>
         <Textarea placeholder="default width" />
       </ComponentWrapper>

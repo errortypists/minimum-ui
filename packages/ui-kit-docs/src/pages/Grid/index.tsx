@@ -21,7 +21,6 @@ const GridPage: React.FC = () => {
         구성요소는 격자모양의 형태로 순서대로 좌측에서 우측으로 위에서 아래로
         요소 하나하나씩 배치됩니다.
       </Description>
-      <ComponentTitle>Basic Grid</ComponentTitle>
       <ComponentWrapper>
         <Grid row={2} col={2} gap={8}>
           <Box>GRID1</Box>
