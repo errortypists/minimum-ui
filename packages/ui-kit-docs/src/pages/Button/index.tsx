@@ -22,7 +22,6 @@ const ButtonPage: React.FC = () => {
         유발한 다는 것을 예측하도록 제공하는 컴포넌트입니다. 클릭 했을 때
         여러가지 임의의 동작을 주입할 수 있습니다.
       </Description>
-      <ComponentTitle>Basic Button</ComponentTitle>
       <ComponentWrapper>
         <Flex>
           <Button>Default</Button>

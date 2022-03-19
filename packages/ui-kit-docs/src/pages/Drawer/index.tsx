@@ -32,7 +32,6 @@ const DrawerPage: React.FC = () => {
         컴포넌트입니다. 평소에는 닫혀있는 상태로 대기하다가 Open 상태로 전환시
         원하는 방향에서 슬라이드되어 나타납니다.
       </Description>
-      <ComponentTitle>Basic Drawer</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Button
@@ -40,12 +39,12 @@ const DrawerPage: React.FC = () => {
             variant="outline"
             onClick={() => setOpen(!open)}
           >
-            {"Basic Drawer"}
+            {"Open Drawer"}
           </Button>
           {open && (
             <Drawer open={open} onClickOutside={() => setOpen(false)}>
               <Wrapper>
-                <Typography.Title>Basic Drawer</Typography.Title>
+                <Typography.Title>Drawer</Typography.Title>
               </Wrapper>
             </Drawer>
           )}

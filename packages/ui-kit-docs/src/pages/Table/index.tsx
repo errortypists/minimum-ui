@@ -21,7 +21,6 @@ const TablePage: React.FC = () => {
         있습니다. 이때 구성요소로서 Head, Row, Cell등을 활용헤 다양한 영역을
         구분 지을 수 있습니다.
       </Description>
-      <ComponentTitle>Basic Table</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={20}>
           <Table>

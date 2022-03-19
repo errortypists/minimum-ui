@@ -58,7 +58,6 @@ const TabsPage: React.FC = () => {
         타이틀을 사용하여 상태를 나타낼 수 있습니다. 일반적으로는 선택된 Tab에
         따라 개발자가 원하는 개별적인 상태를 보여주는데 사용합니다.
       </Description>
-      <ComponentTitle>Basic Tabs</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="row" justify="center" gap={0}>
           <Tabs

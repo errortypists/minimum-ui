@@ -18,7 +18,6 @@ const PaginationPage: React.FC = () => {
         Pagination 컴퍼넌트는 게시판등 목록화 하여 각각의 데이터를 페이지로
         순번을 매겨 관리할때 사용합니다.
       </Description>
-      <ComponentTitle>Basic Input</ComponentTitle>
       <ComponentWrapper>
         <Pagination
           currentPage={5}

@@ -20,7 +20,6 @@ const SelectPage: React.FC = () => {
         기반으로 작성되었기 때문에 동작하는 플랫폼에 따라 디자인이 달라 질 수
         있습니다.
       </Description>
-      <ComponentTitle>Basic Select</ComponentTitle>
       <ComponentWrapper>
         <Select
           options={[

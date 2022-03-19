@@ -22,7 +22,6 @@ const ProgressPage: React.FC = () => {
         Progress 컴포넌트는 어떤 상황의 진행상태나, 유예를 표현하기위해
         사용합니다. 비율을 입력하여 상태를 표현할 수 있습니다.
       </Description>
-      <ComponentTitle>Basic Progress</ComponentTitle>
       <ComponentWrapper>
         <Flex direction="column" justify="center" gap={0}>
           <Progress type={"linear"} progress={10} />

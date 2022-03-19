@@ -18,7 +18,6 @@ const DividerPage: React.FC = () => {
         Divider 컴포넌트는 영역을 분리할때 각 영역을 구분짓기 위해 사용합니다.
         각 영역사이 중간에 위치하도록 배치해 사용합니다.
       </Description>
-      <ComponentTitle>Basic Divider</ComponentTitle>
       <ComponentWrapper>
         <Flex>Section1</Flex>
         <Divider />
