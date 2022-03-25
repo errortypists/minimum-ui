@@ -49,7 +49,7 @@ const Header: React.FC = () => {
             })
           }}
         >
-          <Menu.Item selected={selectedMenu?.url} name={url}>
+          <Menu.Item selected={url === selectedMenu?.url}>
             {sortedComponents[menuName].displayName}
           </Menu.Item>
         </StyledLink>
@@ -64,13 +64,7 @@ const Header: React.FC = () => {
     >
       <Wrapper>
         <Flex>
-          <Menu defaultSelected={""} onChange={() => {}}>
-            {createMenus()}
-            {/* <Menu.Group title="MENU GROUP">
-              <Menu.Item name="menu4">MENU 4</Menu.Item>
-              <Menu.Item name="menu5">MENU 5</Menu.Item>
-            </Menu.Group> */}
-          </Menu>
+          <Menu>{createMenus()}</Menu>
         </Flex>
       </Wrapper>
     </Drawer>
