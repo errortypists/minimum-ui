@@ -21,6 +21,7 @@ import {
   QuickTablePage,
   GridPage,
   FlexPage,
+  LoginPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 import TextareaPage from "./pages/Textarea"
@@ -104,6 +105,9 @@ function App() {
             </Route>
             <Route path="/checkbox" exact>
               <CheckboxPage />
+            </Route>
+            <Route path="/sample/login" exact>
+              <LoginPage />
             </Route>
           </Switch>
           <DrawerMenu />
