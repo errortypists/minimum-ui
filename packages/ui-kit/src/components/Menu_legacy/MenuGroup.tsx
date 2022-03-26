@@ -1,33 +1,51 @@
-import React, { useState } from "react"
-import Icon from "components/Icon"
-import styled from "styled-components"
+import React, { useEffect, useMemo, useState } from "react"
 import BaseStyle from "assets/styles/base"
 import { BaseColor } from "assets/styles/color"
+import Icon from "components/Icon"
+import styled from "styled-components"
 
 interface MenuGroupProps {
   title: string
-  open?: boolean
+  selected?: string
+  onChange?(key: string): void
 }
 
 const MenuGroup: React.FC<MenuGroupProps> = ({
   title,
-  open = false,
+  selected,
+  onChange,
   children,
 }) => {
-  const [isOpen, setIsOpen] = useState(open)
+  const [isOpen, setIsOpen] = useState(false)
   const childrenCount = React.Children.count(children)
+  const isGroupSelected: boolean = useMemo(() => {
+    return React.Children.toArray(children)
+      .map((child) => {
+        if (React.isValidElement<{ name: string }>(child)) {
+          return child.props.name
+        }
+        return child
+      })
+      .some((name) => name === selected)
+  }, [children, selected])
+
+  useEffect(() => {
+    setIsOpen(isGroupSelected)
+  }, [selected, isGroupSelected])
 
   const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       return React.cloneElement(child, {
         isGroup: true,
+        onChange,
+        selected,
       })
     }
     return child
   })
 
   return (
-    <MenuGroupWrapper>
+    <MenuGroupWrapper className="group">
       <MenuGroupTitle onClick={() => setIsOpen((isOpen) => !isOpen)}>
         {title}
         <MenuGroupIcon>
@@ -68,9 +86,8 @@ const MenuGroupTitle = styled.div`
 
 const MenuGroupIcon = styled.div`
   position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  right: 15px;
+  top: 0;
   width: 10px;
   height: 10px;
 `

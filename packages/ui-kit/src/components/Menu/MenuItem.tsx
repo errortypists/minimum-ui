@@ -4,25 +4,22 @@ import Colors, { BaseColor } from "assets/styles/color"
 import styled from "styled-components"
 
 interface MenuItemProps {
-  height?: string
-  selected?: string
-  onChange?(key: string): void
+  selected?: boolean
   isGroup?: boolean
-  name: string // key 라는 키워드를 쓸 수 있는 방법을 찾아야함
+  onClick?(): void
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
-  selected,
-  onChange,
-  isGroup,
-  name,
+  selected = false,
+  isGroup = false,
+  onClick,
   children,
 }) => {
   return (
     <MenuItemWrapper
-      data-selected={name === selected}
+      data-selected={selected}
       data-group={isGroup}
-      onClick={() => (onChange ? onChange(name) : null)}
+      onClick={onClick}
     >
       {children}
     </MenuItemWrapper>
