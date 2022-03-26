@@ -21,6 +21,7 @@ import {
   QuickTablePage,
   GridPage,
   FlexPage,
+  FormPage,
   LoginPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
@@ -45,6 +46,9 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <OverviewPage />
+            </Route>
+            <Route path="/form" exact>
+              <FormPage />
             </Route>
             <Route path="/tabs" exact>
               <Tabs />
