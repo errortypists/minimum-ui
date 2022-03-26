@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Flex, Button, Drawer, Menu2 } from "ui-kit"
+import { Flex, Button, Drawer, Menu } from "ui-kit"
 import { sortedComponents } from "../../components/component-box"
 import Layout from "../../components/Layout"
 
@@ -14,8 +14,9 @@ const MenuPage: React.FC = () => {
     <ContentsLayout>
       <Title>Menu</Title>
       <Description>
-        기본 1depth의 구조를 가지며, Group 사용으로 최대 2depth의 메뉴를 구성 할
-        수 있습니다.
+        Menu 컴포넌트는 모바일 화면에서 Navagation 역할을 하는 메뉴를 그려낼 때
+        사용합니다. 연관된 메뉴를 그룹화할 수 있습니다. 기본적으로 1 depth의
+        구조를 가지며, 그룹을 활용하면 최대 2 depth의 메뉴를 구성할 수 있습니다.
       </Description>
       <ComponentWrapper>
         <Button onClick={() => setOpen(true)}>Menu</Button>
@@ -29,13 +30,13 @@ const MenuPage: React.FC = () => {
   direction={"left"}
 >
   <Menu>
-    <Menu.Item selected={false}>HOME</Menu.Item>
-    <Menu.Item selected={false}>DOCUMENT</Menu.Item>
-    <Menu.Item selected={false}>GUIDE</Menu.Item>
-    <Menu.Group title="COMPONENT" open={true}>
-      <Menu.Item selected={true}>button</Menu.Item>
-      <Menu.Item selected={false}>checkbox</Menu.Item>
-      <Menu.Item selected={false}>collapse</Menu.Item>
+    <Menu.Item selected={false}>Beauty</Menu.Item>
+    <Menu.Item selected={false}>Food</Menu.Item>
+    <Menu.Item selected={false}>Book</Menu.Item>
+    <Menu.Group title="Fruit" open={true}>
+      <Menu.Item selected={false}>Apple</Menu.Item>
+      <Menu.Item selected={false}>Strawberry</Menu.Item>
+      <Menu.Item selected={false}>Banana</Menu.Item>
     </Menu.Group>
   </Menu>
 </Drawer>`}
@@ -48,24 +49,16 @@ const MenuPage: React.FC = () => {
           // style={{ overflow: "auto" }} // 기본 옵션으로 적용할지?
         >
           <Flex>
-            <Menu2>
-              <Menu2.Item selected={false}>HOME</Menu2.Item>
-              <Menu2.Item selected={false}>DOCUMENT</Menu2.Item>
-              <Menu2.Item selected={false}>GUIDE</Menu2.Item>
-              <Menu2.Group title="COMPONENT" open={true}>
-                {names.map((name) => (
-                  <Menu2.Item key={name} selected={name === "button"}>
-                    {name}
-                  </Menu2.Item>
-                ))}
-                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
-                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
-                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
-                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
-                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
-                <Menu2.Item selected={false}>GUIDE</Menu2.Item>
-              </Menu2.Group>
-            </Menu2>
+            <Menu>
+              <Menu.Item selected={false}>Beauty</Menu.Item>
+              <Menu.Item selected={false}>Food</Menu.Item>
+              <Menu.Item selected={false}>Book</Menu.Item>
+              <Menu.Group title="Fruit" open={true}>
+                <Menu.Item selected={false}>Apple</Menu.Item>
+                <Menu.Item selected={false}>Strawberry</Menu.Item>
+                <Menu.Item selected={false}>Banana</Menu.Item>
+              </Menu.Group>
+            </Menu>
           </Flex>
         </Drawer>
       )}
