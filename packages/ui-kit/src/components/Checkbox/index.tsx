@@ -71,8 +71,8 @@ const Wrapper = styled.div<any>`
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-left: ${BaseStyle.padding};
-  margin-right: ${BaseStyle.padding};
+  /* margin-left: ${BaseStyle.padding};
+  margin-right: ${BaseStyle.padding}; */
   flex-direction: row;
   flex-direction: ${(props) =>
     `${

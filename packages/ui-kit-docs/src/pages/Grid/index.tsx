@@ -3,14 +3,8 @@ import { Grid } from "ui-kit"
 import styled from "styled-components"
 import { BaseColor } from "../../assets/styles/color"
 
-const {
-  ContentsLayout,
-  ComponentTitle,
-  ComponentWrapper,
-  CodeWrapper,
-  Title,
-  Description,
-} = Layout
+const { ContentsLayout, ComponentWrapper, CodeWrapper, Title, Description } =
+  Layout
 
 const GridPage: React.FC = () => {
   return (

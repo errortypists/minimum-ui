@@ -4,14 +4,8 @@ import { Flex, Button, Modal, Typography } from "ui-kit"
 import Layout from "../../components/Layout"
 import styled from "styled-components"
 
-const {
-  ContentsLayout,
-  ComponentWrapper,
-  CodeWrapper,
-  Title,
-  Description,
-  ComponentTitle,
-} = Layout
+const { ContentsLayout, ComponentWrapper, CodeWrapper, Title, Description } =
+  Layout
 
 const ModalPage: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
