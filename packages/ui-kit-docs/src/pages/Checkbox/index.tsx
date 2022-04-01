@@ -23,7 +23,7 @@ const CheckboxPage: React.FC = () => {
         활용할 수 있습니다.
       </Description>
       <ComponentWrapper>
-        <Flex direction="row" justify="center" gap={0}>
+        <Flex direction="row" justify="center" gap={20}>
           <Checkbox checked={true} />
           <Checkbox checked={false} />
           <Checkbox checked={true} disabled />
@@ -57,7 +57,7 @@ const CheckboxPage: React.FC = () => {
       <ComponentTitle>Size</ComponentTitle>
       <ComponentDescription>Checkbox의 크기를 지정합니다.</ComponentDescription>
       <ComponentWrapper>
-        <Flex direction="row" justify="center" gap={0}>
+        <Flex direction="row" justify="center" gap={20}>
           <Checkbox size="small" checked={true} />
           <Checkbox size="medium" checked={true} />
           <Checkbox size="large" checked={true} />

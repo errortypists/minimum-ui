@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Button, Flex, Input, Radio } from "ui-kit"
+import { Button, Flex, Input } from "ui-kit"
 import { BaseColor } from "../../assets/styles/color"
 
 import Layout from "../../components/Layout"

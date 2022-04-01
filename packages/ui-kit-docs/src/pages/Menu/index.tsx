@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Flex, Button, Drawer, Menu } from "ui-kit"
-import { sortedComponents } from "../../components/component-box"
 import Layout from "../../components/Layout"
 
 const { ContentsLayout, ComponentWrapper, CodeWrapper, Title, Description } =
@@ -8,7 +7,6 @@ const { ContentsLayout, ComponentWrapper, CodeWrapper, Title, Description } =
 
 const MenuPage: React.FC = () => {
   const [open, setOpen] = useState(false)
-  const names = Object.keys(sortedComponents)
 
   return (
     <ContentsLayout>
