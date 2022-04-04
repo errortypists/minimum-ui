@@ -1,14 +1,14 @@
 {
-  "name": "ui-kit",
+  "name": "minimum-ui",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "kit-build": "yarn workspace ui-kit rollup -c",
-    "kit-watch": "yarn workspace ui-kit rollup -c -w",
-    "docs-start": "yarn workspace ui-kit-docs start",
+    "kit-build": "yarn workspace minimum-ui rollup -c",
+    "kit-watch": "yarn workspace minimum-ui rollup -c -w",
+    "docs-start": "yarn workspace minimum-ui-docs start",
     "dev": "concurrently \"yarn kit-watch\" \"yarn docs-start\""
   },
   "devDependencies": {

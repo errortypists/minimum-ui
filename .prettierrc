@@ -16,6 +16,6 @@
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "filepath": "c:\\Users\\K\\Desktop\\project\\mobile-test-ui\\packages\\ui-kit\\src\\components\\Tabs\\index.tsx",
+  "filepath": "c:\\Users\\K\\Desktop\\project\\mobile-test-ui\\packages\\minimum-ui\\src\\components\\Tabs\\index.tsx",
   "parser": "typescript"
 }
