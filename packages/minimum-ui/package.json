@@ -1,6 +1,6 @@
 {
   "name": "minimum-ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
@@ -30,25 +30,25 @@
   "dependencies": {
     "react-svg-unique-id": "^1.3.3"
   },
-  "description": "minimum ui kit",
+  "description": "minimum ui",
   "keywords": [
     "react",
     "ui"
   ],
-  "homepage": "https://github.com/axios/axios",
+  "homepage": "https://github.com/errortypists",
   "bugs": {
-    "url": "https://github.com/axios/axios/issues",
-    "email": "issues@axios.com"
+    "url": "https://github.com/errortypists/minimum-ui/issues",
+    "email": "errortypists@gmail.com"
   },
   "license": "MIT",
   "author": {
-    "name": "Team Name",
-    "email": "teamame@aaaa.com",
-    "url": "http://teamname.com"
+    "name": "errortypists",
+    "email": "errortypists@gmail.com",
+    "url": "https://github.com/errortypists/minimum-ui"
   },
   "contributors": [
-    "kdilot <@> ()",
-    "kelten89 <skyimt33@gmail.com> (https://abc.com)"
+    "kdilot <kdilotdev@gmail.com> (https://github.com/errortypists/minimum-ui)",
+    "kelten89 <skyimt33@gmail.com> (https://github.com/errortypists/minimum-ui)"
   ]
 
 }
