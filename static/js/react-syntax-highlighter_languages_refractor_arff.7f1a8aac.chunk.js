@@ -1,0 +1,2 @@
+(this["webpackJsonpminimum-ui-docs"]=this["webpackJsonpminimum-ui-docs"]||[]).push([[8],{111:function(i,n,t){"use strict";function a(i){i.languages.arff={comment:/%.*/,string:{pattern:/(["'])(?:\\.|(?!\1)[^\\\r\n])*\1/,greedy:!0},keyword:/@(?:attribute|data|end|relation)\b/i,number:/\b\d+(?:\.\d+)?\b/,punctuation:/[{},]/}}i.exports=a,a.displayName="arff",a.aliases=[]}}]);
+//# sourceMappingURL=react-syntax-highlighter_languages_refractor_arff.7f1a8aac.chunk.js.map

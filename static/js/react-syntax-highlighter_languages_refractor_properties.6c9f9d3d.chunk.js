@@ -1,0 +1,2 @@
+(this["webpackJsonpminimum-ui-docs"]=this["webpackJsonpminimum-ui-docs"]||[]).push([[106],{198:function(s,t,n){"use strict";function i(s){s.languages.properties={comment:/^[ \t]*[#!].*$/m,"attr-value":{pattern:/(^[ \t]*(?:\\(?:\r\n|[\s\S])|[^\\\s:=])+?(?: *[=:] *| ))(?:\\(?:\r\n|[\s\S])|[^\\\r\n])+/m,lookbehind:!0},"attr-name":/^[ \t]*(?:\\(?:\r\n|[\s\S])|[^\\\s:=])+?(?= *[=:] *| )/m,punctuation:/[=:]/}}s.exports=i,i.displayName="properties",i.aliases=[]}}]);
+//# sourceMappingURL=react-syntax-highlighter_languages_refractor_properties.6c9f9d3d.chunk.js.map
