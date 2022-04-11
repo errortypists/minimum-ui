@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Button, Flex, Grid, Typography } from "minimum-ui"
 import { BaseColor } from "../../assets/styles/color"
 import { Footer } from "../../components"
-import { sortedComponents } from "../../components/component-box"
+import { sortedComponents } from "../../components/ComponentBox"
 
 const OverviewPage: React.FC = () => {
   const history = useHistory()

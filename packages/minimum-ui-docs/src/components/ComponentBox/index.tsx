@@ -6,6 +6,7 @@ import styled from "styled-components"
 import Color, { BaseColor } from "../../assets/styles/color"
 import components, { ComponentProps } from "../../assets/components"
 import useStatus from "../../hooks/useStatus"
+import { replacePathname } from "../../lib/path"
 
 export const sortedComponents = (() => {
   const names = Object.keys(components)
@@ -37,12 +38,13 @@ const ComponentBox: React.FC = () => {
     <Grid gap={10} col={width > 1050 ? 4 : 3} style={{ marginBottom: "50px" }}>
       {names.map((menuName, index) => {
         const id = `cb-${index}`
-        const url = `/${menuName}`
+        const url = `/minimum-ui/${menuName}`
         const isSelected = selectedMenu?.url === url
+
         return (
           <BoxWrapper
             key={id}
-            to={url}
+            to={replacePathname(url)}
             onClick={() => {
               setSelectedMenu({
                 id: menuName,

@@ -21,17 +21,16 @@ import {
   QuickTablePage,
   GridPage,
   FlexPage,
-  FormPage,
-  LoginPage,
 } from "./pages"
 import TypographyPage from "./pages/Typography"
 import TextareaPage from "./pages/Textarea"
 import "./assets/styles/reset.css"
 import { StatusContext } from "./contexts/StatusContext"
 import DrawerMenu from "./components/DrawerMenu"
+import { replacePathname } from "./lib/path"
 
 function App() {
-  const path = window.location.pathname.slice(1)
+  const path = replacePathname(window.location.pathname).slice(1)
   const [selectedMenu, setSelectedMenu] = useState({
     id: path,
     url: window.location.pathname,
@@ -42,13 +41,10 @@ function App() {
       <StatusContext.Provider
         value={{ selectedMenu, isLeftMenu, setSelectedMenu, setLeftMenu }}
       >
-        <Router>
+        <Router basename="/minimum-ui">
           <Switch>
             <Route path="/" exact>
               <OverviewPage />
-            </Route>
-            <Route path="/form" exact>
-              <FormPage />
             </Route>
             <Route path="/tabs" exact>
               <Tabs />
@@ -109,9 +105,6 @@ function App() {
             </Route>
             <Route path="/checkbox" exact>
               <CheckboxPage />
-            </Route>
-            <Route path="/sample/login" exact>
-              <LoginPage />
             </Route>
           </Switch>
           <DrawerMenu />
