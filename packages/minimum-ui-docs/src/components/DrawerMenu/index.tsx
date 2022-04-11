@@ -38,7 +38,7 @@ const Header: React.FC = () => {
   const createMenus = () => {
     return names.map((menuName, index) => {
       const id = `menu-${index}`
-      const url = `/minimum-ui/${menuName}`
+      const url = `/${menuName}`
       return (
         <StyledLink
           key={id}
@@ -50,7 +50,9 @@ const Header: React.FC = () => {
             })
           }}
         >
-          <Menu.Item selected={url === selectedMenu?.url}>
+          <Menu.Item
+            selected={url === replacePathname(selectedMenu?.url as string)}
+          >
             {sortedComponents[menuName].displayName}
           </Menu.Item>
         </StyledLink>
