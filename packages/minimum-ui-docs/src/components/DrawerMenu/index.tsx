@@ -6,6 +6,7 @@ import { useEffect } from "react"
 
 import useStatus from "../../hooks/useStatus"
 import components, { ComponentProps } from "../../assets/components"
+import { replacePathname } from "../../lib/path"
 
 const sortedComponents = (() => {
   const names = Object.keys(components)
@@ -25,7 +26,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     if (history) {
       history.listen(() => {
-        const path = window.location.pathname.slice(1)
+        const path = replacePathname(window.location.pathname).slice(1)
         setSelectedMenu({
           id: path,
           url: window.location.pathname,
@@ -49,7 +50,9 @@ const Header: React.FC = () => {
             })
           }}
         >
-          <Menu.Item selected={url === selectedMenu?.url}>
+          <Menu.Item
+            selected={url === replacePathname(selectedMenu?.url as string)}
+          >
             {sortedComponents[menuName].displayName}
           </Menu.Item>
         </StyledLink>
