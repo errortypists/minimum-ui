@@ -15,8 +15,12 @@ const OverviewPage: React.FC = () => {
       style={{ height: "100%", userSelect: "none" }}
     >
       <LogoWrapper>
-        <Typography.SubTitle>github</Typography.SubTitle>
-        <Typography.SubTitle>npm</Typography.SubTitle>
+        <Typography.SubTitle>
+          <a href="https://github.com/errortypists/minimum-ui">github</a>
+        </Typography.SubTitle>
+        <Typography.SubTitle>
+          <a href="https://www.npmjs.com/package/minimum-ui">npm</a>
+        </Typography.SubTitle>
       </LogoWrapper>
       <BoardWrapper>
         <Brand>Minimum UI</Brand>
