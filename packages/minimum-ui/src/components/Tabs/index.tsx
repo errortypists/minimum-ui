@@ -29,6 +29,7 @@ const Tabs: React.FC<Props> = (props) => {
       if (item.status === "selected") status = item.status
       return (
         <Tab
+          key={index}
           icon={item.icon}
           text={item.text}
           status={status}
